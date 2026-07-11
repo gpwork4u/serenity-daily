@@ -1,0 +1,423 @@
+<title>Serenity 卡點投資 · 每日研究清單</title>
+<style>
+  :root{
+    --bg:#F4F6F8; --surface:#FFFFFF; --surface-2:#EDF1F4; --surface-3:#E4EAEF;
+    --ink:#0E141B; --ink-2:#46586B; --ink-3:#7889A0; --border:#DBE2E9; --border-2:#CAD4DD;
+    --accent:#0E97A6; --accent-soft:#0e97a614;
+    --core:#0B8A5F; --pre:#B4770A; --explor:#3F5BC4; --avoid:#C33B3B;
+    --core-soft:#0b8a5f18; --pre-soft:#b4770a18; --explor-soft:#3f5bc418; --avoid-soft:#c33b3b18;
+    --warn-bg:#fbf3e2; --warn-bd:#e6c885; --warn-ink:#6b4e12;
+    --shadow:0 1px 2px rgba(16,30,45,.05),0 8px 24px rgba(16,30,45,.05);
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,"Cascadia Mono","Roboto Mono",Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0A0E13; --surface:#121A22; --surface-2:#0E151C; --surface-3:#1A242F;
+      --ink:#E7EDF3; --ink-2:#A7B6C7; --ink-3:#6E8095; --border:#1F2C39; --border-2:#2A3947;
+      --accent:#28C6D6; --accent-soft:#28c6d61f;
+      --core:#33C489; --pre:#E0AC46; --explor:#8098EE; --avoid:#EC6B6B;
+      --core-soft:#33c48922; --pre-soft:#e0ac4622; --explor-soft:#8098ee22; --avoid-soft:#ec6b6b22;
+      --warn-bg:#2a2312; --warn-bd:#5c491d; --warn-ink:#e8cf95;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#F4F6F8; --surface:#FFFFFF; --surface-2:#EDF1F4; --surface-3:#E4EAEF;
+    --ink:#0E141B; --ink-2:#46586B; --ink-3:#7889A0; --border:#DBE2E9; --border-2:#CAD4DD;
+    --accent:#0E97A6; --accent-soft:#0e97a614;
+    --core:#0B8A5F; --pre:#B4770A; --explor:#3F5BC4; --avoid:#C33B3B;
+    --core-soft:#0b8a5f18; --pre-soft:#b4770a18; --explor-soft:#3f5bc418; --avoid-soft:#c33b3b18;
+    --warn-bg:#fbf3e2; --warn-bd:#e6c885; --warn-ink:#6b4e12;
+    --shadow:0 1px 2px rgba(16,30,45,.05),0 8px 24px rgba(16,30,45,.05);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0A0E13; --surface:#121A22; --surface-2:#0E151C; --surface-3:#1A242F;
+    --ink:#E7EDF3; --ink-2:#A7B6C7; --ink-3:#6E8095; --border:#1F2C39; --border-2:#2A3947;
+    --accent:#28C6D6; --accent-soft:#28c6d61f;
+    --core:#33C489; --pre:#E0AC46; --explor:#8098EE; --avoid:#EC6B6B;
+    --core-soft:#33c48922; --pre-soft:#e0ac4622; --explor-soft:#8098ee22; --avoid-soft:#ec6b6b22;
+    --warn-bg:#2a2312; --warn-bd:#5c491d; --warn-ink:#e8cf95;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-size:15px}
+  .wrap{max-width:1120px;margin:0 auto;padding:clamp(20px,4vw,44px) clamp(16px,4vw,32px) 64px}
+
+  /* header */
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);font-weight:600}
+  h1{font-size:clamp(26px,4.4vw,40px);line-height:1.08;margin:.28em 0 .1em;letter-spacing:-.02em;
+    font-weight:760;text-wrap:balance}
+  .lede{color:var(--ink-2);max-width:70ch;font-size:15.5px}
+  .asof{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);margin-top:10px;
+    display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .asof b{color:var(--ink-2);font-weight:600}
+  .rule{height:1px;background:var(--border);margin:26px 0}
+
+  /* disclaimer */
+  .disc{background:var(--warn-bg);border:1px solid var(--warn-bd);border-left-width:4px;
+    border-radius:10px;padding:14px 16px;color:var(--warn-ink);font-size:13.5px;margin:22px 0}
+  .disc b{font-weight:700}
+  .disc .t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:700;display:block;margin-bottom:5px}
+
+  /* section heads */
+  .sec-h{display:flex;align-items:baseline;gap:12px;margin:40px 0 6px}
+  .sec-h h2{font-size:19px;font-weight:700;letter-spacing:-.01em;margin:0}
+  .sec-h .n{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+  .sec-sub{color:var(--ink-3);font-size:13px;margin:0 0 18px}
+
+  /* weight bars */
+  .bars{display:grid;gap:8px;background:var(--surface);border:1px solid var(--border);
+    border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+  .bar{display:grid;grid-template-columns:132px 1fr 52px;align-items:center;gap:14px}
+  .bar .lab{display:flex;align-items:baseline;gap:8px;min-width:0}
+  .bar .tk{font-family:var(--mono);font-weight:640;font-size:14px}
+  .bar .co{color:var(--ink-3);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .track{height:20px;background:var(--surface-3);border-radius:6px;overflow:hidden;position:relative}
+  .fill{height:100%;border-radius:6px;background:var(--cv,var(--accent));opacity:.9;
+    min-width:2px;display:flex;align-items:center}
+  .fill.zero{background:repeating-linear-gradient(45deg,var(--border-2),var(--border-2) 5px,transparent 5px,transparent 10px)}
+  .bar .pct{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;
+    text-align:right;font-weight:600;color:var(--ink-2)}
+  .meth{font-size:12.5px;color:var(--ink-3);margin:12px 2px 0;font-family:var(--mono)}
+
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;margin-top:16px}
+  .card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--cv,var(--accent));
+    border-radius:13px;padding:16px 17px 17px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:11px}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .tkwrap{min-width:0}
+  .card .ticker{font-family:var(--mono);font-size:20px;font-weight:680;letter-spacing:-.01em;line-height:1}
+  .card .company{color:var(--ink-2);font-size:12.5px;margin-top:5px}
+  .card .venue{color:var(--ink-3);font-size:11px;font-family:var(--mono);margin-top:2px}
+  .chip{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.03em;
+    padding:4px 9px;border-radius:999px;white-space:nowrap;color:var(--cv);
+    background:var(--cv-soft);border:1px solid var(--cv)}
+  .layer{font-size:12.5px;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--border);
+    border-radius:7px;padding:7px 9px}
+  .layer .k{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-3);margin-right:6px}
+  .thesis{font-size:13.5px;color:var(--ink);font-weight:500}
+  .metarow{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-family:var(--mono);font-size:10.5px;padding:3px 7px;border-radius:6px;
+    background:var(--surface-2);border:1px solid var(--border);color:var(--ink-2)}
+  .tag b{color:var(--ink);font-weight:640}
+  .warnline{font-size:12px;color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-bd);
+    border-radius:7px;padding:6px 9px}
+  details{border-top:1px solid var(--border);padding-top:9px}
+  summary{cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:600;list-style:none;display:flex;align-items:center;gap:6px}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";color:var(--accent);font-weight:700;width:10px}
+  details[open] summary::before{content:"–"}
+  .body{margin-top:10px;display:flex;flex-direction:column;gap:12px}
+  .blk .bh{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:5px}
+  .dev{font-size:12.5px;color:var(--ink-2);margin-bottom:6px;padding-left:12px;position:relative}
+  .dev:last-child{margin-bottom:0}
+  .dev::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;
+    background:var(--cv,var(--accent))}
+  .dev .d{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-right:6px}
+  .dev a{color:var(--accent);text-decoration:none}
+  .dev a:hover{text-decoration:underline}
+  ul.mini{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+  ul.mini li{font-size:12.5px;color:var(--ink-2);padding-left:13px;position:relative}
+  ul.mini li::before{content:"›";position:absolute;left:0;color:var(--ink-3);font-weight:700}
+  ul.mini.fail li::before{content:"✕";color:var(--avoid);font-size:10px;top:1px}
+  .fresh{font-size:11.5px;color:var(--ink-3);font-style:normal;line-height:1.5}
+
+  /* footer */
+  .foot{margin-top:52px;border-top:1px solid var(--border);padding-top:22px;
+    display:flex;flex-direction:column;gap:14px}
+  .foot h3{font-size:13px;font-family:var(--mono);letter-spacing:.05em;text-transform:uppercase;
+    color:var(--ink-2);margin:0 0 4px}
+  .foot p{font-size:12.5px;color:var(--ink-3);margin:0;max-width:80ch}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);font-family:var(--mono)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:9px;height:9px;border-radius:50%}
+  a.src-note{color:var(--accent);text-decoration:none}
+
+  @media (max-width:560px){
+    .bar{grid-template-columns:96px 1fr 44px;gap:9px}
+    .bar .co{display:none}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Serenity Chokepoint Investing · 每日研究</div>
+    <h1>AI 光通訊供應鏈 · 卡點研究觀察清單</h1>
+    <p class="lede">用 Serenity（@aleabitoreddit）「物理卡點」框架，追蹤美股／歐股與台股 AI 光通訊、CPO、襯底／磊晶／雷射的上游瓶頸候選。此為研究輔助，非投資建議。</p>
+    <div class="asof">
+      <span>資料截止 <b id="asof">—</b></span>
+      <span>標的 <b id="count">—</b> 檔</span>
+      <span>市場 <b>US · EU · TW</b></span>
+    </div>
+  </header>
+
+  <div class="disc">
+    <span class="t">⚠ 重要免責</span>
+    這是套用卡點框架的<b>研究輔助清單，不是投資建議、不是買賣指令、也不是個人化配置建議</b>。下方「示意權重」僅依信念分級<b>機械換算的教學示意</b>，不代表應買進或該持有的比例。許多數字為<b>自述／媒體轉述或落後一季</b>的資料；每一檔結論都必須用最新財報、法說、重大訊息與即時行情自行覆核。清單多為<b>剛大漲大跌、流動性薄的中小型股</b>——貼文／清單讓股價動 ≠ 基本面被驗證，追高只會讓你成為擁擠交易的一部分。
+  </div>
+
+  <section>
+    <div class="sec-h"><h2>示意權重分佈</h2><span class="n">illustrative · 教學示意</span></div>
+    <p class="sec-sub">兩市場各自正規化，不跨市場混算（避免變成配置建議）。</p>
+
+    <div style="margin-bottom:10px" class="eyebrow">＃ 美股 / 歐股</div>
+    <div class="bars" id="bars-US"></div>
+
+    <div style="margin:22px 0 10px" class="eyebrow">＃ 台股</div>
+    <div class="bars" id="bars-TW"></div>
+
+    <p class="meth">權重規則：weight ∝ 信念分級（Core=3 · Pre-ramp=2 · Exploratory=1 · Avoid-watch=0），組內正規化為 100%。Avoid-watch = 0%。權重逐日變動僅反映信念分級變化。</p>
+  </section>
+
+  <section>
+    <div class="sec-h"><h2>逐檔研究摘要</h2><span class="n">US / EU</span></div>
+    <div class="grid" id="grid-US"></div>
+  </section>
+
+  <section>
+    <div class="sec-h"><h2>逐檔研究摘要</h2><span class="n">台股 TW</span></div>
+    <div class="grid" id="grid-TW"></div>
+  </section>
+
+  <footer class="foot">
+    <div class="legend">
+      <span><i class="dot" style="background:var(--core)"></i>Core 主證據</span>
+      <span><i class="dot" style="background:var(--pre)"></i>Pre-ramp 放量前</span>
+      <span><i class="dot" style="background:var(--explor)"></i>Exploratory 探索</span>
+      <span><i class="dot" style="background:var(--avoid)"></i>Avoid-watch 迴避觀察</span>
+    </div>
+    <div>
+      <h3>全清單風險 · 反身性提醒</h3>
+      <p>清單中多檔剛經歷社群／題材驅動的劇烈波動（XFAB 5/27 一日 +76%、AXTI YTD 曾 +600%、SIVE −58%、IQE +291%、台股多檔本益比 78–263x 且曾列處置股）。「貼文後股價動」是市場反身性，不是基本面驗證。大多數標的正進行或剛完成大額稀釋（AXTI／AAOI／IQE／SIVE／聯亞／上詮），財報普遍落後一季，7/28–8 月是下一輪關鍵驗證窗口。所有「市占／獨家客戶」多為第三方或媒體推估（C–E 級），台股數字請以公開資訊觀測站 MOPS 重訊與財報正本覆核。</p>
+    </div>
+    <div>
+      <h3>方法與來源</h3>
+      <p>框架取自 <span style="font-family:var(--mono)">serenity-chokepoint-investing</span> skill；證據分級 A（財報／官方）→ F（社群／鏡像）。本頁由自動化流程對各標的即時網路研究後產出，僅保留關鍵要點，完整佐證連結見各卡片「最新進展」。生成時間戳與資料新鮮度以各卡片標註為準。</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+const CV={ "Core":["core","--core"], "Pre-ramp":["pre","--pre"], "Exploratory":["explor","--explor"], "Avoid-watch":["avoid","--avoid"] };
+const ASOF="2026-07-11";
+
+const DATA=[
+/* ---------- US / EU ---------- */
+{m:"US",tk:"AXTI",co:"AXT Inc",venue:"Nasdaq: AXTI",cv:"Core",w:21.4,ev:"A（10-Q／8-K／424B5）",conf:"中",
+ price:"≈$60–63（7/8–9）· 距 5 月高點 −55%",
+ layer:"InP／GaAs 襯底（唯三商用供應商之一）",
+ thesis:"全球僅三家商用 InP 襯底廠之一、西方最大（~30–35%），餵給 AI 光互連雷射/PD 的缺料卡點；但出口全卡中國 MOFCOM 許可，估值極端。",
+ devs:[{d:"04-30",t:"Q1 營收 $26.9M（+39% YoY），InP 首度過半、毛利 29.9%，InP backlog ≈$100M",u:"https://www.businesswire.com/news/home/20260430987825/en/"},
+       {d:"04-22",t:"以 $64.25 增資 $632.5M，資金用於 InP 產能翻倍",u:"https://finance.yahoo.com/markets/stocks/articles/axt-announces-exercise-over-allotment-160000737.html"}],
+ cat:["7/30 Q2 財報（指引 ≥$34M，可能創高）","中國 MOFCOM 出口許可（美國客戶仍待）"],
+ fin:"7 個月股數 +48%（抓高點增資、成長型非紓困），pro-forma 現金 ≈$720M。",
+ risk:["每筆出口需中國許可＝單點失效","≈28–35x 營收的極端估值","連環稀釋，可能再為 greenfield 增資"],
+ fail:["Q2 <$34M 或 backlog 縮水","許可被卡、backlog 無法轉營收","Sumitomo／JX 6吋產能灌爆致 ASP 崩"],
+ fresh:"Q1 為 ~10 週前資料；Q2 待 7/30；7 月價 ≈$60–63；7 月新聞（Casela 長約等）待 8-K 證實。"},
+
+{m:"US",tk:"NBIS",co:"Nebius Group",venue:"Nasdaq: NBIS",cv:"Core",w:21.4,ev:"A／B（6-K＋具名合約）",conf:"中",
+ price:"≈$209（7/10）· 7 月初 −15%（Meta 傳聞）",
+ layer:"Neocloud／NVIDIA 優先 GPU 配額＋>4GW 電力",
+ thesis:"把 NVIDIA 優先配額與 >4GW 電力轉成 ARR $1.9B（朝 $7–9B），背後 ~$46B 微軟+Meta 合約；但卡點是『特權存取』而非硬壟斷。",
+ devs:[{d:"07-01",t:"Bloomberg 報 Meta 探索自建『Meta Compute』賣多餘算力，NBIS 盤中 −15%（E 級傳聞）",u:"https://www.techtimes.com/articles/319486/20260701/"},
+       {d:"03-16",t:"簽 Meta ~$27B 5 年約；NVIDIA $2B 入股",u:"https://www.cnbc.com/2026/03/16/meta-nebius-ai-infrastructure.html"}],
+ cat:["8 月中 Q2（ARR 軌跡、AI Cloud 毛利是否守 ~45%）","Meta Compute 是否成真／擴大","H2 產能里程碑（~1GW 接上）"],
+ fin:"淨現金為正（$9.3B vs $8.4B 債）但靠可轉債/ATM，18 月股數 +30%；$20–25B capex 下底層 FCF 深度為負。",
+ risk:["客戶變對手（Meta Compute）","微軟／Meta 高度集中","資本密集、結構性融資依賴"],
+ fail:["微軟／Meta 砍單或不續約","ARR 停滯於 $7–9B 軌跡之下","NVIDIA 抽走優先配額；毛利 <40%"],
+ fresh:"Q1 為 ~2 月前；Q2 待 8 月中；價 ≈$209 為 7/10 聚合報價；Meta 傳聞為 E 級未證實。"},
+
+{m:"US",tk:"AAOI",co:"Applied Optoelectronics",venue:"Nasdaq: AAOI",cv:"Pre-ramp",w:14.3,ev:"A（10-Q/8-K）· 客戶未具名 B",conf:"中",
+ price:"≈$120（盤中）· ~9x 營收",
+ layer:"800G／1.6T 資料中心光模組（美系二供）",
+ thesis:"垂直整合（自製 DFB/EML）的美系二供，吃 800G→1.6T 升級（FY26 指引 >$1.1B）；但屬競爭性模組層、非壟斷卡點，單一客戶集中＋$600M ATM 壓頂、仍近損平。",
+ devs:[{d:"05-07",t:"Q1 營收 $151.1M（+51%）但略低於預期；datacenter >半；non-GAAP 近損平",u:"https://www.stocktitan.net/sec-filings/AAOI/"},
+       {d:"03-09",t:"首個 1.6T 量產大單 >$200M（Q3 起出貨）",u:"https://investors.ao-inc.com/news-releases/news-release-details/aoi-receives-first-volume-order-16t-data-center-transceivers"}],
+ cat:["8 月初 Q2（利潤能否轉正）","Q3 1.6T 量產出貨啟動","$600M ATM 動用進度（稀釋）"],
+ fin:"現金 $449M；$600M ATM＋可轉債＋連續增資史；擴產靠稀釋而非內生現金。",
+ risk:["非真卡點：競爭性多供應商模組層","單一 hyperscaler 客戶集中（未具名）","~9x 營收但仍近損平"],
+ fail:["$200M 1.6T 訂單延遲／取消","客戶轉 Innolight／Coherent 或轉向 CPO/LPO","毛利跌破 28%；ATM 大量抽用"],
+ fresh:"Q2（6/30）待 8 月初，H2 放量仍為指引；客戶身分未揭露；價 ≈$120（第三方報價）。"},
+
+{m:"US",tk:"SOI",co:"Soitec",venue:"Euronext Paris: SOI",cv:"Pre-ramp",w:14.3,ev:"A（FY26 財報）",conf:"中",
+ price:"≈€103–104（7/8–9，指示性）",
+ layer:"Photonics-SOI 襯底（>95% 份額）",
+ thesis:"光子級 SOI 唯一量產供應商（>95%、Smart Cut），每家矽光子代工都從它起步＝真襯底卡點；但溢價押在仍在認證的 CPO，RF/FD-SOI 基本盤處虧損週期谷底。",
+ devs:[{d:"05-27",t:"FY26 營收 €592M（−30%）、淨虧 €220m，FCF 轉正 +€63m；Photonics-SOI >$100M 超前計畫",u:"https://www.globenewswire.com/news-release/2026/05/27/3302215/0/en/"},
+       {d:"03-15",t:"與 Skyworks 簽多年 POI 晶圓供應約（具名設計勝出）",u:"https://www.powersemiconductorsweekly.com/2026/05/28/"}],
+ cat:["7/28 Q1 FY27 營收（指引 +15%）","CPO 由產業認證轉量產","RF-SOI 庫存正常化"],
+ fin:"財務健康、稀釋風險低：€325m 可轉債已於 2025-10 到期償還，無迫近稀釋。",
+ risk:["RF／mobile 週期拖累（FY26 −30%、淨虧）","~€5.2B 市值押在尚未上量的 CPO","架構或第二來源侵蝕 SOI 內容"],
+ fail:["代工認證第二來源（環球晶／信越）","架構轉離 SOI 矽光子","Photonics-SOI FY27 停滯；EBITDA 毛利 <20%"],
+ fresh:"FY26（3/31）為主；Q1 FY27 待 7/28（近期趨勢僅指引）；價為 7/8–9 聚合、跨平台不一致。"},
+
+{m:"US",tk:"IQE",co:"IQE plc",venue:"London AIM: IQE",cv:"Pre-ramp",w:14.3,ev:"A／B（RNS＋具名供應約）",conf:"中",
+ price:"≈38.75p（7/10）· 12 個月 +291%",
+ layer:"InP／VCSEL 化合物半導體外延片",
+ thesis:"少數商用外延片廠，位 InP/VCSEL 卡點；MACOM 主導 £81m 重整降槓桿並綁定戰略客戶，Tower InP 供應約驗證該層——但 AI-InP 放量仍屬預期、增資極稀釋。",
+ devs:[{d:"06-15",t:"與 Tower 簽多年 InP 外延供應約（含最低採購量）",u:"https://www.iqep.com/media/press-releases/2026/iqe-and-tower-semiconductor-announce-multi-year-inp-epiwafer-supply-agreement/"},
+       {d:"05-28",t:"£81m MACOM 主導增資（19.8p、−58%）完成，還銀行債；MACOM 取 ~11.5%＋2 董事",u:"https://www.semiconductor-today.com/news_items/2026/may/iqe-280526.shtml"}],
+ cat:["9 月 H1 中報（>20% 成長驗證）","H2 Tower／MACOM 長約下的訂單流","可轉債／認股權證轉換（稀釋觸發）"],
+ fin:"19.8p 紓困價、股數 +34% 至 1.31bn；MACOM 可轉債＋7,576 萬認股權證懸置；MACOM 兼股東/董事/客戶（關聯集中）。",
+ risk:["AI-InP 放量仍屬指引未入帳","+291% 動能／估值風險","毛利僅 3%；MACOM 關聯集中"],
+ fail:["Tower／MACOM 最低量未達或砍","中報 InP 未如 >20% 成長","客戶自製或轉單；毛利未回升"],
+ fresh:"FY25（5/29）；無 FY26 中報（9 月）；股數/市值口徑混亂（部分站台仍顯示增資前）；價 ≈38.75p。"},
+
+{m:"US",tk:"XFAB",co:"X-FAB Silicon Foundries",venue:"Euronext Paris: XFAB",cv:"Pre-ramp",w:14.3,ev:"財務 A · 矽光子 C · 5/27 拉抬 F",conf:"中",
+ price:"市值 ≈€1.0B · 5/27 曾一日 +76%（社群）",
+ layer:"特殊製程／SiC 代工＋矽光子（未量產）",
+ thesis:"開放式 SiC 功率＋類比代工是真實有營收卡點（WBG +152% YoY）；矽光子／InP-on-Si 平台可信但尚未有營收（2027–28）。目前市值把 AI/光子選擇權提前定價。",
+ devs:[{d:"05-27",t:"@aleabitoreddit 一則貼文盤中 +76%，無公司消息、無升評——純社群驅動（Tier F）",u:"https://cryptobriefing.com/x-fab-shares-soar-social-media-boost/"},
+       {d:"04-29",t:"Q1 營收 $195.6M（−4%），EBIT −89% 近損平；WBG +152%；矽光子僅 NRE ~$5–6M",u:"https://www.businesswire.com/news/home/20260429543413/en/X-FAB-First-Quarter-2026-Results"}],
+ cat:["7 月底 Q2（稼動率、是否恢復全年指引）","H2 汽車庫存回補","矽光子 2027–28 首批產品收入"],
+ fin:"債務融資、非股權稀釋（無 ATM／可轉債），股數穩定；但淨債升、EBIT 近零使利息覆蓋變薄。",
+ risk:["PE ~62 的估值泡沫（社群拉抬）","矽光子仍為 pre-revenue（2027–28）","Melexis 關聯＋客戶集中；SiC 削價競爭"],
+ fail:["估值泡沫破","H2 汽車復甦落空","矽光子 2027 里程碑跳票；若被迫增資→Avoid-watch"],
+ fresh:"Q1（4/29）；Q2 待 7 月底；股價因社群事件波動極大，市值口徑隨價變動。"},
+
+{m:"US",tk:"SIVE",co:"Sivers Semiconductors",venue:"Nasdaq Stockholm: SIVE",cv:"Avoid-watch",w:0,ev:"C（reference-design）＋A（財務）· 缺 B 訂單",conf:"中",
+ price:"≈SEK 41–42／$4.97 OTC · 距 6 月高點 −58%",
+ layer:"CPO 外部光源 CW／DFB 雷射",
+ thesis:"可信的 InP ELS/CPO reference-design 玩家（GF／POET／O-Net），但 CW/DFB 雷射是競爭性多供應商層、非硬卡點；~40–50x 且營收在萎縮、連環稀釋，CPO 是 2027 故事、尚無具名訂單。",
+ warn:"權重 0%：連環稀釋＋營收萎縮＋競爭性卡點，維持迴避觀察。",
+ devs:[{d:"07-01/03",t:"連環增資：SEK 700M @ SEK 57＋$12M 可轉債轉 2,285 萬股，股數→3.55 億",u:"https://www.sivers-semiconductors.com/press/sivers-semiconductors-has-resolved-on-a-directed-share-issue-of-shares-amounting-to-approximately-sek-700-million/"},
+       {d:"05-29",t:"Q1 營收 SEK 61.9M（−22%，Photonics −32%）；$799M 為機會漏斗、非在手訂單",u:"https://www.sivers-semiconductors.com/press/sivers-semiconductors-ab-publ-publishes-interim-report-q1-january-march-2026/"}],
+ cat:["reference-design 何時轉『具名訂單』（目前為零）＝唯一去風險事件","規劃中的紐約雙重上市"],
+ fin:"6 個月 3+ 次增資／轉換、~11% 成本可轉債；pro-forma 現金已補足，但模式靠 momentum 增資。",
+ risk:["競爭性卡點非硬（Lumentum／Coherent／MACOM 皆能做）","營收萎縮而非爬坡","~40–50x 估值＋219% 年化波動；連環稀釋"],
+ fail:["reference-design 未能轉具名訂單","競品被認證為主供、把 Sivers 設計出局","2027 放量再度跳票；毛利續深虧"],
+ fresh:"Q1（5/29）；7 月增資事件為近期；SEK 26.6M 現金為 3/31（已過時，pro-forma 較高）；價 SEK 41–42。"},
+
+/* ---------- 台股 TW ---------- */
+{m:"TW",tk:"3081",co:"聯亞 LandMark",venue:"TPEx 上櫃: 3081",cv:"Core",w:27.3,ev:"A–B（月營收/長約 A · 法說 B · 毛利/EPS C–D）",conf:"中",
+ price:"≈2,005 元（7/9）· 市值 ~1,855 億 · PE ~263x",
+ layer:"光通訊磊晶／CW·DFB 雷射晶粒（InP）",
+ thesis:"全球少數穩定量產 InP/GaAs 光通訊磊晶（CW/DFB 雷射晶粒/EML/PD）的獨立磊晶代工廠，收割 800G→1.6T 與 CPO 外置光源上游放量，訂單能見度 2–3 年；真卡點但非獨佔，估值極端＋多管道稀釋。",
+ warn:"更正：網傳「輝達入股聯亞」為誤讀——實為 NVIDIA 投資 Lumentum／Coherent，聯亞僅上游受惠者。",
+ devs:[{d:"07-05",t:"6 月營收 4.21 億（YoY +128%）；H1 累計 13.00 億（+103.7%）",u:"https://goodinfo.tw/tw/ShowSaleMonChart.asp?STOCK_ID=3081"},
+       {d:"04-22",t:"Q1 營收 9.04 億（+99% 創高）；簽 InP 基板長約；capex 由 7 億上修至 13.15 億",u:"https://www.sinotrade.com.tw/richclub/hotstock/"}],
+ cat:["8 月 7 月營收＋Q2 財報（季增/毛利）","H2 私募定價＋雙可轉債條件落定","2027H2 起新 InP 產能開出"],
+ fin:"四管道並行：私募 450 萬股（未定價/未揭露對象）＋雙可轉債＋10% 股票股利＋RSU。已由虧轉盈、非紓困式，但稀釋幅度待逐案追蹤。",
+ risk:["PE ~263x 極端估值、零容錯","磊晶非獨佔（IQE／下游自製／中國新進）","datacom 單一應用集中；高價低流通易漲跌停"],
+ fail:["月營收 YoY 明顯減速或連 2–3 月 MoM 轉負","單季毛利跌破 ~45%","客戶轉自製或 IQE；私募大幅折價；訂單能見度縮短"],
+ fresh:"月營收至 6 月（A）；Q1 毛利 ~49%/EPS 3.44 為法說/次級來源未逐項複核；價為 7/9 盤中（週末未更新）。以 MOPS 為準。"},
+
+{m:"TW",tk:"3105",co:"穩懋 WIN Semi",venue:"TPEx 上櫃: 3105",cv:"Pre-ramp",w:18.2,ev:"A–B（月營收/財報）· 市占 C · 客戶 C–D",conf:"中",
+ price:"≈406 元（7/9）· 市值 ~1,721 億 · PE ~78x",
+ layer:"GaAs／InP 化合物半導體晶圓代工",
+ thesis:"全球最大 GaAs/InP 化合物半導體代工龍頭（~70%），Broadcom 級超高速 InP 幾乎只能找它，由手機 PA 轉向 AI 光通訊 VCSEL/PD/雷射晶粒；護城河為真，但光通訊僅佔 5–10%、估值已高、私募授權懸而未決。",
+ devs:[{d:"07-10",t:"6 月營收 17.68 億（YoY +29.6%）；H1 累計 98.47 億（+33.9%）〔注意媒體曾誤植 176.77 億〕",u:"https://disp.cc/b/Stock/i8cJ"},
+       {d:"04-30",t:"Q1 營收 45.9 億、毛利 26.3%、EPS 1.26（Optical 僅 5–10%）；Q2 指引 ~52 億／毛利 27–29%",u:"https://www.stockfeel.com.tw/"}],
+ cat:["每月營收（Optical/PD 放量驗證）","8 月中 Q2 財報","H2 200G PD 放量／Optical 佔比破 10%","私募是否經股東會通過"],
+ fin:"私募授權懸而未決（台股私募可 8 折發特定人）＝中度 overhang；2026 capex 30–40 億大增。帳面每股淨值高、PB ~4.2x 尚健康。",
+ risk:["PE ~78x 題材已反映（有報告目標價僅 324）","Optical 佔比仍小、主體仍循環性 PA","客戶集中（Apple／Broadcom）；三安殺價；私募 overhang"],
+ fail:["Optical+AI DC 佔比 2027 仍 <10%","200G PD 遞延、800G→1.6T 停滯","毛利回落 teens；私募折價對特定人；宏捷科/三安 InP 取得認證"],
+ fresh:"6 月營收（A）；Q2 待 8 月中；私募條件未定（data gap）；客戶為媒體推論（C–D）；價為 7/9 收盤附近。"},
+
+{m:"TW",tk:"2455",co:"全新 VPEC",venue:"TWSE 上市: 2455",cv:"Pre-ramp",w:18.2,ev:"A（月營收/季報/CB）· B（法說）· C–E（市占/EPS 推估）",conf:"中",
+ price:"≈330.5 元（7/9）· 市值 ~663 億 · PE ~104x",
+ layer:"GaAs／InP 磊晶片（epi foundry）",
+ thesis:"全球前三大、被點名 800G 受光端（PD）磊晶龍頭的 InP/GaAs 磊晶代工，從手機 PA 轉向 AI 光通訊（1.6T CW 雷射/PD）；磊晶層僅約三家形成門檻＝真卡點，但月營收『爆發』尚未反映在合併數字、估值 ~104x 且處置股投機期。",
+ devs:[{d:"07-03",t:"6 月營收 3.26 億（YoY +23.5%）；H1 累計 19.25 億（+27.65%）——合併數尚未見爆發",u:"https://finance.technews.tw/2026/07/03/vpec-2455-202606-financial-report"},
+       {d:"03-24",t:"法說稱訂單『塞爆』、1.6T 已量產、CW 雷射三位數成長；capex 上看 7 億+（YoY >3x）",u:"https://www.taiwanhot.net/news/focus/1131480/"}],
+ cat:["8 月中 Q2（毛利是否隨光電子回升）","月營收是否非線性跳升","2026 底新 MOCVD／平鎮新廠開出"],
+ fin:"稀釋主要來自可轉債：全新二/三深度價內（市價 240–251 vs 面額 100），持續轉換稀釋；為擴產可能再發新 CB。公司持續獲利、資產負債表尚健康。",
+ risk:["PE ~104x（券商 2026 EPS 估 4.63 vs 6.1 分歧大）","『爆發』與合併月營收有時間差","InP 基板供給；毛利壓力；客戶集中；二度處置股"],
+ fail:["光電子佔比/毛利未提升","月營收 MoM 轉負且無 1.6T 跳升","客戶導入二供或內製；InP 斷料；大額增資"],
+ fresh:"6 月營收（A）；Q2 待 ~8/14；市占『800G PD 龍頭』與 EPS 目標 264–537 元為 C–E 推估、分歧大。以 MOPS 覆核。"},
+
+{m:"TW",tk:"3363",co:"上詮 FOCI",venue:"TPEx 上櫃: 3363",cv:"Pre-ramp",w:18.2,ev:"A（月營收/Q1/增資/法說）· B–C（客戶臆測）",conf:"中",
+ price:"≈608 元（7/9）· 市值 ~665 億 · PB ~11.5x（虧損中）",
+ layer:"CPO 光引擎／FAU 光纖陣列封裝",
+ thesis:"具差異化 IP（ReLFACon 耐高溫 FAU）＋台積電 COUPE／NVIDIA Rubin CPO 卡位，但 CPO 營收尚未認列、本業 YoY 衰退且 Q1 轉虧；Q3 FAU 首批出貨與 1.6T 模組認證是『夢想價轉落實價』分水嶺。",
+ warn:"標的確認：3363＝上詮光纖 FOCI（非 Browave／波若威 3163）；Q1 2026 EPS −0.98。",
+ devs:[{d:"07-03",t:"亮燈漲停；重申 FAU 依排程 Q3 出貨（對接 NVIDIA Vera Rubin CPO 交換器）；法人推估 FAU 三年營收上看 70 億（推估）",u:"https://money.udn.com/money/story/5607/9604427"},
+       {d:"03-31",t:"完成 31.6 億現增（@316 元）股款收足，投 CPO 量產設備",u:"https://tw.stock.yahoo.com/news/"}],
+ cat:["Q3 FAU 首批 1.6T/3.2T 出貨＋1.6T 模組認證（分水嶺）","月營收是否出現 CPO 帶動跳升","8 月中 Q2 是否止血"],
+ fin:"3 月完成 31.6 億現增（~9–10% 稀釋）；capex 15.8 億燒錢擴產，營運現金流為負，若遞延不排除二度稀釋。",
+ risk:["CPO 未認列、本業 YoY 衰退（1–5 月 −19%）","客戶未具名（NVIDIA／台積電為臆測）高度集中","大立光／天孚競爭；Q1 毛利驟降 ~2% 轉虧；PB 11.5x 卻虧損"],
+ fail:["Q3 FAU 未依排程出貨","月營收未跳升（卡在 130–150M）","證伪台積電獨家；毛利未回 20%+；二度增資"],
+ fresh:"月營收至 5 月（6 月待補）；Q1 EPS −0.98；客戶身分與 70 億營收貢獻為法人/媒體臆測。以 MOPS 覆核。"},
+
+{m:"TW",tk:"4979",co:"華星光 LuxNet",venue:"TPEx 上櫃: 4979",cv:"Pre-ramp",w:18.2,ev:"A（月營收/Q1）· B（法說）· C–D（客戶/市占臆測）",conf:"中",
+ price:"≈432–450 元（7 月初，波動大）· 市值 ~620 億 · PE ~78–81x",
+ layer:"光收發模組＋自製雷射晶粒（CW Laser/EML）",
+ thesis:"具自製雷射晶粒（CW Laser/EML）＋800G 模組認證的垂直整合光通訊廠，從 400G 商品模組往 CPO 外部光源與 1.6T 稀缺環節爬升；訂單營收加速，但毛利僅 ~20%、PE >78x 已高度反映——認證已過、高毛利放量未到。",
+ devs:[{d:"07-09",t:"6 月營收 4.55 億（YoY +27.68%）創新高",u:"https://tw.stock.yahoo.com/quote/4979.TWO"},
+       {d:"04-17",t:"法說：800G 今年主流已認證出貨；CW Laser 較 2024 +4 倍；CPO 以 ELS 切入、瞄準 Google TPU 供應鏈",u:"https://money.udn.com/money/story/11074/9229605"}],
+ cat:["每月營收（800G 放量）","8 月中 Q2（毛利能否站上 20–22%）","H2 桃園新廠投產／800G 放量","CPO 打入 Google TPU 之實質訂單"],
+ fin:"以 0% 票息可轉債＋自有現金擴產（5 月斥 10.5 億購桃園廠）；深度價內 CB 未來轉換稀釋但相對市值不大——成長型融資。",
+ risk:["PE ~78–81x（同業均值 ~57x）","毛利僅 ~20%（仍帶商品性）","客戶集中未具名（傳 Google）；匯兌一次性；世代切換競爭"],
+ fail:["月營收 YoY 連跌破 +10%","毛利未站上並持續 20–22%","800G/EML 認證跳票或砍單；CPO 打入 Google TPU 延宕；大額增資"],
+ fresh:"6 月營收（A）；Q1（A）；股價 6/17 曾 546、7 月初 ~432–450 差距大；客戶為供應鏈臆測（C–D）。以 MOPS 覆核。"},
+];
+
+function esc(s){return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+
+function renderBars(market){
+  const el=document.getElementById("bars-"+market);
+  const rows=DATA.filter(d=>d.m===market).slice().sort((a,b)=>b.w-a.w||a.tk.localeCompare(b.tk));
+  el.innerHTML=rows.map(d=>{
+    const cvv=CV[d.cv][1];
+    return `<div class="bar" style="--cv:var(${cvv})">
+      <div class="lab"><span class="tk">${esc(d.tk)}</span><span class="co">${esc(d.co)}</span></div>
+      <div class="track"><div class="fill ${d.w===0?'zero':''}" style="width:${Math.max(d.w,1.5)}%"></div></div>
+      <div class="pct">${d.w.toFixed(1)}%</div>
+    </div>`;
+  }).join("");
+}
+
+function renderCards(market){
+  const el=document.getElementById("grid-"+market);
+  const rows=DATA.filter(d=>d.m===market).slice().sort((a,b)=>b.w-a.w||a.tk.localeCompare(b.tk));
+  el.innerHTML=rows.map(d=>{
+    const cvv=CV[d.cv][1];
+    const devs=d.devs.map(x=>`<div class="dev"><span class="d">${esc(x.d)}</span>${esc(x.t)}${x.u?` · <a href="${esc(x.u)}" target="_blank" rel="noopener">來源</a>`:""}</div>`).join("");
+    const cat=`<ul class="mini">${d.cat.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+    const risk=`<ul class="mini">${d.risk.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+    const fail=`<ul class="mini fail">${d.fail.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+    return `<article class="card" style="--cv:var(${cvv});--cv-soft:var(${cvv}-soft)">
+      <div class="card-top">
+        <div class="tkwrap">
+          <div class="ticker">${esc(d.tk)}</div>
+          <div class="company">${esc(d.co)}</div>
+          <div class="venue">${esc(d.venue)}</div>
+        </div>
+        <span class="chip">${esc(d.cv)}</span>
+      </div>
+      <div class="layer"><span class="k">卡點</span>${esc(d.layer)}</div>
+      <div class="thesis">${esc(d.thesis)}</div>
+      <div class="metarow">
+        <span class="tag">證據 <b>${esc(d.ev)}</b></span>
+        <span class="tag">信心 <b>${esc(d.conf)}</b></span>
+        <span class="tag">價 <b>${esc(d.price)}</b></span>
+      </div>
+      ${d.warn?`<div class="warnline">⚠ ${esc(d.warn)}</div>`:""}
+      <details>
+        <summary>展開研究細節</summary>
+        <div class="body">
+          <div class="blk"><div class="bh">最新進展</div>${devs}</div>
+          <div class="blk"><div class="bh">催化劑</div>${cat}</div>
+          <div class="blk"><div class="bh">稀釋 · 財務</div><div style="font-size:12.5px;color:var(--ink-2)">${esc(d.fin)}</div></div>
+          <div class="blk"><div class="bh">主要風險</div>${risk}</div>
+          <div class="blk"><div class="bh">失效條件</div>${fail}</div>
+          <div class="blk"><div class="bh">資料新鮮度</div><div class="fresh">${esc(d.fresh)}</div></div>
+        </div>
+      </details>
+    </article>`;
+  }).join("");
+}
+
+document.getElementById("asof").textContent=ASOF;
+document.getElementById("count").textContent=DATA.length;
+["US","TW"].forEach(m=>{renderBars(m);renderCards(m);});
+</script>
