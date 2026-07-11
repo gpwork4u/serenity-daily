@@ -1,0 +1,278 @@
+<title>Serenity 卡點投資 · 每日研究清單</title>
+<style>
+  :root{
+    --bg:#F4F6F8; --surface:#FFFFFF; --surface-2:#EDF1F4; --surface-3:#E4EAEF;
+    --ink:#0E141B; --ink-2:#46586B; --ink-3:#7889A0; --border:#DBE2E9; --border-2:#CAD4DD;
+    --accent:#0E97A6; --accent-soft:#0e97a614;
+    --core:#0B8A5F; --pre:#B4770A; --explor:#3F5BC4; --avoid:#C33B3B;
+    --core-soft:#0b8a5f18; --pre-soft:#b4770a18; --explor-soft:#3f5bc418; --avoid-soft:#c33b3b18;
+    --warn-bg:#fbf3e2; --warn-bd:#e6c885; --warn-ink:#6b4e12;
+    --shadow:0 1px 2px rgba(16,30,45,.05),0 8px 24px rgba(16,30,45,.05);
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,"Cascadia Mono","Roboto Mono",Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0A0E13; --surface:#121A22; --surface-2:#0E151C; --surface-3:#1A242F;
+      --ink:#E7EDF3; --ink-2:#A7B6C7; --ink-3:#6E8095; --border:#1F2C39; --border-2:#2A3947;
+      --accent:#28C6D6; --accent-soft:#28c6d61f;
+      --core:#33C489; --pre:#E0AC46; --explor:#8098EE; --avoid:#EC6B6B;
+      --core-soft:#33c48922; --pre-soft:#e0ac4622; --explor-soft:#8098ee22; --avoid-soft:#ec6b6b22;
+      --warn-bg:#2a2312; --warn-bd:#5c491d; --warn-ink:#e8cf95;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#F4F6F8; --surface:#FFFFFF; --surface-2:#EDF1F4; --surface-3:#E4EAEF;
+    --ink:#0E141B; --ink-2:#46586B; --ink-3:#7889A0; --border:#DBE2E9; --border-2:#CAD4DD;
+    --accent:#0E97A6; --accent-soft:#0e97a614;
+    --core:#0B8A5F; --pre:#B4770A; --explor:#3F5BC4; --avoid:#C33B3B;
+    --core-soft:#0b8a5f18; --pre-soft:#b4770a18; --explor-soft:#3f5bc418; --avoid-soft:#c33b3b18;
+    --warn-bg:#fbf3e2; --warn-bd:#e6c885; --warn-ink:#6b4e12;
+    --shadow:0 1px 2px rgba(16,30,45,.05),0 8px 24px rgba(16,30,45,.05);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0A0E13; --surface:#121A22; --surface-2:#0E151C; --surface-3:#1A242F;
+    --ink:#E7EDF3; --ink-2:#A7B6C7; --ink-3:#6E8095; --border:#1F2C39; --border-2:#2A3947;
+    --accent:#28C6D6; --accent-soft:#28c6d61f;
+    --core:#33C489; --pre:#E0AC46; --explor:#8098EE; --avoid:#EC6B6B;
+    --core-soft:#33c48922; --pre-soft:#e0ac4622; --explor-soft:#8098ee22; --avoid-soft:#ec6b6b22;
+    --warn-bg:#2a2312; --warn-bd:#5c491d; --warn-ink:#e8cf95;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-size:15px}
+  .wrap{max-width:1120px;margin:0 auto;padding:clamp(20px,4vw,44px) clamp(16px,4vw,32px) 64px}
+
+  /* header */
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);font-weight:600}
+  h1{font-size:clamp(26px,4.4vw,40px);line-height:1.08;margin:.28em 0 .1em;letter-spacing:-.02em;
+    font-weight:760;text-wrap:balance}
+  .lede{color:var(--ink-2);max-width:70ch;font-size:15.5px}
+  .asof{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);margin-top:10px;
+    display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .asof b{color:var(--ink-2);font-weight:600}
+  .rule{height:1px;background:var(--border);margin:26px 0}
+
+  /* disclaimer */
+  .disc{background:var(--warn-bg);border:1px solid var(--warn-bd);border-left-width:4px;
+    border-radius:10px;padding:14px 16px;color:var(--warn-ink);font-size:13.5px;margin:22px 0}
+  .disc b{font-weight:700}
+  .disc .t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:700;display:block;margin-bottom:5px}
+
+  /* section heads */
+  .sec-h{display:flex;align-items:baseline;gap:12px;margin:40px 0 6px}
+  .sec-h h2{font-size:19px;font-weight:700;letter-spacing:-.01em;margin:0}
+  .sec-h .n{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+  .sec-sub{color:var(--ink-3);font-size:13px;margin:0 0 18px}
+
+  /* weight bars */
+  .bars{display:grid;gap:8px;background:var(--surface);border:1px solid var(--border);
+    border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+  .bar{display:grid;grid-template-columns:132px 1fr 52px;align-items:center;gap:14px}
+  .bar .lab{display:flex;align-items:baseline;gap:8px;min-width:0}
+  .bar .tk{font-family:var(--mono);font-weight:640;font-size:14px}
+  .bar .co{color:var(--ink-3);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .track{height:20px;background:var(--surface-3);border-radius:6px;overflow:hidden;position:relative}
+  .fill{height:100%;border-radius:6px;background:var(--cv,var(--accent));opacity:.9;
+    min-width:2px;display:flex;align-items:center}
+  .fill.zero{background:repeating-linear-gradient(45deg,var(--border-2),var(--border-2) 5px,transparent 5px,transparent 10px)}
+  .bar .pct{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;
+    text-align:right;font-weight:600;color:var(--ink-2)}
+  .meth{font-size:12.5px;color:var(--ink-3);margin:12px 2px 0;font-family:var(--mono)}
+
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;margin-top:16px}
+  .card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--cv,var(--accent));
+    border-radius:13px;padding:16px 17px 17px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:11px}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .tkwrap{min-width:0}
+  .card .ticker{font-family:var(--mono);font-size:20px;font-weight:680;letter-spacing:-.01em;line-height:1}
+  .card .company{color:var(--ink-2);font-size:12.5px;margin-top:5px}
+  .card .venue{color:var(--ink-3);font-size:11px;font-family:var(--mono);margin-top:2px}
+  .chip{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.03em;
+    padding:4px 9px;border-radius:999px;white-space:nowrap;color:var(--cv);
+    background:var(--cv-soft);border:1px solid var(--cv)}
+  .layer{font-size:12.5px;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--border);
+    border-radius:7px;padding:7px 9px}
+  .layer .k{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-3);margin-right:6px}
+  .thesis{font-size:13.5px;color:var(--ink);font-weight:500}
+  .metarow{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-family:var(--mono);font-size:10.5px;padding:3px 7px;border-radius:6px;
+    background:var(--surface-2);border:1px solid var(--border);color:var(--ink-2)}
+  .tag b{color:var(--ink);font-weight:640}
+  .warnline{font-size:12px;color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-bd);
+    border-radius:7px;padding:6px 9px}
+  details{border-top:1px solid var(--border);padding-top:9px}
+  summary{cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:600;list-style:none;display:flex;align-items:center;gap:6px}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";color:var(--accent);font-weight:700;width:10px}
+  details[open] summary::before{content:"–"}
+  .body{margin-top:10px;display:flex;flex-direction:column;gap:12px}
+  .blk .bh{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:5px}
+  .dev{font-size:12.5px;color:var(--ink-2);margin-bottom:6px;padding-left:12px;position:relative}
+  .dev:last-child{margin-bottom:0}
+  .dev::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;
+    background:var(--cv,var(--accent))}
+  .dev .d{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-right:6px}
+  .dev a{color:var(--accent);text-decoration:none}
+  .dev a:hover{text-decoration:underline}
+  ul.mini{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+  ul.mini li{font-size:12.5px;color:var(--ink-2);padding-left:13px;position:relative}
+  ul.mini li::before{content:"›";position:absolute;left:0;color:var(--ink-3);font-weight:700}
+  ul.mini.fail li::before{content:"✕";color:var(--avoid);font-size:10px;top:1px}
+  .fresh{font-size:11.5px;color:var(--ink-3);font-style:normal;line-height:1.5}
+
+  /* footer */
+  .foot{margin-top:52px;border-top:1px solid var(--border);padding-top:22px;
+    display:flex;flex-direction:column;gap:14px}
+  .foot h3{font-size:13px;font-family:var(--mono);letter-spacing:.05em;text-transform:uppercase;
+    color:var(--ink-2);margin:0 0 4px}
+  .foot p{font-size:12.5px;color:var(--ink-3);margin:0;max-width:80ch}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);font-family:var(--mono)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:9px;height:9px;border-radius:50%}
+  a.src-note{color:var(--accent);text-decoration:none}
+
+  @media (max-width:560px){
+    .bar{grid-template-columns:96px 1fr 44px;gap:9px}
+    .bar .co{display:none}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Serenity Chokepoint Investing · 每日研究</div>
+    <h1>AI 光通訊供應鏈 · 卡點研究觀察清單</h1>
+    <p class="lede">用 Serenity（@aleabitoreddit）「物理卡點」框架，追蹤美股／歐股與台股 AI 光通訊、CPO、襯底／磊晶／雷射的上游瓶頸候選。此為研究輔助，非投資建議。</p>
+    <div class="asof">
+      <span>資料截止 <b id="asof">—</b></span>
+      <span>標的 <b id="count">—</b> 檔</span>
+      <span>市場 <b>US · EU · TW</b></span>
+    </div>
+  </header>
+
+  <div class="disc">
+    <span class="t">⚠ 重要免責</span>
+    這是套用卡點框架的<b>研究輔助清單，不是投資建議、不是買賣指令、也不是個人化配置建議</b>。下方「示意權重」僅依信念分級<b>機械換算的教學示意</b>，不代表應買進或該持有的比例。許多數字為<b>自述／媒體轉述或落後一季</b>的資料；每一檔結論都必須用最新財報、法說、重大訊息與即時行情自行覆核。清單多為<b>剛大漲大跌、流動性薄的中小型股</b>——貼文／清單讓股價動 ≠ 基本面被驗證，追高只會讓你成為擁擠交易的一部分。
+  </div>
+
+  <section>
+    <div class="sec-h"><h2>示意權重分佈</h2><span class="n">illustrative · 教學示意</span></div>
+    <p class="sec-sub">兩市場各自正規化，不跨市場混算（避免變成配置建議）。</p>
+
+    <div style="margin-bottom:10px" class="eyebrow">＃ 美股 / 歐股</div>
+    <div class="bars" id="bars-US"></div>
+
+    <div style="margin:22px 0 10px" class="eyebrow">＃ 台股</div>
+    <div class="bars" id="bars-TW"></div>
+
+    <p class="meth">權重規則：weight ∝ 信念分級（Core=3 · Pre-ramp=2 · Exploratory=1 · Avoid-watch=0），組內正規化為 100%。Avoid-watch = 0%。權重逐日變動僅反映信念分級變化。</p>
+  </section>
+
+  <section>
+    <div class="sec-h"><h2>逐檔研究摘要</h2><span class="n">US / EU</span></div>
+    <div class="grid" id="grid-US"></div>
+  </section>
+
+  <section>
+    <div class="sec-h"><h2>逐檔研究摘要</h2><span class="n">台股 TW</span></div>
+    <div class="grid" id="grid-TW"></div>
+  </section>
+
+  <footer class="foot">
+    <div class="legend">
+      <span><i class="dot" style="background:var(--core)"></i>Core 主證據</span>
+      <span><i class="dot" style="background:var(--pre)"></i>Pre-ramp 放量前</span>
+      <span><i class="dot" style="background:var(--explor)"></i>Exploratory 探索</span>
+      <span><i class="dot" style="background:var(--avoid)"></i>Avoid-watch 迴避觀察</span>
+    </div>
+    <div>
+      <h3>全清單風險 · 反身性提醒</h3>
+      <p>清單中多檔剛經歷社群／題材驅動的劇烈波動（XFAB 5/27 一日 +76%、AXTI YTD 曾 +600%、SIVE −58%、IQE +291%、台股多檔本益比 78–263x 且曾列處置股）。「貼文後股價動」是市場反身性，不是基本面驗證。大多數標的正進行或剛完成大額稀釋（AXTI／AAOI／IQE／SIVE／聯亞／上詮），財報普遍落後一季，7/28–8 月是下一輪關鍵驗證窗口。所有「市占／獨家客戶」多為第三方或媒體推估（C–E 級），台股數字請以公開資訊觀測站 MOPS 重訊與財報正本覆核。</p>
+    </div>
+    <div>
+      <h3>方法與來源</h3>
+      <p>框架取自 <span style="font-family:var(--mono)">serenity-chokepoint-investing</span> skill；證據分級 A（財報／官方）→ F（社群／鏡像）。本頁由自動化流程對各標的即時網路研究後產出，僅保留關鍵要點，完整佐證連結見各卡片「最新進展」。生成時間戳與資料新鮮度以各卡片標註為準。</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+const CV={ "Core":["core","--core"], "Pre-ramp":["pre","--pre"], "Exploratory":["explor","--explor"], "Avoid-watch":["avoid","--avoid"] };
+const ASOF="REPLACE_WITH_DATE";
+
+const DATA=[
+  /* REPLACE THIS ARRAY with ALL 12 researched entries in this EXACT shape.
+     m:"US" for the 7 US/EU tickers, m:"TW" for the 5 台股. `warn` is optional (omit or set "" when no caveat).
+     Example entry (shape reference): */
+  {m:"US",tk:"AXTI",co:"AXT Inc",venue:"Nasdaq: AXTI",cv:"Core",w:21.4,ev:"A（10-Q/8-K）",conf:"中",price:"≈$00（as-of）",layer:"InP／GaAs 襯底",thesis:"一句話論點…",warn:"",devs:[{d:"MM-DD",t:"最新進展…",u:"https://來源"}],cat:["催化劑…"],fin:"稀釋/財務…",risk:["風險…"],fail:["失效條件…"],fresh:"資料新鮮度…"}
+];
+function esc(s){return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+
+function renderBars(market){
+  const el=document.getElementById("bars-"+market);
+  const rows=DATA.filter(d=>d.m===market).slice().sort((a,b)=>b.w-a.w||a.tk.localeCompare(b.tk));
+  el.innerHTML=rows.map(d=>{
+    const cvv=CV[d.cv][1];
+    return `<div class="bar" style="--cv:var(${cvv})">
+      <div class="lab"><span class="tk">${esc(d.tk)}</span><span class="co">${esc(d.co)}</span></div>
+      <div class="track"><div class="fill ${d.w===0?'zero':''}" style="width:${Math.max(d.w,1.5)}%"></div></div>
+      <div class="pct">${d.w.toFixed(1)}%</div>
+    </div>`;
+  }).join("");
+}
+
+function renderCards(market){
+  const el=document.getElementById("grid-"+market);
+  const rows=DATA.filter(d=>d.m===market).slice().sort((a,b)=>b.w-a.w||a.tk.localeCompare(b.tk));
+  el.innerHTML=rows.map(d=>{
+    const cvv=CV[d.cv][1];
+    const devs=d.devs.map(x=>`<div class="dev"><span class="d">${esc(x.d)}</span>${esc(x.t)}${x.u?` · <a href="${esc(x.u)}" target="_blank" rel="noopener">來源</a>`:""}</div>`).join("");
+    const cat=`<ul class="mini">${d.cat.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+    const risk=`<ul class="mini">${d.risk.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+    const fail=`<ul class="mini fail">${d.fail.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+    return `<article class="card" style="--cv:var(${cvv});--cv-soft:var(${cvv}-soft)">
+      <div class="card-top">
+        <div class="tkwrap">
+          <div class="ticker">${esc(d.tk)}</div>
+          <div class="company">${esc(d.co)}</div>
+          <div class="venue">${esc(d.venue)}</div>
+        </div>
+        <span class="chip">${esc(d.cv)}</span>
+      </div>
+      <div class="layer"><span class="k">卡點</span>${esc(d.layer)}</div>
+      <div class="thesis">${esc(d.thesis)}</div>
+      <div class="metarow">
+        <span class="tag">證據 <b>${esc(d.ev)}</b></span>
+        <span class="tag">信心 <b>${esc(d.conf)}</b></span>
+        <span class="tag">價 <b>${esc(d.price)}</b></span>
+      </div>
+      ${d.warn?`<div class="warnline">⚠ ${esc(d.warn)}</div>`:""}
+      <details>
+        <summary>展開研究細節</summary>
+        <div class="body">
+          <div class="blk"><div class="bh">最新進展</div>${devs}</div>
+          <div class="blk"><div class="bh">催化劑</div>${cat}</div>
+          <div class="blk"><div class="bh">稀釋 · 財務</div><div style="font-size:12.5px;color:var(--ink-2)">${esc(d.fin)}</div></div>
+          <div class="blk"><div class="bh">主要風險</div>${risk}</div>
+          <div class="blk"><div class="bh">失效條件</div>${fail}</div>
+          <div class="blk"><div class="bh">資料新鮮度</div><div class="fresh">${esc(d.fresh)}</div></div>
+        </div>
+      </details>
+    </article>`;
+  }).join("");
+}
+
+document.getElementById("asof").textContent=ASOF;
+document.getElementById("count").textContent=DATA.length;
+["US","TW"].forEach(m=>{renderBars(m);renderCards(m);});
+</script>
