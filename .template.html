@@ -223,6 +223,12 @@
   </footer>
 </div>
 <script>
+const ASOF="REPLACE_WITH_DATE";
+const DATA=[
+  /* REPLACE this array with all researched entries. Shape (NO weight field — illustrative weights are auto-computed from conviction, normalized per region):
+     {m,tk,co,venue,cv,ev,conf,price,layer,thesis,warn,devs:[{d,t,u}],cat:[...],fin,risk:[...],fail:[...],fresh}.  m ∈ "US"|"EU"|"JP"|"KR"|"TW". warn optional (omit or ""). */
+  {m:"US",tk:"AXTI",co:"AXT Inc",venue:"Nasdaq: AXTI",cv:"Core",ev:"A（10-Q/8-K）",conf:"中",price:"≈$00（as-of）",layer:"InP／GaAs 襯底",thesis:"一句話論點…",warn:"",devs:[{d:"MM-DD",t:"最新進展…",u:"https://來源"}],cat:["催化劑…"],fin:"稀釋/財務…",risk:["風險…"],fail:["失效條件…"],fresh:"資料新鮮度…"}
+];
 const CVID={ "Core":["core","--core"], "Pre-ramp":["pre","--pre"], "Exploratory":["explor","--explor"], "Avoid-watch":["avoid","--avoid"] };
 const CVRANK={ "Core":0,"Pre-ramp":1,"Exploratory":2,"Avoid-watch":3 };
 const CONV_TIP={ "Core":"信念最高：一手證據、已見營收、財務可支撐。","Pre-ramp":"放量前：技術/客戶認證可信，但營收尚未顯現。","Exploratory":"探索：有趣的供應鏈定位，但尚無明確倉位理由。","Avoid-watch":"迴避觀察：稀釋/弱交易對手/客戶流失/高估值等疑慮，示意權重 0%。" };
