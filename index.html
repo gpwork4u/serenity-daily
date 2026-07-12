@@ -49,6 +49,43 @@
     background:var(--surface);border:1px solid var(--border);color:var(--ink-2)}
   .pill .d{width:9px;height:9px;border-radius:50%}
   .pill.warn{color:var(--warn-ink);background:var(--warn-bg);border-color:var(--warn-bd)}
+  .pill.avoidpill{color:var(--avoid);background:var(--avoid-soft);border-color:var(--avoid);font-weight:750;cursor:pointer}
+  .pill.avoidpill:hover{filter:brightness(1.04)}
+
+  /* AVOID — 不要買 / 避雷（最優先） */
+  .avoidwrap{border:1.5px solid var(--avoid);border-radius:14px;background:var(--avoid-soft);box-shadow:var(--shadow);padding:14px 16px 8px;margin:8px 0 22px}
+  .avoidwrap[hidden]{display:none}
+  .avoidhd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+  .avoidhd h2{font-size:16px;margin:0;color:var(--avoid);font-weight:800;letter-spacing:-.01em}
+  .avoidsub{font-size:12px;color:var(--ink-2);max-width:62ch}
+  .avoidcount{font-family:var(--mono);font-size:11px;color:var(--avoid);margin-left:auto;font-weight:700;white-space:nowrap}
+  .avoidbody{display:flex;flex-direction:column;margin-top:6px}
+  .aitem{border-top:1px solid var(--avoid);border-top-color:color-mix(in srgb,var(--avoid) 24%,transparent)}
+  .aitem:first-child{border-top:none}
+  .arow{display:grid;grid-template-columns:20px minmax(116px,1.2fr) auto minmax(0,2.2fr) 15px;gap:11px;align-items:center;width:100%;padding:10px 3px;background:none;border:none;cursor:pointer;text-align:left;color:var(--ink);font-family:var(--sans)}
+  .arow:hover{background:color-mix(in srgb,var(--avoid) 8%,transparent)}
+  .arow:focus-visible{outline:2px solid var(--avoid);outline-offset:-2px;border-radius:6px}
+  .aicon{font-size:14px;justify-self:center}
+  .atk{display:flex;flex-direction:column;gap:1px;min-width:0}
+  .atk b{font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:-.01em}
+  .atk .aco{font-size:11px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .acat{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--avoid);border:1px solid var(--avoid);border-radius:5px;padding:2px 6px;justify-self:start;white-space:nowrap}
+  .awhy{font-size:12.5px;color:var(--ink-2);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .abadge{font-family:var(--mono);font-size:9px;font-weight:800;color:var(--avoid);background:var(--surface);border:1px solid var(--avoid);border-radius:4px;padding:1px 5px;margin-left:7px;white-space:nowrap;vertical-align:1px}
+  .acaret{justify-self:center;color:var(--avoid);font-family:var(--mono);font-size:12px;transition:transform .15s ease}
+  .arow[aria-expanded="true"] .acaret{transform:rotate(90deg)}
+  .adetail{display:none;padding:2px 8px 15px 31px}
+  .adetail.open{display:block}
+  .adetail .ah{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--avoid);font-weight:700;margin:11px 0 5px}
+  ul.aflags{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+  ul.aflags li{font-size:12.5px;color:var(--ink-2);padding-left:16px;position:relative}
+  ul.aflags li::before{content:"\2715";position:absolute;left:0;top:1px;color:var(--avoid);font-size:10px;font-weight:700}
+  .awatch{font-size:12.5px;color:var(--ink);background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 11px;line-height:1.55}
+  .awhyfull{font-size:12.5px;color:var(--ink);background:var(--surface);border:1px solid var(--avoid);border-left-width:3px;border-radius:8px;padding:8px 11px;line-height:1.6}
+  .ameta{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .agrp{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--avoid);margin:12px 0 2px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+  .agrp:first-child{margin-top:4px}
+  .agrp span{font-family:var(--sans);font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:var(--ink-3)}
 
   /* disclaimer mini */
   details.disc{background:var(--warn-bg);border:1px solid var(--warn-bd);border-left-width:3px;border-radius:9px;margin:16px 0;color:var(--warn-ink);font-size:12.5px}
@@ -200,6 +237,13 @@
     .fresh-note{font-size:12.5px}
     .bar{grid-template-columns:70px 1fr 42px;gap:9px}
     .bar .tk{font-size:13px}
+    .avoidhd h2{font-size:16.5px}
+    .arow{grid-template-columns:20px 1fr auto 15px;gap:8px 9px;padding:13px 3px}
+    .atk b{font-size:16px}
+    .awhy{grid-column:1/-1;white-space:normal;font-size:13.5px;color:var(--ink-2)}
+    .adetail{padding:2px 4px 16px 8px}
+    .awatch{font-size:13.5px}
+    ul.aflags li{font-size:13.5px}
   }
 </style>
 <div class="wrap">
@@ -207,7 +251,7 @@
     <div>
       <div class="eyebrow">Serenity Chokepoint Investing · 每日研究</div>
       <h1>AI 供應鏈卡點 · 研究觀察清單</h1>
-      <p class="sub">物理卡點框架，追蹤美股/歐股/台股 AI 光通訊、CPO、襯底/磊晶、先進封裝、散熱與 ASIC 的上游瓶頸。研究輔助，非投資建議。</p>
+      <p class="sub">物理卡點框架，追蹤 AI 光通訊/CPO、襯底/磊晶、先進封裝、散熱、ASIC 等上游瓶頸，並逐步擴及電力/重電、關鍵材料、先進製程設備等相鄰卡點。<b>先看「不要買」避雷清單，再看買方觀察。</b>研究輔助，非投資建議。</p>
       <div class="asof"><span>資料截止 <b id="asof">—</b></span><select id="dsel" class="dsel" style="display:none" aria-label="選擇日期"></select><span>標的 <b id="count">—</b></span><span class="hint">點列可展開研究細節 · 術語可懸停看解釋</span></div>
     </div>
     <button class="tglbtn" id="tgl" title="切換淺/深色" aria-label="切換主題">◐</button>
@@ -217,8 +261,17 @@
 
   <details class="disc">
     <summary>⚠ 研究輔助，非投資建議 · 示意權重僅教學示意<span class="cta"></span></summary>
-    <div class="full">下方任何分級、權重、清單都<b>不是買賣指令、不是個人化配置建議</b>。「示意權重」僅依信念分級機械換算，屬教學示意，不代表應買進或該持有比例。許多數字為自述/媒體轉述或落後一季，每一檔都須用最新財報、法說、重大訊息與即時行情自行覆核。清單多為波動大、流動性薄的中小型股——貼文/清單讓股價動 ≠ 基本面被驗證，追高只會讓你成為擁擠交易的一部分。</div>
+    <div class="full">下方任何分級、權重、清單都<b>不是買賣指令、不是個人化配置建議</b>。「不要買/避雷」清單同樣是<b>研究判斷，非放空/賣出指令，也非指控不法</b>——每條紅旗均附來源，僅來自社群/謠言者已標低證據級別。「示意權重」僅依信念分級機械換算，屬教學示意。許多數字為自述/媒體轉述或落後一季，每一檔都須用最新財報、法說、重大訊息與即時行情自行覆核。清單多為波動大、流動性薄的中小型股——貼文/清單讓股價動 ≠ 基本面被驗證，追高只會讓你成為擁擠交易的一部分。</div>
   </details>
+
+  <section class="avoidwrap" id="avoidwrap" hidden>
+    <div class="avoidhd">
+      <h2>🚫 不要買 · 避雷清單</h2>
+      <span class="avoidsub">先看該「閃」什麼——紅旗與失效條件優先於任何買點。研究判斷，非放空/賣出指令，非投資建議。</span>
+      <span class="avoidcount" id="avoidcount"></span>
+    </div>
+    <div id="avoid-body" class="avoidbody"></div>
+  </section>
 
   <section class="today">
     <h2>⚡ 今日重點 · 該看哪裡</h2>
@@ -256,7 +309,7 @@
   </footer>
 </div>
 <script>
-let DATA=[], ASOF="", ASOFD=null;
+let DATA=[], AVOIDS=[], ASOF="", ASOFD=null;
 const CVID={ "Core":["core","--core"], "Pre-ramp":["pre","--pre"], "Exploratory":["explor","--explor"], "Avoid-watch":["avoid","--avoid"] };
 const CVRANK={ "Core":0,"Pre-ramp":1,"Exploratory":2,"Avoid-watch":3 };
 const CONV_TIP={ "Core":"信念最高：一手證據、已見營收、財務可支撐。","Pre-ramp":"放量前：技術/客戶認證可信，但營收尚未顯現。","Exploratory":"探索：有趣的供應鏈定位，但尚無明確倉位理由。","Avoid-watch":"迴避觀察：稀釋/弱交易對手/客戶流失/高估值等疑慮，示意權重 0%。" };
@@ -356,8 +409,10 @@ function detailHTML(d){const cvv=CVID[d.cv][1];const ec=evChar(d);
 function renderPulse(){
   const c={Core:0,"Pre-ramp":0,Exploratory:0,"Avoid-watch":0};let warn=0,fresh=0;
   DATA.forEach(d=>{c[d.cv]++;if(d.warn)warn++;if(d._fresh)fresh++;});
+  const nav=mergedAvoids().length;
   const p=document.getElementById("pulse");
-  p.innerHTML=Object.keys(c).map(k=>`<span class="pill"><span class="d" style="background:var(${CVID[k][1]})"></span>${esc(k)} ${c[k]}</span>`).join("")
+  p.innerHTML=(nav?`<span class="pill avoidpill" title="跳到避雷清單">🚫 不要買 ${nav}</span>`:"")
+    +Object.keys(c).map(k=>`<span class="pill"><span class="d" style="background:var(${CVID[k][1]})"></span>${esc(k)} ${c[k]}</span>`).join("")
     +`<span class="pill warn">⚠ 警示 ${warn}</span>`+`<span class="pill"><span class="d" style="background:var(--accent)"></span>近 7 日有進展 ${fresh}</span>`;
 }
 function chip(d){return `<a class="htk" data-jump="${d._i}" style="--cv:var(${CVID[d.cv][1]});--cv-soft:var(${CVID[d.cv][1]}-soft)">${esc(d.tk)} <small>${esc(layerShort(d.layer))}</small></a>`;}
@@ -365,9 +420,56 @@ function renderToday(){
   const body=document.getElementById("today-body");
   const fresh=DATA.filter(d=>d._fresh).sort((a,b)=>a._rec-b._rec);
   const soon=DATA.filter(d=>d._soon).sort((a,b)=>a._soon.days-b._soon.days);
-  const warn=DATA.filter(d=>d.warn||d.cv==="Avoid-watch");
   function line(k,arr,none){return `<div class="row"><span class="k">${k}</span>${arr.length?arr.map(chip).join(""):`<span class="none">${none}</span>`}</div>`;}
-  body.innerHTML=line("近期進展",fresh.slice(0,10),"—")+line("催化劑近",soon.slice(0,10),"近 30 日內未偵測到明確日期")+line("警示/迴避",warn,"無");
+  body.innerHTML=line("近期進展",fresh.slice(0,10),"—")+line("催化劑近",soon.slice(0,10),"近 30 日內未偵測到明確日期");
+}
+
+// ---- 不要買 / 避雷 ----
+function mergedAvoids(){
+  const out=(AVOIDS||[]).map(a=>Object.assign({},a));
+  const have=new Set(out.map(a=>String(a.tk).toUpperCase()));
+  DATA.forEach(d=>{ if(d.cv==="Avoid-watch" && !have.has(String(d.tk).toUpperCase())){
+    out.push({tk:d.tk,co:d.co,m:d.m,venue:d.venue,cat:"迴避",why:d.warn||d.thesis,
+      flags:(d.risk||[]).concat(d.fail||[]),watch:(d.fail&&d.fail[0])||"",price:d.price,pool:"watch",src:d.devs||[]});
+  }});
+  const ord={hyped:0,watch:1};
+  out.sort((a,b)=>(ord[a.pool]==null?9:ord[a.pool])-(ord[b.pool]==null?9:ord[b.pool]));
+  return out;
+}
+function avoidCard(a,i){
+  const flags=(a.flags||[]).map(x=>`<li>${gloss(x)}</li>`).join("");
+  const src=(a.src||[]).map(x=>`<div class="dev"><span class="d">${esc(x.d||"")}</span>${gloss(x.t||"")}${x.u?` · <a href="${esc(x.u)}" target="_blank" rel="noopener">來源</a>`:""}</div>`).join("");
+  const hyped=a.pool==="hyped";
+  const badge=hyped?`<span class="abadge" title="不在研究池、但正被市場追捧">清單外·被追捧</span>`:"";
+  return `<div class="aitem">
+    <button class="arow" data-a="${i}" aria-expanded="false">
+      <span class="aicon">🚫</span>
+      <span class="atk"><b>${esc(a.tk)}</b><span class="aco">${esc(a.co||"")}${a.m?" · "+esc(a.m):""}</span></span>
+      <span class="acat">${esc(a.cat||"迴避")}</span>
+      <span class="awhy">${gloss(a.why||"")}${badge}</span>
+      <span class="acaret">▸</span>
+    </button>
+    <div class="adetail" id="adet-${i}">
+      ${a.whyfull?`<div class="ah">為何避開</div><div class="awhyfull">${gloss(a.whyfull)}</div>`:""}
+      ${flags?`<div class="ah">紅旗</div><ul class="aflags">${flags}</ul>`:""}
+      ${a.watch?`<div class="ah">什麼情況才重新評估</div><div class="awatch">${gloss(a.watch)}</div>`:""}
+      <div class="ameta">${a.price?`<span class="tag">價/估值 <b>${esc(a.price)}</b></span>`:""}${a.ev?`<span class="tag">證據 <b>${esc(a.ev)}</b></span>`:""}${a.conf?`<span class="tag">信心 <b>${esc(a.conf)}</b></span>`:""}${a.venue?`<span class="tag">${esc(a.venue)}</span>`:""}<span class="tag">狀態 <b>${hyped?"清單外·被追捧":"池內·風險注意"}</b></span></div>
+      ${src?`<div class="ah">來源</div>${src}`:""}
+    </div>
+  </div>`;
+}
+function renderAvoids(){
+  const list=mergedAvoids();
+  const wrap=document.getElementById("avoidwrap");
+  if(!list.length){wrap.hidden=true;return;}
+  wrap.hidden=false;
+  const hy=list.filter(a=>a.pool==="hyped"),wa=list.filter(a=>a.pool!=="hyped");
+  let gi=0;
+  function grp(label,arr,hint){if(!arr.length)return"";return `<div class="agrp">${label}<span>${hint}</span></div>`+arr.map(a=>avoidCard(a,gi++)).join("");}
+  document.getElementById("avoid-body").innerHTML=
+    grp("清單外 · 被追捧",hy,"不在研究池、正被追捧卻有紅旗 → 別追")+
+    grp("研究池內 · 風險注意",wa,"買方清單裡帶硬紅旗 → 非乾淨買點");
+  document.getElementById("avoidcount").textContent=list.length+" 檔（清單外 "+hy.length+" · 池內 "+wa.length+"）";
 }
 function renderControls(){
   const mk=document.getElementById("f-market"),cv=document.getElementById("f-conv");
@@ -398,6 +500,11 @@ function ensureDetail(i){const el=document.getElementById("det-"+i);if(el&&!el.d
 
 // events
 document.addEventListener("click",e=>{
+  const ap=e.target.closest(".avoidpill");
+  if(ap){const w=document.getElementById("avoidwrap");if(w&&!w.hidden)w.scrollIntoView({behavior:"smooth",block:"start"});return;}
+  const arow=e.target.closest(".arow");
+  if(arow){const i=arow.dataset.a;const det=document.getElementById("adet-"+i);const open=det.classList.contains("open");
+    det.classList.toggle("open",!open);arow.setAttribute("aria-expanded",String(!open));return;}
   const jump=e.target.closest("[data-jump]");
   if(jump){e.preventDefault();const i=+jump.dataset.jump;const row=document.querySelector('.rrow[data-i="'+i+'"]');
     if(row){ensureDetail(i);const det=document.getElementById("det-"+i);det.classList.add("open");row.setAttribute("aria-expanded","true");row.scrollIntoView({behavior:"smooth",block:"center"});}return;}
@@ -422,7 +529,7 @@ function initAll(){
   document.getElementById("asof").textContent=ASOF||"—";
   const _rc={};DATA.forEach(d=>{_rc[d.m]=(_rc[d.m]||0)+1;});
   document.getElementById("count").textContent=DATA.length+" 檔（"+["US","EU","JP","KR","TW"].filter(x=>_rc[x]).map(x=>x+" "+_rc[x]).join(" · ")+"）";
-  renderPulse();renderToday();renderControls();renderRoster();renderBars();
+  renderAvoids();renderPulse();renderToday();renderControls();renderRoster();renderBars();
 }
 async function initDates(cur){
   try{const r=await fetch("data/index.json",{cache:"no-cache"});if(!r.ok)return;const idx=await r.json();
@@ -438,7 +545,7 @@ async function boot(){
     try{const r=await fetch("data/"+(want||"latest")+".json",{cache:"no-cache"});if(!r.ok)throw new Error("HTTP "+r.status);payload=await r.json();}
     catch(e){document.getElementById("roster-body").innerHTML='<div style="padding:26px;text-align:center;color:var(--ink-3);line-height:1.7">無法載入資料（'+esc(e.message)+'）。<br>此頁需從 GitHub Pages 載入 <code>data/latest.json</code>；本機或 artifact 直接開啟會被 CSP/CORS 擋。</div>';document.getElementById("asof").textContent="載入失敗";return;}
   }
-  ASOF=payload.asof||payload.generated||"";DATA=payload.tickers||[];
+  ASOF=payload.asof||payload.generated||"";DATA=payload.tickers||[];AVOIDS=payload.avoids||[];
   initAll();initDates(want);
 }
 boot();
