@@ -1735,6 +1735,965 @@
     "Bloom Energy 訂單大幅下修、轉單或自建 Hotbox 產能 → 燃料電池引擎與『Hotbox 主力供應商』獨佔性證偽"
    ],
    "fresh": "股價與市值為 2026/07/09 收盤（NT$1,230、市值約 1,149 億元、股數 93,387,429 股、TTM 本益比 88.73），為兩個獨立來源皆止於之最新可確認交易日；未能取得 7/10（週五）盤後與 7/11/12（週末休市）確認。6 月營收（7.25 億元）約於 7/10 前公布。最新季報為 2026Q1（EPS 6.54 元），2026Q2 財報預計 2026/08 中公布。私募現金增資尚未定價、應募人未定。…"
+  },
+  {
+   "m": "EU",
+   "tk": "ASML",
+   "co": "ASML Holding N.V.",
+   "venue": "Euronext Amsterdam (ASML.AS)／NASDAQ ADR (ASML)",
+   "cv": "Core",
+   "ev": "EUV 全球唯一供應商，市佔 EUV ~100%／整體微影 ~94%（Nikon/Canon 無法複製）。真實營收：Q1 2026 營收 €8.8B、毛利 53%（含 2 台 High-NA 出貨，EUV 佔比 ~65%）；在手訂單 €38.8B（約一年營收）；Q4'25 record 訂單 €13.2B（其中 EUV €7.4B）。2026 全年指引上修至 €36–40B。High-NA €350-380M/台，Intel/Samsung/SK Hynix 導入中。",
+   "conf": "高",
+   "price": "~$1,804 ADR（2026-07-09）；forward PE ~47-52、trailing PE ~62；GuruFocus 估約高於公允價值 ~65%。歷史區間偏上緣。",
+   "layer": "微影設備(EUV／High-NA／DUV)—WFE 最上游、無替代",
+   "thesis": "半導體供應鏈最硬的物理瓶頸：EUV 微影全球唯一供應商，3nm/2nm 以下先進邏輯與先進 DRAM 物理繞不開，客戶為鎖定 2nm/HBM 產能而提前下單。€38.8B 在手訂單過半為 EUV，High-NA 拉開下一代差。near-100% 獨佔且已見大額真實營收與 50%+ 毛利，護城河結構性成立。此為卡點認證無疑，但屬『卡點成立、進場價偏貴』——高信念鎖定資產本質，非鎖定當前買點。",
+   "warn": "估值偏熱：fwd PE ~50、trailing 62x、約高於公允價值 65%，PEG 偏高，殺估值/倍數壓縮風險存在。中國地緣：China 佔 2025 營收 33%→2026 指引 ~19-20%（DUV 為主），美國 MATCH Act 若通過恐斷中國最後通路，衝擊營收與高毛利服務。建議：卡點認定 Core，但『買點』宜逢回分批、非現價全押。",
+   "devs": [
+    {
+     "d": "2026-04",
+     "t": "Q1 2026 營收 €8.8B、淨利 €2.4B、毛利率 53%；微影系統淨接單 €5.5B，backlog >€38B(過半 EUV)，上調 2026 全年展望至 €36-40B",
+     "u": "https://www.stocktitan.net/sec-filings/ASML/6-k-asml-holding-nv-current-report-foreign-issuer-728274d6f07a.html"
+    },
+    {
+     "d": "2026-01-28",
+     "t": "FY2025 全年營收 €32.7B、淨利 €9.6B",
+     "u": "https://www.asml.com/en/news/press-releases/2026/q4-2025-financial-results"
+    }
+   ],
+   "cat": [
+    "EUV微影",
+    "near-monopoly",
+    "WFE最上游",
+    "High-NA",
+    "2nm"
+   ],
+   "fin": "FY2025 營收 €32.7B、淨利 €9.6B；Q1 2026 營收 €8.8B、淨利 €2.4B、毛利率 53%；在手訂單 >€38B(過半 EUV)。EUV 市占近 100%、整體微影約 90%。",
+   "risk": [
+    "估值偏熱（~50x fwd、65% 高於公允），倍數壓縮風險",
+    "MATCH Act／出口管制升級恐切斷中國通路（~19-20% 營收＋服務）",
+    "WFE 具週期性，AI capex 若進入消化期→訂單空窗/取消",
+    "客戶高度集中（TSMC/Intel/Samsung）",
+    "中國自主 EUV（華為 LDP、SMEE）長線潛在侵蝕，需持續監控"
+   ],
+   "fail": [
+    "中國自主 EUV（華為 Dongguan LDP 2026 試產／SMEE）達可信先進節點量產→長線獨佔破口",
+    "MATCH Act 或全面出口禁令落地→近期營收與服務顯著下修",
+    "半導體 capex 週期反轉／AI 資本支出消化→在手訂單取消、訂單空窗",
+    "High-NA 導入延後（TSMC 稱 2029 前不量產用）→High-NA 論點兌現慢於預期"
+   ],
+   "fresh": "2026-07；最新為 Q1 2026 財報(2026-04)＋FY2025 業績(2026-01)。"
+  },
+  {
+   "m": "JP",
+   "tk": "8035",
+   "co": "東京威力科創 Tokyo Electron",
+   "venue": "東京證券交易所 (TSE: 8035)",
+   "cv": "Pre-ramp",
+   "ev": "coater/developer: TEL約89%(CY2022)、CY2025法說約91%、EUV用近100%(sharedresearch/nomadsemi/klover)；etch: AMAT~32% > Lam~28% > TEL~15%，三家佔etch約75%(matrixbcg/mordor)；估值: TEL trailing PE ~58x(高於10年中位數~21x達178%，gurufocus)、forward ~30-39x；同儕forward PE: AMAT~31.6x < TEL~30-39x ≈ Lam~40x < ASML~49x(financecharts/valueinvesting/gurufocus 2026-07-10)",
+   "conf": "高",
+   "price": "trailing PE ~58x(遠高於10年中位數~21x)、forward PE ~30-39x；同業AMAT forward ~31.6x實際比TEL便宜，ASML~49x/Lam~40x",
+   "layer": "卡點層——塗佈/顯影(coater/developer, track)近獨佔(EUV用近100%)為皇冠級卡點；蝕刻/沉積/清洗為前段WFE top-3(蝕刻第3名，非龍頭)",
+   "thesis": "塗佈顯影機(track)全球約89-91%、EUV用近100%獨佔，與EUV微影一對一綁定——有EUV就必配TEL track，屬皇冠級結構卡點；同時是蝕刻(全球第3名~15%，居AMAT/Lam之後)、沉積、清洗等前段設備top-3，HBM與2nm邏輯放量直接受惠。營收真實、獲利高、無稀釋問題的成熟藍籌。惟估值已隨AI週期過熱，卡點品質達Core級但進場價偏貴，先列Pre-ramp待估值收斂再加碼。",
+   "warn": "『三雄中估值最合理(PE ~38x)』為話術：38x是forward數字，trailing PE高達~58x(高於自身10年中位數~21x達178%)，屬AI週期估值擴張；且若把AMAT(forward~31.6x)納入比較，TEL並非最便宜——只有刻意定義三雄為ASML/TEL/Lam才成立。信念不應直接給Core，先Pre-ramp，待估值回落/multiple壓縮再升級。蝕刻定位亦被略誇(實為第3名~15%，非共同龍頭)。",
+   "devs": [
+    {
+     "d": "2026-04-30",
+     "t": "最新法說：續看多 calendar 2026 WFE 雙位數成長，塗佈顯影營收 FY2027 預估 +50% YoY，動能來自 HBM 與 2nm",
+     "u": "https://envalith.com/en/companies/8035"
+    },
+    {
+     "d": "2025-05",
+     "t": "FY2025 營收 ¥2,431.5B(+32.8%，歷史新高)；塗佈顯影全球份額 91%，蝕刻/沉積同步成長",
+     "u": "https://www.blog.baldengineering.com/2025/05/tokyo-electron-delivers-record-fy2025.html"
+    }
+   ],
+   "cat": [
+    "塗佈顯影",
+    "near-monopoly",
+    "蝕刻沉積",
+    "HBM",
+    "2nm"
+   ],
+   "fin": "FY2025 營收 ¥2,431.5B(+32.8%，歷史新高)；塗佈顯影全球份額 91%；FY2027 塗佈顯影營收預估 +50% YoY。PE ~38x。",
+   "risk": [
+    "Lam的dry-resist(乾式光阻沉積)若在關鍵層被廣泛採用，可能繞過塗佈步驟、侵蝕TEL皇冠級track獨佔(長期最大威脅)",
+    "估值過熱：trailing 58x，若AI/HBM資本支出降溫，multiple與獲利雙殺風險高",
+    "中國曝險與出口管制/地緣政治，WFE需求具週期性",
+    "2nm/High-NA放量時程若遞延，近期營收動能不如預期"
+   ],
+   "fail": [
+    "dry-resist被TSMC/三星/Intel在量產關鍵層採用，track附著率結構性下滑",
+    "coater/developer全球份額跌破~80%或EUV用份額出現實質競爭者",
+    "WFE資本支出反轉、TEL營收/獲利連兩季下修且multiple未回落",
+    "『估值最合理』被證偽後仍維持Core分級=分級不誠實，應直接降級"
+   ],
+   "fresh": "2026-07；最新為法說(2026-04-30)＋FY2025 業績(2025-05)。"
+  },
+  {
+   "m": "US",
+   "tk": "CAMT",
+   "co": "Camtek Ltd",
+   "venue": "NASDAQ (CAMT)／TASE",
+   "cv": "Pre-ramp",
+   "ev": "Q1'26 營收 $121.7M、GM 51%、營益 ~$31M;AP 占營收 ~70%、AI 相關 ~50%;Hawk 為所有主要 HBM 廠 HBM4 3D 量測參考機台;$50M+ 單客訂單(2027 交機)+ 兩家 HBM 廠 2026–27 逾 $260M 在手;Eagle-AP 為 bump/copper-pillar 量產產業標準。來源:SEC 6-K、Q1'26 法說、Camtek Feb'26 投資人簡報、產業市占報告。",
+   "conf": "中",
+   "price": "~$181/股、市值 ~$6.56B(2026-07 初);forward P/E ~36、trailing P/E ~143–208;GF Value 公允 ~$108、DCF 公允 ~$37;股價一年 +73.7%。",
+   "layer": "先進封裝/HBM 光學檢測(AP AOI)與 3D 量測 — 聚焦光學檢測與凸塊/銅柱 3D metrology 子利基(非廣義 metrology+inspection TAM)",
+   "thesis": "先進封裝光學檢測(AOI)與 HBM 3D 量測的利基龍頭(非純獨佔)。Eagle-AP 為 bump/copper-pillar 2D+3D 量產產業標準；新平台 Hawk 被證實為所有主要 HBM 廠 HBM4 3D 量測的『參考機台』,Eagle G5 切 2D fan-out 檢測。CoWoS/HBM 堆疊放量下檢測/量測為必經卡點,下游 memory 三大廠依賴。已有 $50M+ 單一 HBM 客戶訂單、兩家 HBM 廠合計 2026–27 逾 $260M 在手訂單;新平台占營收由 2025 ~30% 升向 2026 50%+,HBM4 出貨主要落在 2027,故為快速放量前段(Pre-ramp)而非成熟獨佔。",
+   "warn": "估值嚴重過熱:多來源判定較公允值高估 60–80%、一年漲逾 7 成、trailing P/E 三位數 — 現價應以 Avoid-watch 對待,勿在此價位追。誠實界線:『>40% 領先份額』僅在 AP 光學檢測(AOI)子利基成立,勿混同為廣義 metrology+inspection 主導(該大盤 KLA ~24.6% 領先、Onto 進逼)。屬利基寡佔龍頭而非硬獨佔。",
+   "devs": [
+    {
+     "d": "2026-05",
+     "t": "Q1 2026 營收 $121.7M；管理層看 2026 雙位數成長、H2 較 H1 +25%；先進封裝占營收約 70%",
+     "u": "https://www.prnewswire.com/news-releases/camtek-announces-results-for-the-first-quarter-of-2026-302769389.html"
+    },
+    {
+     "d": "2026-02",
+     "t": "已獲兩家 HBM 廠 3D 量測與 2D 檢測訂單/預測，對應 2026-27 逾 $260M 營收；HBM 檢測份額 >40%",
+     "u": "https://www.stocktitan.net/sec-filings/CAMT/6-k-camtek-ltd-current-report-foreign-issuer-1c543ac9f004.html"
+    }
+   ],
+   "cat": [
+    "先進封裝檢測",
+    "HBM",
+    "3D量測",
+    "CoWoS"
+   ],
+   "fin": "FY2025 營收 $496.1M；Q1 2026 營收 $121.7M；先進封裝占營收約 70%；HBM 檢測份額 >40%，已獲兩家 HBM 廠 2026-27 逾 $260M 訂單。市值約 US$6.6B。",
+   "risk": [
+    "記憶體/HBM 資本支出景氣循環,訂單集中三大 memory 廠(客戶集中度高)",
+    "Onto(Dragonfly)、KLA 在 AP 檢測/量測進逼,可能侵蝕光學 AOI 份額",
+    "HBM4 營收後置至 2027,兌現有時間與執行風險",
+    "$425M 0% 可轉債(2030,轉換價 ~$109.34)股價高於此即潛在稀釋",
+    "現價估值透支,一旦成長不如預期回檔幅度大;毛利率(51%)若因新平台放量而壓縮"
+   ],
+   "fail": [
+    "失去 HBM4 3D 量測參考機台地位/被 Onto 或 KLA 取代主要 metrology step",
+    "AP 光學檢測子利基份額顯著下滑(跌破 ~30%)",
+    "HBM/CoWoS 資本支出遭砍,在手訂單延遲或取消",
+    "新平台(Hawk/Eagle G5)放量不如導引(2026 未達 50%+ 營收)",
+    "毛利率持續壓縮或營益轉弱,顯示議價/卡點力不如宣稱"
+   ],
+   "fresh": "2026-07；最新為 Q1 2026 財報(2026-05)＋HBM 訂單公告(2026-02)。"
+  },
+  {
+   "m": "US",
+   "tk": "LRCX",
+   "co": "Lam Research Corp",
+   "venue": "NASDAQ (LRCX)",
+   "cv": "Pre-ramp",
+   "ev": "蝕刻市占 ~45-55% 全球第一、3D NAND 高深寬比近獨佔；沉積第二 ~24%；Q3'26 營收 $5.84B、YoY +24%；Aether 獲最先進 DRAM 量產 TOR(2026/01)、HVM scale-up 進行中；imec 驗證 Aether direct-print BEOL ≤2nm。",
+   "conf": "中",
+   "price": "~$389（YTD +110%）；trailing P/E ~51-75；forward P/E ~44x（半導體業界 ~31x）；PEG ~4.87（高於中位數 ~606%）；分析師合理價/目標價 ~$323，已低於現價。",
+   "layer": "卡點 — 晶圓製造設備：乾式蝕刻(etch)全球龍頭 + 沉積(deposition)第二 + 乾式光阻(dry resist / Aether)",
+   "thesis": "半導體前段設備寡佔龍頭。乾式蝕刻全球約 45-55% 市占、明確第一，3D NAND 高深寬比蝕刻近獨佔；沉積(deposition)全球第二(~24%)。龐大安裝基數 + process-of-record 製程鎖定 → 切換成本高、下游 fab 依賴深。Aether 乾式光阻於 2026/01 獲某記憶體大廠選為『最先進 DRAM 製程』量產 tool of record（非 HBM，提名有誤），HVM 放量中；imec 亦驗證其可直印 ≤2nm BEOL 邏輯 28nm pitch，切入 EUV patterning 生態，但屬早期放量、尚無揭露營收。屬寡佔龍頭而非純獨佔（與 AMAT/TEL 三強）。",
+   "warn": "估值過熱：現價 ~$389 已高於分析師合理價/目標價 ~$323，YTD +110%、fwd P/E ~44x、PEG ~4.9，已 price for perfection——本次由 Core 下修為 Pre-ramp，勿在現價建立高信念部位，等回檔。提名事實更正：Aether 是『DRAM』量產 tool of record，非『HBM』；Aether 營收貢獻尚未揭露、屬早期放量。",
+   "devs": [
+    {
+     "d": "2026-02",
+     "t": "Aether 乾式光阻獲某記憶體大廠選為 HBM 量產 tool of record；Morningstar 評 wide-moat，蝕刻份額約 45% 龍頭",
+     "u": "https://www.morningstar.com/company-reports/1168500-lam-research-dominates-etch-and-deposition-and-merits-a-wide-moat"
+    },
+    {
+     "d": "2026-01",
+     "t": "FY2026 EPS 預估 +37% YoY；TD Cowen 於 $400B WFE 情境估 ~US$20 EPS，目標價上調至 $400",
+     "u": "https://www.investing.com/news/analyst-ratings/lam-research-stock-price-target-raised-to-400-by-td-cowen-on-wfe-outlook-93CH-4784247"
+    }
+   ],
+   "cat": [
+    "蝕刻",
+    "沉積",
+    "乾式光阻",
+    "3D NAND",
+    "HBM"
+   ],
+   "fin": "蝕刻全球份額 ~45%(龍頭)、沉積第二；FY2026 EPS 預估 +37% YoY；市值約 US$438B。2026 H1 股價 +114~154%。",
+   "risk": [
+    "WFE / 記憶體資本支出循環性強，下行時營收與 EPS 大幅擺盪",
+    "中國出口管制與中國營收曝險（先進製程設備限制風險）",
+    "未來 3 年營收預估 ~17% p.a. 略低於業界 ~21%",
+    "客戶集中（少數大 fab/記憶體廠）",
+    "Aether 從 TOR 到大量產的放量執行風險，尚未見營收證據"
+   ],
+   "fail": [
+    "WFE/記憶體資本支出持續下行，蝕刻/沉積訂單走弱",
+    "中國進一步管制切掉可觀營收",
+    "Aether 無法規模化量產或失去 TOR 資格",
+    "毛利/營益率壓縮",
+    "高估值倍數 de-rate（回歸業界 ~31x 以下）造成股價大幅回檔"
+   ],
+   "fresh": "2026-07；最新為近期季報＋H1 2026 股價/分析資料。"
+  },
+  {
+   "m": "EU",
+   "tk": "VACN",
+   "co": "VAT Group AG",
+   "venue": "SIX Swiss Exchange (VACN)",
+   "cv": "Pre-ramp",
+   "ev": "FY2025 集團營收 CHF 1,074M（+14% YoY，LFL +20%）；半導體真空閥全球約71%份額、etch/depo段約70%，top5合計僅55%；EBITDA利潤率30%、FCF創新高CHF 230M（+26%）、ROE 27.7%、ROIC 23%；Global Service +19% 為安裝基數經常性收入。真實營收+寡佔地位，非題材。",
+   "conf": "中",
+   "price": "SIX:VACN ~CHF 587（2026-05），市值~CHF 18B；TTM PE ~73（一說84）、forward PE ~52、EV/EBITDA ~52、EV/FCF ~65；52週+94%。相對瑞士機械業forward PE~18x 溢價巨大，估值處5年區間~94百分位。",
+   "layer": "真空/氣體控制關鍵零組件（高精度真空閥）— 內建於沉積/蝕刻/微影機台；認證綁定 + 安裝基數服務雙護城河",
+   "thesis": "半導體高精度真空閥近獨佔龍頭（~71%份額）。每台沉積/蝕刻/EUV機台需大量真空閥，且與機台共同認證、替換/認證成本極高，設備商（AMAT/LAM/TEL/ASML）繞不開——屬機台『內建』隱形卡點。安裝基數帶動Global Service經常性收入形成第二護城河；AI/HBM/GAA擴產（110+座fab在建、hyperscaler 2025 capex>USD 400B）直接拉動閥件用量與單機真空含量提升。卡點論點成立。",
+   "warn": "估值嚴重過熱、已price-in完美AI擴產（forward PE~52 / EV/EBITDA~52）。半導體WFE具週期性：FY2025訂單其實持平（+6% LFL）、backlog -18%，動能放緩。護城河屬Core級但此價位不給Core信念，列Pre-ramp——等週期回檔或估值收斂再加碼；93% FCF全數配息代表成長再投資空間有限。",
+   "devs": [
+    {
+     "d": "2026-03-03",
+     "t": "FY2025 營收 CHF 1.074B(+14%)、EBITDA CHF 321.6M(margin 30.0%)；半導體事業 +15%，半導體真空閥份額維持 71%",
+     "u": "https://www.vatgroup.com/files/live/sites/vat/files/Investor%20relations/annual-report/2025/vat-media-release-full-year-2025-results-en.pdf"
+    },
+    {
+     "d": "2026-03-03",
+     "t": "Q1 2026 營收指引 CHF 240-260M，book-to-bill 顯著 >1，需求由中國產能建置轉向 AI 資料中心相關",
+     "u": "https://www.vatgroup.com/files/live/sites/vat/files/Investor%20relations/annual-report/2025/full-year-2025-results-presentation.pdf"
+    }
+   ],
+   "cat": [
+    "真空閥",
+    "near-monopoly",
+    "設備關鍵零組件",
+    "AI資料中心",
+    "HBM"
+   ],
+   "fin": "FY2025 營收 CHF 1.074B(+14%)、EBITDA CHF 321.6M(margin 30.0%)；半導體事業 +15%；半導體真空閥份額 71%、整體真空閥市場 >34%。Q1 book-to-bill >1。",
+   "risk": [
+    "半導體WFE週期下行→高本益比遭殺估值（下修風險大於基本面惡化）",
+    "FY2025訂單持平、backlog -18%，訂單動能已放緩",
+    "客戶高度集中於少數設備商（AMAT/LAM/TEL/ASML），議價/斷單風險",
+    "MKS、Pfeiffer、ULVAC等次要對手及中國本土化替代長線侵蝕份額",
+    "瑞郎升值/匯率壓縮利潤，馬來西亞產能轉移執行風險"
+   ],
+   "fail": [
+    "半導體真空閥份額跌破~60%（失去近獨佔地位）",
+    "連續兩季訂單YoY衰退且backlog持續下滑（週期反轉確立）",
+    "EBITDA利潤率跌破25%（定價權/護城河鬆動）",
+    "估值未回檔即追高導致大幅回撤（進場點失敗）"
+   ],
+   "fresh": "2026-07；最新為 FY2025 業績(2026-03-03)。"
+  },
+  {
+   "m": "US",
+   "tk": "CW",
+   "co": "Curtiss-Wright",
+   "venue": "NYSE",
+   "cv": "Pre-ramp",
+   "ev": "CW 10-K（2012/2013 起延續至今）自述為核動力推進泵之『preferred supplier or single source provider』；官方 Naval Power：自 1952 USS Nautilus 起供應美海軍核動力次系統，含 main coolant pumps／power-dense compact motors／generators／steam turbines／secondary propulsion。2023 ~$250M 海軍推進裝備合約（Virginia/Columbia/Ford）。FY2025：新訂單 $4.1B（+10%），全公司 book-to-bill ~1.2x；Q4 Naval&Power 銷售 +21%；record backlog ~$4.3B。FY2026 指引：營收 ~$3.77B、adj EPS ~$15.10、營益率 19–19.2%。X-energy Xe-100 關鍵組件已進入原型製造。估值：股價 ~$771、P/E ~53x，分析師公允值 ~$711（略高於公允值，priced to perfection）。",
+   "conf": "中",
+   "price": "約 $771（2026 中）；P/E ~53x（FY26 adj EPS ~$15.10）；分析師公允值 ~$711，略高於公允值。理想分批進場區間為明顯回檔至 P/E 35–40x 或潛艇爬坡營收實質放量後。",
+   "layer": "海軍核動力次系統（主冷卻泵／緊湊馬達／發電機／二次推進）— 近獨佔／單一來源卡點",
+   "thesis": "美海軍核動力推進次系統的近獨佔／單一來源供應商（自家 10-K 明列 single-source pumps）：主冷卻泵、緊湊高功率馬達、主／艦發電機、二次推進，服役逾 70 年，NNPP 取證＋國安綁定造成極高替代壁壘；吃 Columbia 級 SSBN 與 Virginia 級 SSN 生產爬坡，record backlog ~$4.3B。另切入商用 SMR（X-energy Xe-100 關鍵組件原型製造）為選擇權。屬結構上不可繞開的國防次系統卡點——但目前估值 ~53x P/E 過熱，非 Core 進場價，先列 Pre-ramp 待回檔／爬坡兌現再加碼。",
+   "warn": "估值過熱，已從 Core 下修為 Pre-ramp：股價高於分析師公允值、P/E ~53x『priced to perfection』，低-中位數 EPS 成長撐不起此倍數，追高風險大。提名論點指標亦誇大——全公司 book-to-bill 實為 ~1.2x（非 1.5x），+21% 僅 Q4 Naval&Power 單季（非年度段）。卡點本身為真，勿因估值瑕疵誤列避雷；但也勿在此價位以 Core 信念重壓。",
+   "devs": [
+    {
+     "d": "2026-05",
+     "t": "FY26 Q1：營收$913.7M +13.4%、adj EPS $3.48、op margin 17.5%；Naval&Power +21%、B/B 1.5x，上調全年至 op margin 19%+",
+     "u": "https://curtisswright.com/news/press-releases/news-release-details/2026/curtiss-wright-reports-first-quarter-2026-financial-results-and-raises-fullyear-2026-guidance-for-sales-operating-margin-eps-and-free-cash-flow"
+    },
+    {
+     "d": "2026-05",
+     "t": "進入 X-energy Xe-100 高溫氣冷爐關鍵系統原型製造，延伸至商用／SMR 核電",
+     "u": "https://www.fool.com/earnings/call-transcripts/2026/06/01/curtiss-wright-cw-q1-2026-earnings-transcript/"
+    }
+   ],
+   "cat": [
+    "Columbia／Virginia 潛艦生產爬坡",
+    "商用核電／SMR（X-energy）",
+    "FY26 Q2 財報"
+   ],
+   "fin": "FY26Q1 營收$913.7M（+13.4%），adj EPS $3.48，op margin 17.5%；全年上調至營收+7~8%、op margin 19~19.2%。Naval&Power book-to-bill 1.5x 提供能見度。",
+   "risk": [
+    "估值多重壓縮：53x 倍數對利率上行／成長不如預期極敏感，回檔幅度可能遠大於基本面惡化",
+    "潛艇量產爬坡受造船廠（GD Electric Boat／HII）產能與供應鏈瓶頸拖累，交付與認列遞延",
+    "國防預算／CR（持續決議）或優先序調整影響 Columbia/Virginia 節奏",
+    "X-energy SMR 為長天期選擇權，商轉不確定，短期不應計入估值",
+    "多元工業集團屬性：Aerospace/Industrial 段景氣循環拖累整體 EPS，稀釋純海軍核卡點的純度"
+   ],
+   "fail": [
+    "若 10-K 未來移除或弱化 single-source/preferred supplier 之泵浦定位、或出現第二來源競標 → 卡點護城河證偽",
+    "Naval&Power 段年度成長回落至個位數且 book-to-bill 跌破 1.0x → 爬坡論證偽",
+    "record backlog 開始淨下滑或訂單取消 → 需求論證偽",
+    "估值續高於 45–50x 且無法用實際交付放量支撐 → 維持 Pre-ramp／不升 Core",
+    "X-energy 若正式停擺，需確認估值中未偷渡 SMR 溢價"
+   ],
+   "fresh": "2026-06"
+  },
+  {
+   "m": "US",
+   "tk": "HWM",
+   "co": "Howmet Aerospace",
+   "venue": "NYSE",
+   "cv": "Pre-ramp",
+   "ev": "SEC 10-Q FY2026 與 Q1 財報：Engine Products Q1 2026 第三方營收 1,253M、+29% YoY、約佔總營收 54%，調整後 EBITDA +44% 至 458M、利潤率 36.6%（+400bps）；商用航太引擎備件 +48%。市場結構：單晶渦輪葉片市場高度集中／實質寡佔，認證與製程專有壁壘高，Howmet 為獨立供應商龍頭。資本配置：2025 回購 700M（均價約 161）、2026 初再回購 150M（均價約 215）、股數降至約 4.02 億、股息 +50%、減債——無稀釋。估值：前瞻 P/E 約 56–60x vs 5 年中位數約 43x，GF Value 估約 95% 高估，股價約 274 貼近分析師目標，內部人賣股。",
+   "conf": "中",
+   "price": "約 274（2026-07）；前瞻本益比約 56–60x，估值過熱",
+   "layer": "航太引擎熱段精密鑄件／單晶超合金渦輪葉片（獨立供應商龍頭；OEM 認證＋物理製程雙壁壘）",
+   "thesis": "引擎熱段精密鑄件／單晶超合金渦輪葉片近寡佔龍頭。投資鑄造葉片、單晶生長控制、真空感應熔煉與 OEM 取證需數年、良率壁壘高，於 GE／CFM／RR／PW／Safran 主要引擎平台多為單一或雙來源之獨立供應商。Q1 2026 Engine Products 佔營收約 54%、YoY +29%、EBITDA 利潤率 36.6%（+400bps），商用航太引擎備件 +48%，直接吃到窄體機產出爬坡＋引擎備件超級循環。物理製程瓶頸清晰、下游繞不開。屬 Core 級企業品質，但因入場估值過熱先列 Pre-ramp、等回檔或成長再確認再升級。",
+   "warn": "企業品質為 Core 級，但目前估值過熱（前瞻 P/E 約 56–60x，遠高於 5 年中位數約 43x，多模型顯示顯著高估、內部人賣股），已為引擎備件超級循環定價至完美；不宜在此價位按 Core 部位加碼，故列 Pre-ramp，等估值回檔或爬坡持續獲驗證再升級。",
+   "devs": [
+    {
+     "d": "2026-05-06",
+     "t": "FY26 Q1：營收$2.313B +19%，Engine Products +29%、spares +36%，GAAP EPS $1.44",
+     "u": "https://www.stocktitan.net/sec-filings/HWM/10-q-howmet-aerospace-inc-quarterly-earnings-report-76452e33be62.html"
+    },
+    {
+     "d": "2026-05-06",
+     "t": "密西根新廠完工、預計 Q4 2025 起可售產出支援渦輪葉片；另有多座擴充在建",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/howmets-q1-earnings-beat-estimates-151000314.html"
+    }
+   ],
+   "cat": [
+    "窄體機／引擎產出爬坡",
+    "引擎備件（spares）超級循環",
+    "FY26 Q2 財報（約2026-07/08）"
+   ],
+   "fin": "FY26Q1 營收$2.313B（+19%）；GAAP EPS $1.44、adj EPS $1.22；spares +36% 佔營收 23% 為高毛利驅動。基本面強，弱點在估值已高。",
+   "risk": [
+    "估值定價至完美，任何窄體機交付／引擎備件循環放緩或旅運轉弱都可能大幅殺估值",
+    "備件超級循環具週期性，YoY 高基期後成長率終將正常化",
+    "「14% 全球市占」含 OEM 自製產能，部分下游（PW/RR）具自製能力，長期可能內化部分鑄件",
+    "737 MAX／GTF 等平台生產或供應鏈事件會直接波及需求節奏",
+    "單一大客戶／平台集中度風險"
+   ],
+   "fail": [
+    "Engine Products 連兩季 YoY 成長轉個位數或備件成長明顯降溫",
+    "EBITDA 利潤率自 36%+ 區間回落、爬坡動能反轉",
+    "主要 OEM 導入替代／自製鑄件來源，侵蝕單一／雙來源地位",
+    "前瞻本益比未隨獲利成長消化、估值與基本面持續背離擴大",
+    "出現實質稀釋或現金流品質轉差（此為升 Core 的前提被打破）"
+   ],
+   "fresh": "2026-05"
+  },
+  {
+   "m": "US",
+   "tk": "MP",
+   "co": "MP Materials",
+   "venue": "NYSE",
+   "cv": "Pre-ramp",
+   "ev": "催化：Independence 磁廠（德州 Fort Worth）2H2026 首批商用磁材；10X 廠 2028（+~1萬噸/年 NdFeB 並啟動重稀土 Sm/Dy/Tb 分離）；DoD $110/kg NdPr 地板自 Q4'25 生效；DoD 100% offtake 7,000MT/年＋$140M/年 EBITDA 保證；Apple $500M 回收磁材 2027 起交付。",
+   "conf": "中",
+   "price": "~$52 / 市值~$9.3B（2026-07-11）；自 $98.65 ATH（2025-10）回落約47%；仍虧損（負 P/E，2025 估 EPS 約-$0.43、2026 估轉正 ~+$0.71），~18x P/S 偏貴但有 DoD 地板托底。",
+   "layer": "稀土礦（Mountain Pass，美國唯一規模化）＋ NdFeB 磁材垂直整合（美國唯一規模化）",
+   "thesis": "美國唯一規模化稀土礦＋唯一規模化磁材垂直整合者：物理資源近獨佔＋不可繞開的國安需求＝硬卡點。DoD 公私合營提供政策地板（$110/kg NdPr 價格地板 CfD、7,000MT/年磁材100% offtake、$140M/年 EBITDA 保證、10年期），把下行風險大幅去化。真實在產（Q1'26 NdPr 銷量 +117% YoY、合併營收 $132.9M），非題材空殼。惟磁材營收仍在起步（$21.1M/季），論點目前由政策與前瞻產能支撐，尚未由自身盈利驗證，故列 Pre-ramp。",
+   "warn": "估值仍貴（~18x P/S、尚未持續獲利），論點目前是政策/前瞻驅動而非自身盈利驗證；NdPr 現貨市價僅約 $110 地板之半，商業端（超額利潤分成）經濟性在無 DoD CfD 下仍偏薄；Q2'26 因維護/調試有產量下滑、PPA(庫存)收益遞減。",
+   "devs": [
+    {
+     "d": "2026-05-08",
+     "t": "FY26 Q1：營收$90.65M +49% YoY，價格與量同步改善",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001801368/000180136826000029/mp-20260331.htm"
+    },
+    {
+     "d": "2025-07-10",
+     "t": "國防部公私合營：$400M 股權＋10 年磁材 offtake＋NdPr $110/kg 價格地板，10X 磁廠 2028",
+     "u": "https://mpmaterials.com/news/mp-materials-announces-transformational-public-private-partnership-with-the-department-of-defense-to-accelerate-u-s-rare-earth-magnet-independence/"
+    }
+   ],
+   "cat": [
+    "Independence（德州）磁廠 2H2026 投產",
+    "重稀土分離 commissioning",
+    "中國稀土出口管制／稀土價格"
+   ],
+   "fin": "FY26Q1 營收$90.65M（+49%），規模仍小、獲利薄；DoD 價格地板托底但增長高度依賴磁材放量。市值約$93 億。",
+   "risk": [
+    "Independence 2H2026 與 10X 2028 產能爬坡/良率執行風險",
+    "重稀土分離（Sm/Dy/Tb）尚未規模化驗證",
+    "稀釋：DoD Series A 特別股（轉換價$30.03）＋最多再 $350M＋認股權≈15% 政府股權，Apple 預付款",
+    "單一礦址集中（Mountain Pass）之營運/地質風險",
+    "中國以低價傾銷 NdPr 壓制商業端上行利潤分成"
+   ],
+   "fail": [
+    "DoD 價格地板/EBITDA 保證撤除或縮水 → 獨立經濟性顯薄，卡點降級為政策依賴",
+    "磁材 ramp 延遲或良率不達，磁材長期停留在低個位數%營收占比",
+    "NdPr 市價長期低於 $110、且 CfD 到期後無續約 → 商業毛利承壓"
+   ],
+   "fresh": "2026-05"
+  },
+  {
+   "m": "EU",
+   "tk": "RHM",
+   "co": "Rheinmetall AG",
+   "venue": "XETRA（法蘭克福）",
+   "cv": "Pre-ramp",
+   "ev": "A 財報/官方 + B 烏克蘭 155mm 具名訂單（order backlog 約€55B）",
+   "conf": "中",
+   "price": "€989.70（2026-07-10；fwd P/E≈30，5 年+1385%，估值極熱）",
+   "layer": "155mm 砲彈＋推進藥（硝化棉）歐洲產能卡點",
+   "thesis": "歐洲 155mm 砲彈與推進藥產能龍頭。真瓶頸已從砲彈鍛造上移到裝填端——歐洲僅一家主要 TNT 產能（波蘭）、硝化棉全球稀缺；Rheinmetall 併購 Hagedorn-NC 掌握硝化棉原料、垂直整合上游卡點，這是別人短期補不上的物理瓶頸。砲彈年產能拓向 1.5M 發（2030），Lower Saxony 新廠 35 萬發、西班牙 Expal 45 萬發；order backlog 約€55B。歐洲重整軍備下的裝藥／推進藥壟斷是最硬的一環。",
+   "warn": "估值極熱（fwd P/E≈30、5 年漲逾 1385%），已 price in 大量成長，故給 Pre-ramp、conf 中；獲利高度綁定地緣政治與政府預算週期，和平進程是主要下行催化。",
+   "devs": [
+    {
+     "d": "2026-06-30",
+     "t": "再獲烏克蘭 155mm 砲彈＋推進藥訂單（高雙位數百萬歐，Q2 認列、2027 交付）",
+     "u": "https://www.rheinmetall.com/en/media/news-watch/news/2026/06/2026-06-30-major-order-rheinmetall-to-supply-155mm-artillery-ammunition-to-ukraine"
+    },
+    {
+     "d": "2025-04-07",
+     "t": "收購 Hagedorn-NC 硝化棉廠，CEO 稱化解推進藥『戰略瓶頸』；推進藥產能 2028 前 +50%",
+     "u": "https://www.defensenews.com/global/europe/2025/04/07/rheinmetall-secures-nitrocellulose-supply-amid-european-ammo-scramble/"
+    }
+   ],
+   "cat": [
+    "歐洲重整軍備／烏克蘭補給",
+    "新砲彈廠 2026 上線",
+    "推進藥產能 2028 前 +50%"
+   ],
+   "fin": "order backlog 約€55B（2024 底），營收／獲利高速成長；但 fwd P/E≈30、5 年+1385%，估值為主要弱點。",
+   "risk": [
+    "估值極熱，任何和平進程／訂單放緩都放大回檔",
+    "獲利高度綁定地緣政治與政府預算週期",
+    "產能擴張執行；若填藥／推進藥上游瓶頸被外部補上，護城河下降",
+    "5 年巨幅漲幅後波動性高"
+   ],
+   "fail": [
+    "烏俄和平或歐洲國防支出見頂使訂單動能反轉",
+    "估值均值回歸而 backlog 兌現不如預期"
+   ],
+   "fresh": "2026-07"
+  },
+  {
+   "m": "US",
+   "tk": "TDG",
+   "co": "TransDigm Group",
+   "venue": "NYSE",
+   "cv": "Pre-ramp",
+   "ev": "FY26Q2：營收 $2,544M（+18.3%）、有機 +11.0%；商用後市場 +14%、國防 +11%、商用 OEM +12%；上調 FY26 指引至營收 ~$10.36B、EBITDA(as defined) ~$5.42B、調整後 EPS ~$39.52。FY2025：約90%營收來自專有產品、約75-80% sole-source；後市場約占營收55%、貢獻約75%獲利；EBITDA margin ~52.9%（FY25Q1）。FAA 認證使換料需重新取證，25-30 年機型壽命鎖定。淨負債 $27.4B ≈ 5.8x EBITDA。",
+   "conf": "高",
+   "price": "TTM P/E ~38.7、forward P/E ~29、EV/EBITDA ~20-21x（premium，在 TDG 歷史區間內但不便宜）；淨負債 $27.4B ≈ 5.8x EBITDA（公司目標 5-7x）。市值/估值均反映已充分定價的優質性。",
+   "layer": "航太後市場 sole-source 專有零件（FAA 認證重新取證形成機型壽命鎖定）",
+   "thesis": "真·卡點成立：航太後市場 sole-source 專有零件。約90%營收來自自有專利產品、約75-80% sole-source，FAA 認證與重新取證成本形成 25-30 年機型內獨家鎖定；後市場（約55%營收、約75%獲利）具高複現金流與逾50% EBITDA margin，每年具持續性提價力。FY26Q2 有機+11%、上調指引，基本面確為航太後市場最硬定價權標的之一。但以『買方進場』論，估值偏貴且淨槓桿極高、靠債務融資特別股息，屬高財務風險的優質資產，故列 Pre-ramp 而非 Core；待回檔或估值/槓桿改善再升級。",
+   "warn": "信念從 Core 下修至 Pre-ramp：卡點與護城河確為 Core 級，但估值偏貴（fwd P/E ~29、EV/EBITDA ~20x）加上『上市版 PE』模式的極高槓桿（5.8x EBITDA、以債務融資發特別股息，近一次 $90/股、$50 億新債支應）。此為財務槓桿與利率/週期風險，非本業空洞或股權稀釋；不宜以 Core『任何價位進場』看待。論點原述 43/32/25 營收拆分略不精確，實際約 40% 國防/32% 商用後市場/28% 商用 OEM。",
+   "devs": [
+    {
+     "d": "2026-05-06",
+     "t": "FY26 Q2：營收$2.544B +18%、有機+11%，EBITDA margin 52.6%，上調全年指引",
+     "u": "https://www.stocktitan.net/sec-filings/TDG/8-k-trans-digm-group-inc-reports-material-event-02213d58289f.html"
+    },
+    {
+     "d": "2026-05-06",
+     "t": "10-Q：淨利+12% 至$536M、adj EPS $9.85；淨負債續增",
+     "u": "https://www.stocktitan.net/sec-filings/TDG/10-q-trans-digm-group-inc-quarterly-earnings-report-4bb27f89210d.html"
+    }
+   ],
+   "cat": [
+    "航太後市場循環持續",
+    "FY26 Q3 財報（約2026-08）",
+    "國防後市場提列"
+   ],
+   "fin": "FY26Q2 營收$2.544B（+18%），有機+11%；EBITDA margin 52.6%；adj EPS $9.85（+8%）；淨利+12%。獲利品質極高但淨負債偏高、槓桿為主要弱點。",
+   "risk": [
+    "極高淨槓桿 ~5.8x EBITDA，利率上升與再融資風險；連續債務融資特別股息使資本結構脆弱",
+    "估值 premium（fwd P/E ~29、EV/EBITDA ~20-21x），基本面已充分定價，回檔空間大",
+    "監管/政治風險：曾遭 DoD 監察長（IG）點名 sole-source 國防零件超額定價、國會關注，未來提價力可能受政策壓制",
+    "商用 OEM 週期性（FY25 曾負成長）、航空需求與地緣（中東）波動",
+    "併購驅動成長，整合與 margin 稀釋（如 Simmonds Precision 拖累獲利率）"
+   ],
+   "fail": [
+    "監管強制 sole-source 定價上限或國防審計，導致後市場結構性提價力下滑",
+    "後市場有機成長轉為個位數以下且年度提價力消失",
+    "槓桿觸及再融資危機或信用評級大幅下調",
+    "查出營收並非真來自 sole-source（現況查核為 ~90% proprietary、~75-80% sole-source，屬實）"
+   ],
+   "fresh": "2026-05"
+  },
+  {
+   "m": "JP",
+   "tk": "3436",
+   "co": "SUMCO Corporation",
+   "venue": "東京證交所 TSE Prime",
+   "cv": "Pre-ramp",
+   "ev": "股價 ¥4,544（2026-07-09），市值 ¥1.59T，PBR ~3.1、P/S ~3.1x；仍虧損 Q1 FY2026 淨損 ¥8.4B、營業損失 ¥5.2B、forward P/E ~476；已由 52 週低點 ¥1,126 漲約 4 倍（高點 ¥5,309）。Q2 指引營收 ¥112B、營業損失收斂至 ¥2.5B。",
+   "conf": "中",
+   "price": "進場需紀律：現價已 pricing in 復甦，宜等回檔或等連續 2 季獲利/單價回升確認再加碼；不追高。",
+   "layer": "最上游基材：300mm 半導體級矽晶圓（prime polished / epi，2-3nm 超平坦等級）",
+   "thesis": "與信越並列的 300mm 矽晶圓雙寡頭（合計市佔 50%+，SUMCO ~23-25%），全球先進製程前段基材的物理瓶頸，AI logic/DRAM 拉貨強、200mm/非 AI 弱。屬循環底部復甦：營業損失由 Q1 ¥5.2B 收斂至 Q2 指引 ¥2.5B、營收 ¥101.4B→¥112B。護城河為 Core 等級，但獲利尚未轉正、進場價已過熱，故信念僅給 Pre-ramp。",
+   "warn": "估值過熱：股價自谷底約 4 倍、PBR~3.1，公司仍淨虧損、forward P/E 失真，Q1 實際 miss 並下修上半年展望，復甦被市場提前重押。護城河雖屬 Core 等級，但獲利未確認+價格已熱，僅能給 Pre-ramp，切勿因『雙寡頭』故事給高信念。",
+   "devs": [
+    {
+     "d": "2026-05-11",
+     "t": "Q1 FY2026 營收¥101.4B、營業虧損 -¥5.2B",
+     "u": "https://finance.biggo.com/news/jpx_tdnet_140120260511523138"
+    },
+    {
+     "d": "2026-05-11",
+     "t": "Q2 指引營收¥112B、虧損收斂至 -¥2.5B，AI 300mm 強",
+     "u": "https://www.investing.com/news/transcripts/earnings-call-transcript-sumco-misses-q1-2026-expectations-stock-dips-93CH-4698631"
+    },
+    {
+     "d": "2026",
+     "t": "AI 先進 logic/DRAM 拉貨、NAND/伺服器 SSD 復甦訊號",
+     "u": "https://www.investing.com/news/company-news/sumco-q4-2025-slides-revenue-beats-forecast-amid-continued-losses-ai-demand-offers-hope-93CH-4505783"
+    }
+   ],
+   "cat": [
+    "300mm 矽晶圓",
+    "雙寡頭",
+    "先進製程基材",
+    "循環底部"
+   ],
+   "fin": "Q1 FY2026 營收¥101.4B、營業虧損 -¥5.2B；Q2 指引營收¥112B、虧損收斂至 -¥2.5B；維持股利政策；市值¥1.6兆。",
+   "risk": [
+    "循環性強：非 AI / 200mm 需求疲弱與庫存調整拖累整體",
+    "中國 300mm 本土化替代長線侵蝕份額/定價",
+    "LTA 長約價格重談與晶圓單價下行風險",
+    "先進製程擴產 capex 沉重、折舊壓縮利潤",
+    "日圓匯率波動影響獲利品質（過往靠 forex gain）",
+    "股價已高，循環反轉不如預期時回檔幅度大"
+   ],
+   "fail": [
+    "Q2/Q3 未能如指引收斂虧損、營收停滯或再度下修",
+    "AI 300mm 拉貨轉弱或客戶庫存去化拉長",
+    "中國本土晶圓在成熟/次先進節點快速上量壓價",
+    "再融資/大規模增資稀釋（目前查無，一旦出現應改列避雷）",
+    "晶圓 ASP 因供給過剩結構性下滑，破壞雙寡頭定價力"
+   ],
+   "fresh": "2026-07-12 查；最新 Q1 FY2026(2026-05-11)+Q2 指引"
+  },
+  {
+   "m": "JP",
+   "tk": "4186",
+   "co": "Tokyo Ohka Kogyo (東京應化 TOK)",
+   "venue": "東京證交所 TSE Prime",
+   "cv": "Pre-ramp",
+   "ev": "卡點寡佔已證：EUV光阻全球前3(JSR/TOK/信越)合計市佔>90%；TOK自稱光阻世界市佔第1約24.7%(Nomura稱JSR 27%居首、TOK緊追)，均屬近寡佔且需客戶長期認證。實際量產營收非題材：FY2025 EUV光阻營收+50%、WHS先進封裝材料+170%(生成式AI驅動)。FY2025營收¥2,370億(+17.9%)、營益¥473億(+43.2%)、淨利¥333億(+47%)全創高；FY2026指引營收¥2,610億(+10.1%)/營益¥522億再創高(連三年)，Q1 FY2026營收+23.6%、營益+53.8%。JSR 2024-06-25被JIC私有化下市，TOK為最乾淨上市純·光阻標的屬實。記錄級capex ¥358億自建郡山/福島產能。",
+   "conf": "高",
+   "price": "現價~¥10,300(2026-07)、市值~¥1.29兆。PER約30x(部分口徑近trailing 38x)，minkabu判定『割高』、理論價僅¥5,247。52週區間¥5,883~¥12,925，自2026-01低點已近翻倍。非現價買點；等回檔至PER 20x上下或AI資本支出循環雜訊時分批建倉。",
+   "layer": "微影耗材：EUV/ArF/KrF 光阻 + 先進封裝(WHS)材料（近寡佔卡點）",
+   "thesis": "全球光阻近寡佔龍頭之一：EUV光阻前3家(JSR/TOK/信越)合計佔該環節>90%，TOK市佔第1~第2、且是EUV光阻商用化最前線的核心供應商，下游先進製程(TSMC/Samsung/Intel)剛性依賴、切換需長期認證=真·卡點。龍頭JSR 2024私有化下市後，TOK成為最乾淨的上市純·光阻標的。生成式AI帶動EUV光阻+50%、先進封裝(WHS)材料+170%，FY2026連三年創高。惟現價已自年初低點翻倍、估值偏熱，屬高品質卡點但非現價買點，宜回檔分批而非追高，故列Pre-ramp而非Core。",
+   "warn": "估值過熱：股價半年內近翻倍、PER約30x且被判『割高』(理論價遠低於現價)，AI循環高點追價風險高，故信念自Core下修為Pre-ramp。營收與獲利高度綁定生成式AI/先進製程資本支出循環，屬循環性峰值，別把峰值外推當常態。追高買在循環頂為主要虧損來源。",
+   "devs": [
+    {
+     "d": "2026-02-09",
+     "t": "FY2025 連二年創高、EUV 光阻+50%、WHS 材料+170%",
+     "u": "https://finance.biggo.com/news/JP_4186.T_2026-02-09"
+    },
+    {
+     "d": "2026-05-11",
+     "t": "Q1 FY2026 營收+23.6%、營益+53.8%，重申財測",
+     "u": "https://finance.biggo.com/news/jpx_tdnet_140120260511521683"
+    },
+    {
+     "d": "2026-03",
+     "t": "福島購地建新光阻廠，郡山新棟 2026 下半投產",
+     "u": "https://www.theglobeandmail.com/investing/markets/stocks/TOKCF/pressreleases/1864524/tokyo-ohka-kogyo-delivers-strong-q1-results-and-confirms-2026-outlook/"
+    }
+   ],
+   "cat": [
+    "EUV 光阻",
+    "先進封裝材料",
+    "寡佔龍頭",
+    "AI 曝險"
+   ],
+   "fin": "FY2025 營收¥237B(+17.9%)、營益¥47.3B(+43%)；FY2026 指引營收¥261B、營益¥52.2B；Q1 FY2026 營收¥67B(+23.6%)、營益¥15B(+54%)。",
+   "risk": [
+    "生成式AI/先進製程資本支出循環反轉，EUV光阻與WHS材料需求回落，峰值獲利均值回歸",
+    "估值偏熱(PER~30x、被判割高)，循環見頂時本益比與獲利雙殺",
+    "EUV光阻寡佔對手信越、及被JIC重本挹注的JSR加大競爭，市佔/毛利受壓",
+    "PFAS法規與高NA下一代光阻技術路線轉換風險(TOK已投資Irresistible Materials避險，但落後即被替代)",
+    "日圓匯率：近期增益部分來自円安，匯率反轉削弱獲利",
+    "客戶高度集中於少數先進晶圓廠，單一客戶擴產節奏波動放大營收波動"
+   ],
+   "fail": [
+    "EUV光阻/先進封裝材料連續兩季營收年減，或AI相關訂單明顯轉弱",
+    "FY2026實績跌破指引、連三年創高落空",
+    "全球EUV光阻市佔跌出前2、或前3寡佔集中度(>90%)被打破",
+    "毛利率/營益率因競爭或降價連續數季明顯下滑",
+    "出現與本業無關的連環併購/增資或本業獲利空洞化跡象(目前無)",
+    "PER持續>35x且無獲利成長支撐(純估值擴張)"
+   ],
+   "fresh": "2026-07-12 查；最新 Q1 FY2026(2026-05-11 揭露)+FY2026 指引"
+  },
+  {
+   "m": "JP",
+   "tk": "5016",
+   "co": "JX Advanced Metals (JX金屬)",
+   "venue": "東京證交所 TSE Prime",
+   "cv": "Pre-ramp",
+   "ev": "全球半導體濺鍍靶材約60%市佔（部分來源64%），Cu/Ta/Ti/W/Co 靶材世界No.1；礦→冶煉精煉→6N(99.9999%)靶材全供應鏈整合，已 qualify 進先進製程金屬化(Cu 內連線/Ta 障壁層)。2025-03 自 ENEOS 分拆 IPO。FY2026 實績約營收¥884B、營益¥175B、淨利¥105B（優於提名上修的¥790B/¥125B/¥79B）。ENEOS 經 JX 庫藏股公開收購由42.38%減至35.28%（買回非稀釋）。來源：JX IR、GII/Wikipedia 市佔、ir-tracker 財報、ENEOS/TradingView 減持公告。",
+   "conf": "高",
+   "price": "PER 約31–42x、PBR 約4.5x、市值約¥4.94T、近價約¥4,577（一年大漲後）；遠高於同業(~31x)與產業(~13x)平均。",
+   "layer": "PVD 金屬化：半導體濺鍍靶材(6N 高純度 銅/鉭/鋁鈧/鈦/鎢/鈷)",
+   "thesis": "半導體濺鍍靶材近寡佔龍頭：約60%全球市佔、Cu/Ta/Ti/W/Co 靶材世界第一，垂直整合到 6N 超高純度、已進先進製程金屬化世界標準。卡點品質為 Core 級。惟(1) 估值過熱，(2) 上修動能與很大一塊營收其實來自週期性銅冶煉/貿易而非純靶材，故現階段以 Pre-ramp 觀察、待估值消化或銅價週期回檔再考慮加碼至 Core。",
+   "warn": "估值過熱（PER~30–40x、PBR~4.5x、大漲一年），不宜現價給 Core 高信念。且 FY 上修主要由銅價推動，本業含一大塊週期性銅冶煉/貿易，膨脹帳面獲利、稀釋純靶材高毛利敘事——勿把整體財報當靶材業成長。ENEOS 仍持35%，將持續減持，賣壓懸頂。",
+   "devs": [
+    {
+     "d": "2025-03",
+     "t": "自 ENEOS 分拆於東證上市，轉型半導體材料",
+     "u": "https://asia.nikkei.com/business/markets/ipo/fresh-from-ipo-japan-s-jx-advanced-metals-aims-for-new-start-as-chip-sector-stock"
+    },
+    {
+     "d": "2026",
+     "t": "Q3 FY2026 淨利+65%、營收+10%，優於預期",
+     "u": "https://www.smartkarma.com/home/newswire/earnings-alerts/jx-advanced-metals-5016-earnings-reveal-robust-fy-net-sales-of-930-billion-yen/"
+    },
+    {
+     "d": "2026",
+     "t": "FY 財測上修：營收¥790B、營益¥125B、淨利¥79B",
+     "u": "https://www.smartkarma.com/home/newswire/earnings-alerts/jx-advanced-metals-5016-earnings-fy-net-sales-and-income-forecasts-revised-upward/"
+    }
+   ],
+   "cat": [
+    "濺鍍靶材",
+    "近獨佔",
+    "PVD 金屬化",
+    "2025 新上市"
+   ],
+   "fin": "Q3 FY2026 營收¥218.1B(+10%)、淨利¥36.6B(+65%)、利潤率 17%；FY 上修：營收¥790B、營益¥125B、淨利¥79B。",
+   "risk": [
+    "ENEOS 35% 持股續減持之賣壓",
+    "銅價週期性拖累合併損益（本業非全為高純靶材）",
+    "中韓客戶端國產化/認證侵蝕60%市佔",
+    "競品 Honeywell、Materion、Tosoh、Ulvac、Mitsui 追趕",
+    "少數先進 fab 客戶集中",
+    "轉向積極資本支出、股東回報後撤"
+   ],
+   "fail": [
+    "先進製程金屬化改用 Ru/Mo/W 等新內連線金屬使 Cu/Ta 靶材優勢流失",
+    "中/韓/台在地靶材完成認證、60%市佔明顯下滑",
+    "靶材皇冠實為小占比、合併 P&L 被銅冶煉商品波動主導",
+    "ENEOS 或後續大股東大量出脫壓垮股價/流動性"
+   ],
+   "fresh": "2026-07-12 查；最新 Q3 FY2026 + FY 上修指引"
+  },
+  {
+   "m": "JP",
+   "tk": "7741",
+   "co": "HOYA Corporation (豪雅)",
+   "venue": "東京證交所 TSE Prime",
+   "cv": "Pre-ramp",
+   "ev": "EUV 光罩基板雙寡佔(HOYA+AGC 合計~90-93%，HOYA EUV 專項約 30-35%、整體光罩基板為龍頭)；FY2026 guidance 營收 ¥444B(+3.6%)、稅前利益 ¥135B(+6.3%)、EPS ¥303 級距上修；IT 部門營收 +12%(固定匯率)，EUV blanks 與 HDD 基板擴產；ROE ~24-25%、營益率 >25%、持續買回並註銷庫藏股(股數 -2.14%/年)",
+   "conf": "中",
+   "price": "¥24,975 (2026-07-10，自高點 ¥27,245 回落)；forward PE ~35x、trailing ~37x，遠高於同業均值 ~25.5x，合理 PE 估 ~27x → 估值過熱",
+   "layer": "微影最上游：EUV/DUV 光罩基板(mask blank)",
+   "thesis": "EUV 光罩基板為 HOYA + AGC 雙寡佔（兩家合計約 90-93%），非單一近獨佔——EUV 專項 AGC 佔比較大(~59%)、HOYA 約 30-35%，但 HOYA 在整體光罩基板(含 ArF/KrF)為龍頭。技術門檻極高(Mo/Si 40+ 層鍍膜、相位缺陷密度 <0.1/cm²、超低膨脹石英基板)，2nm/3nm 先進製程曝光的物理咽喉，下游全依賴。IT 部門(半導體光罩基板 + HDD 玻璃基板)為獲利引擎，FY2026 創新高並上修。屬真實卡點雙寡佔者，但非提名所稱之近獨佔龍頭。",
+   "warn": "論點兩處失真已下修：(1) EUV 專項非 HOYA 近獨佔 60-80%，實為 HOYA+AGC 雙寡佔且 AGC 於 EUV 佔比較大(~59%)——提名把整體光罩基板龍頭地位錯植到 EUV；(2) 估值過熱(forward PE ~35x vs 同業 ~25x)，已充分定價，故由 Core 下修至 Pre-ramp，待估值回歸或 EUV 專項份額改善再考慮升評",
+   "devs": [
+    {
+     "d": "2026-01-30",
+     "t": "Q3 FY2026 掩膜基板+HDD 帶動、上修全年財測",
+     "u": "https://finance.biggo.com/news/jpx_tdnet_140120260130542632"
+    },
+    {
+     "d": "2026-05",
+     "t": "FY2026 全年營收獲利創新高(IT 段強)",
+     "u": "https://www.hoya.com/en/investor/kessan/"
+    },
+    {
+     "d": "2026",
+     "t": "新加坡/越南 EUV 元件產能擴張",
+     "u": "https://www.hdinresearch.com/news/1513"
+    }
+   ],
+   "cat": [
+    "EUV 光罩基板",
+    "近獨佔",
+    "先進製程",
+    "AI 曝險"
+   ],
+   "fin": "9個月營收¥699.6B(+7.8%)、稅前+30.1%；全年上修營收¥940B、獲利¥254B；營益率~30%；自由現金流強、財務淨現金。",
+   "risk": [
+    "估值 de-rate 風險：forward PE ~35x，任何成長放緩或市場情緒轉冷都可能顯著回檔",
+    "EUV 專項競爭：AGC 為同級甚至更大玩家，信越亦切入，份額非提名所稱之壟斷",
+    "HDD 玻璃基板需求循環性：nearline HDD/AI 資料中心需求若反轉將拖累 IT 部門",
+    "日圓匯率波動影響換算後獲利",
+    "半導體資本支出循環下行風險"
+   ],
+   "fail": [
+    "若 EUV 專項份額被證實顯著低於論點宣稱、AGC 主導地位擴大",
+    "估值壓縮/PE 回落至同業 ~25x 以下且獲利未同步成長",
+    "HDD 玻璃基板或先進節點光罩基板需求明顯轉弱",
+    "FY 上修動能反轉或連兩季 guidance 下修"
+   ],
+   "fresh": "2026-07-12 查；最新 Q3 FY2026(截至2025-12)+FY2026 全年(2026-05)"
+  },
+  {
+   "m": "US",
+   "tk": "ENTG",
+   "co": "Entegris, Inc.",
+   "venue": "那斯達克 NASDAQ",
+   "cv": "Pre-ramp",
+   "ev": "Q1 2026 營收 $811.9M(+5.0% YoY)、GAAP 營益率 17.4%(自 15.8% 升)、非 GAAP 營益率 23.6%、淨利 +46.3% 至 $92.0M、EPS GAAP $0.60 / 非 GAAP $0.86、營運現金流 $183M / FCF $143.5M（SEC 8-K Q1 2026 ex99.2 核實）。CMP 研磨液全球市占~23%、居 #1~2，前五大合計~64%（寡佔）；qualify 於幾乎所有 Tier-1 fab；2023 部署逾 6300 萬支 CMP 過濾器。CMC 併購案 2022 年 $5.7B、發行 1290 萬股。",
+   "conf": "中",
+   "price": "股價~$184（2026-06）；forward PE~40（略高於半導體中位~38），trailing PE~106；分析師 12 個月共識目標價~$156.56（低於現價，隱含下行），最高 $205（UBS 2026-05）。估值已偏貴，安全邊際薄。",
+   "layer": "製程耗材/污染控制：CMP 研磨液+研磨墊、超高純過濾、材料/氣體輸送(FOUP/液體輸送)",
+   "thesis": "併購 CMC Materials 後成為 CMP 研磨液/墊(全球市占~23%、#1~2)+ 超高純過濾 + 材料/液體輸送的耗材整合龍頭；配方已 qualify 進近乎全部 Tier-1 晶圓廠製程流程，替換需重新認證、成本與風險極高，形成真實 qualified-in 卡點。營收隨晶圓產能與製程微縮呈 unit-driven 放量，具耗材複購性與抗週期底盤。屬結構性卡點而非題材，但當前為週期性半導體材料股、且估值已反映多數多頭情境。",
+   "warn": "估值過熱：trailing PE~106、forward PE~40，且分析師共識目標價已低於現價，追高風險高——故信念自 Core 下修至 Pre-ramp，宜等回檔或 WFE 週期低點再加碼，不可在此價位當高信念核心持股。",
+   "devs": [
+    {
+     "d": "2026-04-30",
+     "t": "Q1 2026 營收+5%、EPS+46%，多項超財測",
+     "u": "https://www.entegris.com/en/home/about-us/news/entegris-reports-results-for-first-quarter-2026.html"
+    },
+    {
+     "d": "2026-04-30",
+     "t": "Q2 2026 指引營收 $815-845M、EBITDA 率 27-28%",
+     "u": "https://www.marketbeat.com/instant-alerts/entegris-nasdaqentg-issues-q2-2026-earnings-guidance-2026-04-30/"
+    },
+    {
+     "d": "2026",
+     "t": "示警中東擾動帶來原料成本壓力(暫吸收)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001101302/000110130226000099/entgq12026ex991.htm"
+    }
+   ],
+   "cat": [
+    "CMP 研磨液/墊",
+    "過濾純化",
+    "製程耗材",
+    "高替換成本"
+   ],
+   "fin": "Q1 2026 營收$812M(+5%)、GAAP EPS$0.60(+46%)、營益率 17.4%；Q2 指引$815-845M、EBITDA 率 27-28%；長債~$37-42億、槓桿~4x。",
+   "risk": [
+    "半導體資本支出/WFE 週期性：耗材雖較穩，但成熟/記憶體產能與晶圓廠稼動率下行會壓縮出貨與利潤",
+    "CMC 併購遺留高債務(長債~$3.7-4.2B)，去槓桿中，升息或現金流轉弱會限制回購/彈性",
+    "晶圓廠推動多元供應(multi-source)以分散對 Entegris–CMC 整合後的集中度依賴，可能侵蝕特定 application 市占",
+    "估值高，任何營收 miss 或毛利不如預期都可能引發較大回檔",
+    "地緣/出口管制對先進節點材料出貨的潛在限制"
+   ],
+   "fail": [
+    "連續兩季營收/營益率不及財測，或 CMP/過濾耗材出貨隨稼動率明顯下滑，顯示 unit-driven 底盤失效",
+    "主要 Tier-1 fab 大規模導入第二供應商(Fujimi/Resonac/DuPont/JSR)並奪取關鍵節點認證，市占結構性流失",
+    "去槓桿停滯、自由現金流轉負或被迫再發股籌資(顯示本業造血不足)",
+    "毛利/營益率在營收成長下反而走弱，顯示定價權/卡點溢價被侵蝕"
+   ],
+   "fresh": "2026-07-12 查；最新 Q1 2026(截至2026-03-28)+Q2 指引，Q2 實績約 8 月公布"
+  },
+  {
+   "m": "EU",
+   "tk": "PRY",
+   "co": "Prysmian",
+   "venue": "Borsa Italiana（米蘭）",
+   "cv": "Core",
+   "ev": "三家寡佔屬實：Prysmian/Nexans/NKT 合佔西方 HV 市場 >75%，Prysmian 全球海纜/陸纜 HV ~35-40%。三家 confirmed backlog 合計約 €38.4B（第三方 tracker NeoMarketData），產能售罄至 2029+、DC 海纜等候逾 5 年；Prysmian 自身 Transmission backlog 約 €16B。進入障礙為 TSO 多年認證＋垂直 CCV 硫化塔＋專用佈纜船=真實體卡點。輸電段營收真實且擴張：Q1'26 Transmission adj. EBITDA €146m/營收 €727m、margin 20.1%（vs Q1'25 16.9%，+320bps）。Encore Wire €3.9B EV 併購以現金 €1.1B + 債務 €3.4B 融資（非增資稀釋），EPS 增益 ~20-30%，無連環稀釋/本業空洞。",
+   "conf": "高",
+   "price": "BIT:PRY ~€153（2025Q4）；fwd EV/EBITDA ~15-19x、trailing P/E ~22x，相對 GE Vernova/Siemens Energy 較便宜但已顯著 re-rate；12M 分析師均價目標 ~€146（略低於現價，區間 €90-178）。",
+   "layer": "高壓/超高壓電纜、HVDC 海纜與陸纜（輸電段）",
+   "thesis": "HVDC/HV 海纜與陸纜輸電段為 Prysmian/Nexans/NKT 三家近寡佔（西方 >75%），真實體卡點=TSO 多年認證＋垂直 CCV 硫化塔＋專用佈纜船；三家 confirmed backlog 合計 ~€38.4B、售罄至 2029+，DC 海纜等候逾 5 年。Prysmian 全球最大（HV ~35-40%），Transmission margin 擴張至 20.1%（Q1'26）、現金流強勁；Encore Wire 併購以現金+債融資、EPS 增益、無稀釋，強化美國資料中心/配電曝光。物理瓶頸＋真實且擴張營收＋乾淨資產負債，屬本組最乾淨 Core。唯估值已滿、股價高於分析師均價目標，須以進場紀律與 sizing 看待，非估值便宜之標的。",
+   "warn": "估值已充分/偏滿：股價高於分析師均價目標（~€146 vs ~€153），P/E 與 EV/EBITDA 皆非便宜，屬已被充分發掘的大型股（~€40B+），非隱藏標的——非卡點真偽問題，而是進場價/報酬空間問題，需注意進場紀律與 sizing。提名論點兩處更正：(1)『Transmission Q1 毛利率升至 20.1%』實為 Q1 2026 之 adjusted EBITDA margin（非毛利率、非 Q1'25）；(2) €38.4B 為三家合計 backlog（第三方 tracker），非 Prysmian 單獨（其自身 ~€16B）。",
+   "devs": [
+    {
+     "d": "2026",
+     "t": "Q1 2026：Transmission營收€727M、EBITDA €146M(毛利20.1%)，資料中心/電網驅動；FY26指引EBITDA €2.7B、FCF €1.35B",
+     "u": "https://www.investing.com/news/company-news/prysmian-q1-2026-slides-margin-expansion-accelerates-on-data-center-push-93CH-4648257"
+    },
+    {
+     "d": "2026",
+     "t": "Prysmian/Nexans/NKT合計backlog €38.4B、產能售罄至2029後，DC海纜等候>5年；Prysmian約$2B產能擴張至2027(525kV海纜/400kV AC產能翻倍)",
+     "u": "https://energy-solutions.co/reports/hvdc-copper-purity-crisis/"
+    }
+   ],
+   "cat": [
+    "HVDC 海纜",
+    "高壓電纜",
+    "輸電",
+    "資料中心配電"
+   ],
+   "fin": "FY26指引EBITDA €2.7B、FCF €1.35B；Transmission Q1毛利20.1%；三雄合計backlog €38.4B售罄至2029+；市值約€43B",
+   "risk": [
+    "專案執行/認證延誤或海纜施工事故導致罰款與 margin 回吐（輸電段大型 EPC 固有風險）",
+    "銅等原物料價格波動：雖多為 pass-through，但衍生品 fair value 變動會影響單季損益",
+    "Encore Wire 舉債後淨負債與利息成本上升",
+    "需求高度綁定離岸風電/電網政策與 FID 時程，利率或補貼環境轉變可能延後專案",
+    "2029 後供需風險：三家（或中資中天/亨通）同步擴產（新硫化塔/新船）可能使產能不再售罄、定價力鬆動",
+    "估值已 re-rate，對任何執行 miss 敏感"
+   ],
+   "fail": [
+    "新進者（含中資）取得 TSO 認證並拿下大型 HVDC 海纜標案，打破三家寡佔",
+    "backlog 出現實質取消/延後，或訂單出現價格戰使 Transmission margin 明顯壓縮並回落至 <15%",
+    "三家或中資大幅擴產致產能不再售罄、等候名單消失",
+    "Transmission cash generation 惡化，或本業現金流被併購/資本支出吸乾",
+    "出現大額增發/稀釋（改變目前無稀釋、乾淨資產負債的前提）"
+   ],
+   "fresh": "Q1 2026 財報為最新；價格 2026-06-19"
+  },
+  {
+   "m": "KR",
+   "tk": "267260",
+   "co": "HD Hyundai Electric（HD현대일렉트릭）",
+   "venue": "KRX（KOSPI）",
+   "cv": "Pre-ramp",
+   "ev": "128 週標準電力變壓器交期(Wood Mackenzie Q2'25 survey，GSU 144 週)；GOES 美國本土單一產源=Cleveland-Cliffs、全球約 5 家寡佔約 3.5-4Mt 難擴產。HD 現代電機(267260)Q1'26 backlog $7.89B(>2 年營收，較 2025 底 +17.2%)、Q1 新單 $1.8B(YoY +34.6%，季高)、其中 73.2% 來自北美；2026-07-02 揭露與單一 global big-tech 之北美資料中心 master supply agreement 上限 ₩1.12T(~$720M，分拆為配電 ₩553.9B＋電力/EHV ₩567.3B，交付至 2028、依客戶工程分批下單，具約束力非框架任選)；2026-07-06 上調 2026 全年接單目標至 $5.185B(+22.8%)。Alabama 二廠 ~$200M、EHV 產能 +50% 並建 765kV 製造/測試，約 2027-04 完工。獲利端 Q1'26 營益率 24.9%(Q4'25 創高 27.6%)、ROE~44%、ROIC~65%。估值：前瞻本益比~26、EV/EBITDA~25.5、股價一年 +80~108%。",
+   "conf": "中",
+   "price": "約 KRW 947,000(2026-07 近期)；前瞻本益比~26、EV/EBITDA~25.5；分析師共識目標約 KRW 1.40M。屬峰值週期估值搭峰值利潤，非便宜。",
+   "layer": "超高壓變壓器(765kV EHV)/GSU、配電設備、開關；上游卡點=GOES 取向電磁鋼(Cleveland-Cliffs 美國唯一產源＋全球五家寡佔)；壁壘=765kV EHV 之公用事業/客戶認證與資格切換成本",
+   "thesis": "美國老化電網汰換＋AI 資料中心新建同時拉爆超高壓變壓器需求；北美本土產能與 GOES(取向電磁鋼，美國唯一產源 Cleveland-Cliffs、全球五家寡佔)雙重瓶頸使交期達 128 週起。真正近獨佔卡點在 GOES 鋼與『少數具 765kV EHV 認證/資格的 OEM』這道資格壁壘；韓國三雄(HD 現代/Hyosung/LS)為美國補缺主力，HD 現代以已具北美製造(Alabama 擴建 765kV)＋可查證的具約束力長約(2026-07 ₩1.12T)成為寡佔受惠者。定位為卡點『受惠者』而非卡點『持有者』，故 Pre-ramp。",
+   "warn": "(1)框架修正：HD 現代是寡佔受惠者，非卡點持有者本身——真卡點是 GOES 鋼(Cliffs)＋五家寡佔，變壓器端仍有 Hyosung/LS/Hitachi Energy/Siemens Energy/GE Vernova/Mitsubishi 競逐，勿誇大為獨佔。(2)估值偏熱：前瞻 PE~26、EV/EBITDA~25 建立在營益率 24.9~27.6% 的週期峰值上，股價一年翻倍；一旦利潤/接單見頂即殺估值＋殺 EPS 雙擊，故僅 Pre-ramp 不可升 Core。(3)KR 上市無美國 ADR，FX/進出場受限。",
+   "devs": [
+    {
+     "d": "2026-07-02",
+     "t": "與單一global big-tech簽₩1.12T(~$721M)北美資料中心電力長約，含765kV EHV變壓器＋配電設備，交付至2028",
+     "u": "https://thegatbull.com/hd-hyundai-electric-bigtech-contract-autopsy/"
+    },
+    {
+     "d": "2026",
+     "t": "Q1 backlog $7.89B(+28%)、新單$1.8B創季高、73%來自北美；上調全年訂單目標至$5.185B(+22.8%)",
+     "u": "https://moatalpha.com/hd-hyundai-electric-analysis-2026/"
+    },
+    {
+     "d": "2026-05-01",
+     "t": "韓國電力設備三雄靠美國電網＋AI熱潮拿下創紀錄訂單、765kV EHV需求強",
+     "u": "https://en.sedaily.com/news/2026/05/01/korean-power-equipment-makers-clinch-record-orders-on-us"
+    }
+   ],
+   "cat": [
+    "超高壓變壓器",
+    "EHV 765kV",
+    "配電設備",
+    "美國電網汰換"
+   ],
+   "fin": "Q1 backlog $7.89B(>2年營收)；Q1新單$1.8B(+34.6%)、73%北美；全年訂單目標$5.185B；電力設備營益率約27%；市值約₩29T",
+   "risk": [
+    "變壓器為典型景氣循環，峰值營益率(~25-28%)不可持續，backlog 是能見度非永久性",
+    "₩1.12T 為上限之分批長約、依客戶(未具名 big-tech)工程進度下單，資料中心資本支出放緩或客戶集中風險可致遞延/縮量",
+    "估值峰值(前瞻 PE~26、EV/EBITDA~25)對接單/利潤反轉高度敏感，回檔幅度大",
+    "自身仍受同一 GOES 鋼瓶頸與投入成本上行影響；ArcelorMittal 阿拉巴馬廠(2027)、Cliffs 擴產或緩解稀缺性",
+    "財閥折價與 KR 公司治理，且無美國 ADR，FX 與流動性/進出場限制"
+   ],
+   "fail": [
+    "季度接單/backlog 由北美掉頭連兩季下滑，或北美新單占比顯著回落",
+    "營益率自 ~25% 明顯收斂(跌破~18-20%)顯示峰值反轉",
+    "₩1.12T 長約出現重大遞延/縮減，或後續無新的具約束力大單接棒(接單目標 $5.185B 跳票)",
+    "ArcelorMittal 2027 阿拉巴馬廠或 Cliffs 擴產使 GOES/交期瓶頸實質緩解、報價回落",
+    "出現配股/可轉債等稀釋或本業以外重資產轉投拖累(目前未見，須持續監看)"
+   ],
+   "fresh": "Q1 2026 財報＋2026-07-02 大單揭露為最新；價格 2026-07-09"
+  },
+  {
+   "m": "JP",
+   "tk": "6501",
+   "co": "Hitachi（日立製作所）／Hitachi Energy",
+   "venue": "TSE（東京）",
+   "cv": "Pre-ramp",
+   "ev": "事業層(高信心):Hitachi Energy 為全球變壓器/HVDC 龍頭——累計整合 HVDC >150GW、製造 550+ 台 80kV–1,100kV DC 換流變壓器、握 1,100kV DC 世界紀錄;HVDC 換流站/UHV 變壓器為近寡佔(對手僅 Siemens Energy、GE Vernova、Toshiba),交期以年計、認證+產線為硬瓶頸。$4.5B(2027 前)投資解變壓器荒(含 Ludvika 擴廠、+2,000 人、+$250M/2025-03)。訂單能見度高(印度單區在手 ~$3.5B),Energy 有機成長 ~15%,約佔集團 1/3 營收、為最大成長引擎。載體層(信心打折):純卡點事業只能透過綜合集團股 6501 間接持有,Energy 僅 ~1/3,曝險被稀釋。估值:6501 ¥4,700、市值 ~¥21T($147B)、fwd PE ~23 / trailing ~27 / EV/EBITDA ~11、52 週 +14%、賣方共識 Buy、目標價 ~+20% 上行。",
+   "conf": "中",
+   "price": "6501 ~¥4,700;市值 ~¥21T/$147B;fwd PE ~23、trailing ~27、EV/EBITDA ~11;52 週 +14%;分析師共識 Buy、目標 ~+20%。估值偏滿但非泡沫。",
+   "layer": "超高壓變壓器、HVDC 換流站/換流變壓器、GIS——Hitachi Energy 全球龍頭(HVDC 累計 >150GW、寡佔);唯一可及載體為綜合集團 6501",
+   "thesis": "用集團股 6501 間接持有全球變壓器/HVDC 卡點龍頭 Hitachi Energy:近寡佔、認證+年計交期護城河、$4.5B 擴產解全球變壓器荒、在手訂單能見度高。純卡點但無純載體——Energy 僅佔集團約 1/3 營收,故只能給 Pre-ramp。",
+   "warn": "這是『卡點味道的集團股』而非純卡點:Energy 僅約 1/3 集團營收,其餘來自 Digital Systems/Lumada、Mobility 等,卡點曝險被大幅稀釋——集團其他事業波動會蓋過電網主題。付的是集團 fwd PE ~23 的偏滿倍數,卻只買到 1/3 的卡點。若出現流動性更純的變壓器/HVDC 標的應優先替換;此標的定位為『高品質但曝險不純』的間接持有。",
+   "devs": [
+    {
+     "d": "2026-06-10",
+     "t": "Hitachi Investor Day 2026：Energy佔集團約1/3營收、最大成長引擎，FY26營收指引¥3,700B(+15%)、adj EBITA ¥500B",
+     "u": "https://www.hitachi.com/content/dam/hitachi/global/en/press/files/2026/06/260610/20260610_01_energy_en.pdf"
+    },
+    {
+     "d": "2025",
+     "t": "Hitachi Energy宣布追加$4.5B(合計約$6B至2027)擴變壓器等電網產能，解全球變壓器荒",
+     "u": "https://finance.yahoo.com/news/hitachi-energy-invest-additional-4-060700413.html"
+    }
+   ],
+   "cat": [
+    "超高壓變壓器",
+    "HVDC",
+    "GIS",
+    "電網龍頭"
+   ],
+   "fin": "Energy段FY26指引營收¥3,700B(+15%)、adj EBITA ¥500B；佔集團約1/3；集團FY26營收指引¥11,100B；集團市值約¥22T",
+   "risk": [
+    "載體稀釋:Energy 僅 ~1/3,集團其他分部(Digital/Mobility)拖累會蓋過卡點論點",
+    "估值偏滿(fwd PE ~23、52 週 +14% 後),電網 capex 若見頂或延後,綜合股評價與訂單同步回落",
+    "FY26 指引已內含中東相關營收風險(集團曾提 ~¥40B 風險);地緣/專案遞延影響 Energy 交付",
+    "日圓匯率與 ADR 溢價影響外資實得報酬;無純載體導致難精準加減碼卡點曝險"
+   ],
+   "fail": [
+    "電網/資料中心 capex 週期見頂,變壓器與 HVDC 在手訂單成長轉弱、報價鬆動→卡點稀缺性 thesis 破功",
+    "對手(Siemens Energy、GE Vernova、Toshiba、以及中國廠)加速擴產填補變壓器荒,寡佔溢價收斂",
+    "集團非 Energy 分部(Digital/Lumada、Mobility)明顯減速或需大額投資,拖累 6501 整體評價",
+    "Energy 佔集團營收比重長期停在 ~1/3 以下、或集團未分拆 Energy,間接持有始終無法轉化為純卡點曝險"
+   ],
+   "fresh": "FY2025 結果＋Investor Day 2026(6/10)為最新；價格 2026-07-07"
+  },
+  {
+   "m": "US",
+   "tk": "GEV",
+   "co": "GE Vernova",
+   "venue": "NYSE",
+   "cv": "Pre-ramp",
+   "ev": "A 財報/官方; B 具名資料中心 gas/grid 大單",
+   "conf": "中",
+   "price": "約 $1,175（2026-07-08）；YTD +73%",
+   "layer": "發電+電網設備：燃氣渦輪(HA級)＋電氣化(變壓器/開關/HVDC)",
+   "thesis": "燃氣渦輪 Big 3(GEV/Siemens Energy/Mitsubishi Heavy)寡佔全球約 85%，交期已達 3 年、2030 產能大致售罄，Big 3 已在接 2031 之後的單。GEV 燃氣訂單＋訂位協議 Q1 達 100GW(目標年底≥110GW)，其中約 20GW 直接綁資料中心——這是 AI 資料中心『可調度基載電力』的實體卡點，渦輪產線無法短期擴充。電氣化段(變壓器/開關/HVDC)Q1 訂單+86%、book-to-bill 約 2.5，資料中心設備訂單一季就超過 2025 全年。近獨佔＋巨額真實營收本質是 Core 級卡點，但估值極端故降列 Pre-ramp。",
+   "warn": "估值極端(前瞻本益比約 70、EV/EBITDA 約 85)，任何交付延遲或毛利不如預期都會殺估值；股價一年翻倍已反映大量樂觀；燃氣長線有去碳/碳定價政策風險。屬『很強但很貴』，用 conf 中＋Pre-ramp 反映。",
+   "devs": [
+    {
+     "d": "2026-04-22",
+     "t": "Q1 2026：訂單$18.3B(+71%有機)、總backlog $163B、燃氣backlog達100GW、上調全年指引",
+     "u": "https://www.gevernova.com/news/press-releases/ge-vernova-reports-first-quarter-2026-financial"
+    },
+    {
+     "d": "2026-04-22",
+     "t": "燃氣渦輪backlog破100GW，資料中心Q1貢獻$4B訂單、渦輪漲價",
+     "u": "https://www.utilitydive.com/news/ge-vernova-gas-turbine-backlog-hits-100-gw-as-prices-rise/818332/"
+    },
+    {
+     "d": "2026",
+     "t": "Big 3(GEV/SE/MHI)控燃氣渦輪全球約85%，2030產能大致售罄、已接2031+",
+     "u": "https://globalenergymonitor.org/research/leading-three-manufacturers-providing-two-thirds-turbines-gas-fired-power-plants-under"
+    }
+   ],
+   "cat": [
+    "燃氣渦輪",
+    "電網電氣化",
+    "HVDC",
+    "資料中心電力"
+   ],
+   "fin": "全年指引營收$44.5-45.5B、FCF $6.5-7.5B；Q1訂單$18.3B(+71%)、backlog $163B；電氣化book-to-bill約2.5；市值約$298B",
+   "risk": [
+    "估值過熱，回檔空間大",
+    "燃氣去碳/碳定價長線政策壓力",
+    "大型設備(鑄件/渦輪)供應鏈與交付執行風險"
+   ],
+   "fail": [
+    "100GW 訂位協議大量取消或無法轉為正式訂單(轉換率崩)",
+    "電氣化 book-to-bill 跌破 1",
+    "毛利/FCF 指引下修"
+   ],
+   "fresh": "Q1 2026 財報(2026-04-22)為最新一手；價格 2026-07-08"
+  },
+  {
+   "m": "EU",
+   "tk": "ENR",
+   "co": "Siemens Energy",
+   "venue": "Xetra（法蘭克福）",
+   "cv": "Exploratory",
+   "ev": "HVDC 近寡佔：top5 >80% 份額、Hitachi Energy+Siemens Energy+GE Vernova ≈60–65% 2025 訂單；僅 Siemens+Hitachi 具已驗證 400kV/9kA 混合 DC 斷路器(實體瓶頸)；2025/04 拿下 National Grid Sea Link 2×2GW 換流站。燃氣渦輪 Big 3(GEV/SE/Mitsubishi)≈在建燃氣電廠 2/3，產能已排到 2028–2030。真實營收：Grid Technologies FY25 訂單 >€21B(季營收創新高)；集團 backlog FYE2025 €138B → Q2 FY26 €154B；book-to-bill 1.72(FY25 全年 1.51)；Q2 FY26 淨利 €835M(去年 €501M)；FY26 指引上調至淨利 ~€4B、稅前 FCF ~€8B(原 €4–5B)、營收成長 14–16%、利潤率 10–12%。",
+   "conf": "中",
+   "price": "股價約 €162(Q2 FY26 後)；forward P/E ~32–38x、trailing ~63x，溢價於德國電機同業 ~25x；DB 目標 €170(近現價)、JPM Overweight €225。",
+   "layer": "卡點 — 電網技術(超高壓變壓器/GIS/HVDC) + 燃氣渦輪 Big 3 + 電網服務",
+   "thesis": "全球超高壓變壓器/GIS/HVDC 少數近寡佔者之一，且為燃氣渦輪 Big 3。認證門檻高、交期以年計、下游電網與資料中心繞不開＝真·物理卡點；backlog €154B、book-to-bill 1.72、FCF 與獲利已修復並上調 FY26 展望。護城河與需求真實。但股價已自 2023 谷底再評價約 20 倍、估值溢價明顯(fwd P/E ~32–38x、trailing ~63x)，屬業務仍 ramp、股價已 post-ramp；因此列 Exploratory 觀察而非追高。",
+   "warn": "估值過熱、無安全邊際：股價已自 €7 級谷底再評價約 20 倍，這是股價的 post-ramp 而非 pre-ramp；定價已隱含完美執行，任何 backlog 轉換或利潤率不及預期都可能大幅回檔。提名者『一年翻倍→Pre-ramp』的框架把業務 ramp 誤植為股價 ramp，故下修至 Exploratory。",
+   "devs": [
+    {
+     "d": "2026",
+     "t": "Q1 FY2026：總backlog破€146B紀錄、Grid Technologies訂單+41% yoy、上調FY26展望",
+     "u": "https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q1-fy-2026.html"
+    },
+    {
+     "d": "2026",
+     "t": "取得波羅的海HVDC專案>€1B；美國多筆資料中心相關訂單(高三位數百萬歐元級)",
+     "u": "https://www.newscase.com/siemens-energy-grapples-with-record-backlog-and-activist-pressure-as-strategic-crossroads-looms/"
+    }
+   ],
+   "cat": [
+    "超高壓變壓器",
+    "GIS",
+    "HVDC",
+    "燃氣渦輪"
+   ],
+   "fin": "總order backlog約€146B(紀錄)；Grid Technologies backlog約€45B、Q1訂單+41% yoy；集團book-to-bill>1.7",
+   "risk": [
+    "Siemens Gamesa(Wind)FY26 仍僅損益兩平，陸域機組品質/執行風險尚未完全證明修復",
+    "估值溢價高，trailing P/E ~63x、fwd ~32–38x，回檔風險大於上檔空間",
+    "產能瓶頸反成雙面刃：交期排到 2028–2030，backlog 兌現受產能與供應鏈節奏限制",
+    "燃氣/資料中心資本支出具週期性，AI 電力題材若降溫會壓縮訂單動能",
+    "歐系大型股，美國關稅/地緣與匯率對利潤有變數"
+   ],
+   "fail": [
+    "Grid Technologies 或集團 book-to-bill 跌破 1.0、backlog 停止成長",
+    "Gamesa 再度出現重大品保/減值，拖累集團回到虧損",
+    "FY26 FCF 或淨利明顯不及 ~€8B / ~€4B 上調後指引",
+    "HVDC/變壓器競爭者(如中國廠、GE Vernova)搶下認證與份額，寡佔溢價收斂",
+    "估值在無獲利再上修下持續擴張至定價完美後急跌，證明信念分級過高"
+   ],
+   "fresh": "Q1 FY2026 財報為最新；價格 2026-07-10"
   }
  ],
  "avoids": [
