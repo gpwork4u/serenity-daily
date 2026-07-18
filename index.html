@@ -201,6 +201,57 @@
   @media (prefers-reduced-motion:reduce){ .tip::after,.tip::before{transition:none} }
 
   .dsel{font-family:var(--mono);font-size:12px;padding:2px 7px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--ink-2)}
+
+  /* tabs */
+  .tabs{display:flex;gap:2px;margin:18px 0 16px;border-bottom:2px solid var(--border);flex-wrap:wrap}
+  .tabbtn{font-family:var(--mono);font-size:12.5px;font-weight:600;padding:9px 13px;border:none;background:none;color:var(--ink-3);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
+  .tabbtn:hover{color:var(--ink)}
+  .tabbtn.on{color:var(--accent);border-bottom-color:var(--accent)}
+  .tabbtn .tc{font-size:10px;color:var(--ink-3);font-weight:400}
+  .tabpane[hidden]{display:none}
+
+  /* full-market tables */
+  .mkthead{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin:2px 0 10px}
+  .mkthead .masof{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+  .msel{font-family:var(--mono);font-size:11.5px;padding:5px 8px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--ink-2);max-width:170px}
+  .mktrow,.mkthd{display:grid;align-items:center;gap:9px;padding:8px 13px;width:100%;text-align:left}
+  .grid-tw{grid-template-columns:minmax(118px,1.35fr) 40px 66px 58px 50px 46px 50px 60px 56px 22px}
+  .grid-us{grid-template-columns:minmax(160px,2fr) 76px 62px 74px minmax(90px,1fr) 22px}
+  .mkthd{background:var(--surface-2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-3);position:sticky;top:0;z-index:5}
+  .mkthd .sort{cursor:pointer;background:none;border:none;color:inherit;font:inherit;padding:0;text-transform:inherit;letter-spacing:inherit;text-align:right}
+  .mkthd .sort:first-child{text-align:left}
+  .mkthd .sort:hover,.mkthd .sort.act{color:var(--accent)}
+  .mktrow{background:none;border:none;border-bottom:1px solid var(--border);cursor:pointer;font-family:var(--sans);color:var(--ink);font-size:12.5px}
+  .mktrow:hover{background:var(--surface-2)}
+  .mktrow:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .mktrow .mtk{display:flex;flex-direction:column;min-width:0}
+  .mktrow .mtk b{font-family:var(--mono);font-size:13px;font-weight:640}
+  .mktrow .mtk small{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mktrow .num{font-family:var(--mono);font-size:11.5px;text-align:right;white-space:nowrap;color:var(--ink-2)}
+  .pos{color:var(--core)!important}
+  .neg{color:var(--avoid)!important}
+  .mmk{font-family:var(--mono);font-size:9.5px;color:var(--ink-3);border:1px solid var(--border);border-radius:4px;padding:1px 4px;justify-self:start;white-space:nowrap}
+  .mbdg{font-size:10px;margin-left:4px}
+  .mcaret{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:center}
+  .msec{font-size:11px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mdetail{display:none;padding:11px 15px 16px;background:var(--surface-2);border-bottom:1px solid var(--border)}
+  .mdetail.open{display:block}
+  .mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:9px}
+  .mcell{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 11px;min-width:0}
+  .mcell .mh{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:3px}
+  .mcell .mv{font-family:var(--mono);font-size:13px;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+  .mcell .mv small{font-size:10.5px;color:var(--ink-3);font-weight:400}
+  .msect{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:700;margin:12px 0 6px}
+  .mlink{margin-top:11px;display:flex;gap:8px;flex-wrap:wrap}
+  .mlink button{font-family:var(--mono);font-size:11.5px;padding:6px 12px;border-radius:8px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--accent);cursor:pointer;font-weight:600}
+  .mlink button.av{border-color:var(--avoid);background:var(--avoid-soft);color:var(--avoid)}
+  .pager{display:flex;gap:5px;align-items:center;justify-content:center;padding:13px 0 4px;flex-wrap:wrap}
+  .pbtn{font-family:var(--mono);font-size:12px;min-width:30px;padding:5px 8px;border-radius:7px;border:1px solid var(--border);background:var(--surface);color:var(--ink-2);cursor:pointer}
+  .pbtn:hover{border-color:var(--accent)}
+  .pbtn.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:700}
+  .pbtn[disabled]{opacity:.35;cursor:default}
+  .pinfo{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-left:8px}
+  .mload{padding:30px;text-align:center;color:var(--ink-3);font-size:13px}
   @media (max-width:720px){
     .wrap{padding:16px 13px 56px}
     body{font-size:16px}
@@ -244,6 +295,19 @@
     .adetail{padding:2px 4px 16px 8px}
     .awatch{font-size:13.5px}
     ul.aflags li{font-size:13.5px}
+    .tabs{gap:0;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
+    .tabbtn{font-size:12.5px;padding:10px 10px}
+    .mkthd{display:none}
+    .mktrow{display:flex;flex-wrap:wrap;gap:3px 10px;padding:12px 13px}
+    .mktrow .mtk{flex:1 1 52%;order:1}
+    .mktrow .mtk b{font-size:15.5px}
+    .mktrow .num.mp{order:2;font-size:15px;font-weight:700;color:var(--ink)}
+    .mktrow .num.mchg{order:3;font-size:13.5px;font-weight:600}
+    .mmk{order:4}
+    .mktrow .num.mx,.mktrow .msec{order:5;flex-basis:100%;text-align:left;font-size:11.5px;color:var(--ink-3)}
+    .mcaret{display:none}
+    .msel{max-width:46vw;font-size:13px;padding:8px 10px}
+    .mdetail{padding:10px 12px 15px}
   }
 </style>
 <div class="wrap">
@@ -259,6 +323,13 @@
 
   <div class="pulse" id="pulse"></div>
 
+  <nav class="tabs" id="tabs" role="tablist">
+    <button class="tabbtn on" data-tab="res" role="tab">🔬 研究清單 <span class="tc" id="tc-res"></span></button>
+    <button class="tabbtn" data-tab="tw" role="tab">🇹🇼 台股全覽 <span class="tc" id="tc-tw"></span></button>
+    <button class="tabbtn" data-tab="us" role="tab">🇺🇸 美股全覽 <span class="tc" id="tc-us"></span></button>
+  </nav>
+
+  <div class="tabpane" id="pane-res">
   <details class="disc">
     <summary>⚠ 研究輔助，非投資建議 · 示意權重僅教學示意<span class="cta"></span></summary>
     <div class="full">下方任何分級、權重、清單都<b>不是買賣指令、不是個人化配置建議</b>。「不要買/避雷」清單同樣是<b>研究判斷，非放空/賣出指令，也非指控不法</b>——每條紅旗均附來源，僅來自社群/謠言者已標低證據級別。「示意權重」僅依信念分級機械換算，屬教學示意。許多數字為自述/媒體轉述或落後一季，每一檔都須用最新財報、法說、重大訊息與即時行情自行覆核。清單多為波動大、流動性薄的中小型股——貼文/清單讓股價動 ≠ 基本面被驗證，追高只會讓你成為擁擠交易的一部分。</div>
@@ -302,10 +373,64 @@
     <summary>示意權重分佈（教學示意 · Core=3 · Pre-ramp=2 · Exploratory=1 · Avoid-watch=0，各區域內正規化 · 前端自動計算）</summary>
     <div class="wbody" id="wbody"></div>
   </details>
+  </div><!-- /pane-res -->
+
+  <div class="tabpane" id="pane-tw" hidden>
+    <div class="mkthead">
+      <span class="masof" id="tw-asof"></span>
+      <span class="hint">上市＋上櫃全部普通股與 ETF · 行情/估值/月營收/季損益 · 點列展開個別檢視</span>
+    </div>
+    <div class="controls">
+      <div class="cgroup"><span class="lbl">類型</span><span id="tw-f-type"></span></div>
+      <select class="msel" id="tw-ind" aria-label="產業別"></select>
+      <input class="search" id="tw-q" placeholder="搜尋代號/名稱…" aria-label="搜尋台股">
+      <span class="count" id="tw-count"></span>
+    </div>
+    <div class="roster">
+      <div class="mkthd grid-tw">
+        <button class="sort" data-twk="c">代號/名稱</button>
+        <span>市場</span>
+        <button class="sort" data-twk="p">收盤</button>
+        <button class="sort" data-twk="chgp">漲跌%</button>
+        <button class="sort" data-twk="pe">PE</button>
+        <button class="sort" data-twk="pb">PB</button>
+        <button class="sort" data-twk="yld">殖利率</button>
+        <button class="sort" data-twk="rev_yoy">營收YoY</button>
+        <button class="sort" data-twk="q_eps">EPS(季)</button>
+        <span></span>
+      </div>
+      <div id="tw-body"><div class="mload">載入中…</div></div>
+    </div>
+    <div class="pager" id="tw-pager"></div>
+  </div>
+
+  <div class="tabpane" id="pane-us" hidden>
+    <div class="mkthead">
+      <span class="masof" id="us-asof"></span>
+      <span class="hint">NYSE/Nasdaq/AMEX 全部普通股 · 行情/市值/產業 · 點列展開個別檢視（深度財報規劃中）</span>
+    </div>
+    <div class="controls">
+      <select class="msel" id="us-sec" aria-label="Sector"></select>
+      <input class="search" id="us-q" placeholder="Search symbol / name…" aria-label="搜尋美股">
+      <span class="count" id="us-count"></span>
+    </div>
+    <div class="roster">
+      <div class="mkthd grid-us">
+        <button class="sort" data-usk="s">Symbol / Name</button>
+        <button class="sort" data-usk="p">價格</button>
+        <button class="sort" data-usk="chgp">漲跌%</button>
+        <button class="sort" data-usk="mc">市值</button>
+        <span>Sector</span>
+        <span></span>
+      </div>
+      <div id="us-body"><div class="mload">載入中…</div></div>
+    </div>
+    <div class="pager" id="us-pager"></div>
+  </div>
 
   <footer class="foot">
     <div><h3>全清單風險 · 反身性提醒</h3><p>清單多檔剛經歷社群/題材驅動的劇烈波動；「貼文後股價動」是市場反身性，不是基本面驗證。多數標的正進行或剛完成大額稀釋，財報普遍落後一季。台股數字請以公開資訊觀測站 MOPS 重訊與財報正本覆核。</p></div>
-    <div><h3>方法</h3><p>框架取自 serenity-chokepoint-investing skill；證據分級 A（財報/官方）→ F（社群/鏡像）。「今日重點/新鮮度」依各檔最新進展日期與 ⚠ 警示由前端即時計算。</p></div>
+    <div><h3>方法</h3><p>框架取自 serenity-chokepoint-investing skill；證據分級 A（財報/官方）→ F（社群/鏡像）。「今日重點/新鮮度」依各檔最新進展日期與 ⚠ 警示由前端即時計算。台股/美股全覽為全市場量化資料層（每日自動更新）：台股行情/估值取自 TWSE·TPEx OpenAPI，月營收/季損益取自公開資訊觀測站彙總；美股行情/市值/產業取自 Nasdaq screener。全覽資料僅供快速瀏覽，正式數字以交易所與 MOPS/SEC 正本為準。</p></div>
   </footer>
 </div>
 <script>
@@ -500,6 +625,36 @@ function ensureDetail(i){const el=document.getElementById("det-"+i);if(el&&!el.d
 
 // events
 document.addEventListener("click",e=>{
+  const tb=e.target.closest("[data-tab]");
+  if(tb){switchTab(tb.dataset.tab);return;}
+  const jr=e.target.closest("[data-jumpres]");
+  if(jr){openResearchCard(jr.dataset.jumpres);return;}
+  const ja=e.target.closest("[data-jumpavd]");
+  if(ja){openAvoidCard(ja.dataset.jumpavd);return;}
+  const twk=e.target.closest("[data-twk]");
+  if(twk){const M=MKT.tw;if(M.sort===twk.dataset.twk)M.dir*=-1;else{M.sort=twk.dataset.twk;M.dir=twk.dataset.twk==="c"?1:-1;}M.page=1;renderMkt("tw");return;}
+  const usk=e.target.closest("[data-usk]");
+  if(usk){const M=MKT.us;if(M.sort===usk.dataset.usk)M.dir*=-1;else{M.sort=usk.dataset.usk;M.dir=usk.dataset.usk==="s"?1:-1;}M.page=1;renderMkt("us");return;}
+  const twt=e.target.closest("[data-twtype]");
+  if(twt){MKT.tw.type=twt.dataset.twtype;MKT.tw.page=1;renderMkt("tw");return;}
+  const tpg=e.target.closest("[data-twpg]");
+  if(tpg&&!tpg.disabled){MKT.tw.page=+tpg.getAttribute("data-twpg");renderMkt("tw");document.getElementById("pane-tw").scrollIntoView({block:"start"});return;}
+  const upg=e.target.closest("[data-uspg]");
+  if(upg&&!upg.disabled){MKT.us.page=+upg.getAttribute("data-uspg");renderMkt("us");document.getElementById("pane-us").scrollIntoView({block:"start"});return;}
+  const mrow=e.target.closest(".mktrow");
+  if(mrow){
+    const tc=mrow.dataset.tc,us=mrow.dataset.us;
+    const id=tc?("twd-"+tc):("usd-"+us);
+    const det=document.getElementById(id);if(!det)return;
+    if(!det.dataset.filled){
+      const M=tc?MKT.tw:MKT.us;
+      const r=tc?M.rows.find(x=>x.c===tc):M.rows.find(x=>x.s===us);
+      if(r){det.innerHTML=tc?twDetail(r):usDetail(r);det.dataset.filled="1";}
+    }
+    const open=det.classList.contains("open");
+    det.classList.toggle("open",!open);mrow.setAttribute("aria-expanded",String(!open));
+    return;
+  }
   const ap=e.target.closest(".avoidpill");
   if(ap){const w=document.getElementById("avoidwrap");if(w&&!w.hidden)w.scrollIntoView({behavior:"smooth",block:"start"});return;}
   const arow=e.target.closest(".arow");
@@ -516,6 +671,12 @@ document.addEventListener("click",e=>{
   const sb=e.target.closest(".rhead .sort");if(sb){if(state.sort===sb.dataset.k)state.dir*=-1;else{state.sort=sb.dataset.k;state.dir=1;}renderRoster();return;}
 });
 document.getElementById("search").addEventListener("input",e=>{state.q=e.target.value;renderRoster();});
+(function(){
+  const twq=document.getElementById("tw-q");if(twq)twq.addEventListener("input",e=>{MKT.tw.q=e.target.value;MKT.tw.page=1;renderMkt("tw");});
+  const usq=document.getElementById("us-q");if(usq)usq.addEventListener("input",e=>{MKT.us.q=e.target.value;MKT.us.page=1;renderMkt("us");});
+  const twi=document.getElementById("tw-ind");if(twi)twi.addEventListener("change",e=>{MKT.tw.ind=e.target.value;MKT.tw.page=1;renderMkt("tw");});
+  const uss=document.getElementById("us-sec");if(uss)uss.addEventListener("change",e=>{MKT.us.sec=e.target.value;MKT.us.page=1;renderMkt("us");});
+})();
 document.getElementById("tgl").addEventListener("click",()=>{
   const cur=document.documentElement.getAttribute("data-theme");
   const next=cur==="dark"?"light":(cur==="light"?"dark":(matchMedia("(prefers-color-scheme: dark)").matches?"light":"dark"));
@@ -523,12 +684,212 @@ document.getElementById("tgl").addEventListener("click",()=>{
 });
 try{const t=localStorage.getItem("sd-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}
 
+// ---- 全市場分頁（台股/美股全覽） ----
+let RES_TK=new Map(),AVD_TK=new Map();
+const MKT={
+  tw:{rows:null,q:"",type:"ALL",ind:"ALL",sort:"a",dir:-1,page:1,asof:"",err:""},
+  us:{rows:null,q:"",sec:"ALL",sort:"mc",dir:-1,page:1,asof:"",err:""},
+  PS:50
+};
+function fmtN(x,d){return x==null?"—":Number(x).toLocaleString("en-US",{maximumFractionDigits:d==null?2:d});}
+function chgHTML(x,cls){if(x==null)return '<span class="num mchg '+(cls||'')+'">—</span>';const c=x>0?"pos":(x<0?"neg":"");return `<span class="num mchg ${cls||''} ${c}">${(x>0?"+":"")+Number(x).toFixed(2)}%</span>`;}
+function fmtYi(x,d){return x==null?"—":(x/1e5).toLocaleString("en-US",{maximumFractionDigits:d==null?(x/1e5>=100?0:1):d})+"億";}
+function fmtMc(x){if(x==null||!x)return "—";if(x>=1e12)return "$"+(x/1e12).toFixed(2)+"T";if(x>=1e9)return "$"+(x/1e9).toFixed(1)+"B";if(x>=1e6)return "$"+(x/1e6).toFixed(0)+"M";return "$"+fmtN(x,0);}
+function rocYM(s){s=String(s||"");const m=s.match(/^(\d{2,3})(\d{2})$/);return m?(+m[1]+1911)+"/"+m[2]:s;}
+function rocQ(s){s=String(s||"");const m=s.match(/^(\d{2,3})Q(\d)$/);return m?(+m[1]+1911)+" Q"+m[2]:s;}
+function bdg(tk,m){
+  const k=m+":"+String(tk).toUpperCase();let out="";
+  if(AVD_TK.has(k))out+=`<span class="mbdg" title="在避雷清單">🚫</span>`;
+  else if(RES_TK.has(k))out+=`<span class="mbdg" title="在研究清單">🔬</span>`;
+  return out;
+}
+function jumpBtns(tk,m){
+  const k=m+":"+String(tk).toUpperCase();let out="";
+  if(RES_TK.has(k))out+=`<button data-jumpres="${escAttr(k)}">🔬 查看研究卡 →</button>`;
+  if(AVD_TK.has(k))out+=`<button class="av" data-jumpavd="${escAttr(k)}">🚫 查看避雷卡 →</button>`;
+  return out?`<div class="mlink">${out}</div>`:"";
+}
+function nullLast(a,b,dir){if(a==null&&b==null)return 0;if(a==null)return 1;if(b==null)return -1;return (a<b?-1:a>b?1:0)*dir;}
+
+async function loadMkt(mk){
+  const M=MKT[mk];
+  if(M.rows)return;
+  M.err=""; // 上次失敗不鎖死：每次切回分頁自動重試
+  try{
+    let d=(typeof window!=="undefined"&&window.__MKT__&&window.__MKT__[mk])||null;
+    if(!d){
+      const r=await fetch("data/market/"+mk+".json",{cache:"no-cache"});
+      if(!r.ok)throw new Error("HTTP "+r.status);
+      d=await r.json();
+    }
+    M.rows=d.rows||[];M.asof=d.asof||"";
+    if(mk==="tw"){
+      const inds=[...new Set(M.rows.map(x=>x.ind).filter(Boolean))].sort();
+      document.getElementById("tw-ind").innerHTML='<option value="ALL">全部產業</option>'+inds.map(x=>`<option>${esc(x)}</option>`).join("");
+      document.getElementById("tw-asof").textContent="行情 "+M.asof;
+      document.getElementById("tc-tw").textContent=M.rows.length+"檔";
+    }else{
+      const secs=[...new Set(M.rows.map(x=>x.sec).filter(Boolean))].sort();
+      document.getElementById("us-sec").innerHTML='<option value="ALL">All sectors</option>'+secs.map(x=>`<option>${esc(x)}</option>`).join("");
+      document.getElementById("us-asof").textContent="行情 "+M.asof;
+      document.getElementById("tc-us").textContent=M.rows.length+"檔";
+    }
+  }catch(e){
+    M.err=e.message;
+    document.getElementById(mk+"-body").innerHTML='<div class="mload">無法載入全市場資料（'+esc(e.message)+'）。此分頁需從 GitHub Pages 載入 <code>data/market/'+mk+'.json</code>。</div>';
+    return;
+  }
+  renderMkt(mk);
+}
+function twFiltered(){
+  const M=MKT.tw;
+  let rows=M.rows.filter(r=>{
+    if(M.type==="上市"&&!(r.mk==="上市"&&r.t==="stock"))return false;
+    if(M.type==="上櫃"&&!(r.mk==="上櫃"&&r.t==="stock"))return false;
+    if(M.type==="ETF"&&r.t!=="etf")return false;
+    if(M.ind!=="ALL"&&r.ind!==M.ind)return false;
+    if(M.q){const q=M.q.toLowerCase();if(!((r.c+r.n).toLowerCase().includes(q)))return false;}
+    return true;
+  });
+  const k=M.sort;
+  rows.sort((a,b)=>k==="c"?a.c.localeCompare(b.c)*M.dir:nullLast(a[k],b[k],M.dir));
+  return rows;
+}
+function usFiltered(){
+  const M=MKT.us;
+  let rows=M.rows.filter(r=>{
+    if(M.sec!=="ALL"&&r.sec!==M.sec)return false;
+    if(M.q){const q=M.q.toLowerCase();if(!((r.s+" "+r.n).toLowerCase().includes(q)))return false;}
+    return true;
+  });
+  const k=M.sort;
+  rows.sort((a,b)=>k==="s"?a.s.localeCompare(b.s)*M.dir:nullLast(a[k],b[k],M.dir));
+  return rows;
+}
+function twRow(r){
+  return `<button class="mktrow grid-tw" data-tc="${escAttr(r.c)}" aria-expanded="false">
+    <span class="mtk"><b>${esc(r.c)}${bdg(r.c,"TW")}</b><small>${esc(r.n)}</small></span>
+    <span class="mmk">${esc(r.t==="etf"?"ETF":r.mk)}</span>
+    <span class="num mp">${fmtN(r.p)}</span>
+    ${chgHTML(r.chgp)}
+    <span class="num">${fmtN(r.pe,1)}</span>
+    <span class="num">${fmtN(r.pb,1)}</span>
+    <span class="num">${r.yld==null?"—":fmtN(r.yld,1)+"%"}</span>
+    ${chgHTML(r.rev_yoy,"mx")}
+    <span class="num mx">${fmtN(r.q_eps)}</span>
+    <span class="mcaret">▸</span>
+  </button><div class="mdetail" id="twd-${escAttr(r.c)}"></div>`;
+}
+function twDetail(r){
+  const cells=[];
+  function cell(h,v){cells.push(`<div class="mcell"><div class="mh">${h}</div><div class="mv">${v}</div></div>`);}
+  let html="";
+  html+=`<div class="msect">行情 · ${esc(MKT.tw.asof)}</div><div class="mgrid">`;cells.length=0;
+  cell("收盤",fmtN(r.p));cell("漲跌",(r.chg==null?"—":(r.chg>0?"+":"")+fmtN(r.chg))+" <small>("+(r.chgp==null?"—":(r.chgp>0?"+":"")+fmtN(r.chgp)+"%")+")</small>");
+  cell("成交量",fmtN(r.v==null?null:r.v/1000,0)+" <small>張</small>");cell("成交值",fmtYi(r.a));
+  html+=cells.join("")+"</div>";
+  if(r.pe!=null||r.pb!=null||r.yld!=null){
+    html+=`<div class="msect">估值</div><div class="mgrid">`;cells.length=0;
+    cell("本益比 PE",fmtN(r.pe,1));cell("股價淨值比 PB",fmtN(r.pb,1));cell("殖利率",r.yld==null?"—":fmtN(r.yld,1)+"%");
+    html+=cells.join("")+"</div>";
+  }
+  if(r.rev_m!=null){
+    html+=`<div class="msect">月營收 · ${esc(rocYM(r.rev_ym))}</div><div class="mgrid">`;cells.length=0;
+    cell("當月營收",fmtYi(r.rev_m));cell("月增 MoM",r.rev_mom==null?"—":(r.rev_mom>0?"+":"")+fmtN(r.rev_mom,1)+"%");
+    cell("年增 YoY",r.rev_yoy==null?"—":(r.rev_yoy>0?"+":"")+fmtN(r.rev_yoy,1)+"%");
+    cell("累計 YoY",r.rev_cum_yoy==null?"—":(r.rev_cum_yoy>0?"+":"")+fmtN(r.rev_cum_yoy,1)+"%");
+    html+=cells.join("")+"</div>";
+  }
+  if(r.q_rev!=null||r.q_eps!=null){
+    html+=`<div class="msect">季損益 · ${esc(rocQ(r.q))}</div><div class="mgrid">`;cells.length=0;
+    cell("營收",fmtYi(r.q_rev));cell("毛利率",r.gm==null?"—":fmtN(r.gm,1)+"%");cell("營益率",r.om==null?"—":fmtN(r.om,1)+"%");
+    cell("母公司淨利",fmtYi(r.q_ni));cell("淨利率",r.nm==null?"—":fmtN(r.nm,1)+"%");cell("EPS",fmtN(r.q_eps));
+    html+=cells.join("")+"</div>";
+  }
+  if(r.ind)html+=`<div class="msect">產業別</div><div style="font-size:12.5px;color:var(--ink-2)">${esc(r.ind)} · ${esc(r.mk)}</div>`;
+  html+=jumpBtns(r.c,"TW");
+  return html;
+}
+function usRow(r){
+  return `<button class="mktrow grid-us" data-us="${escAttr(r.s)}" aria-expanded="false">
+    <span class="mtk"><b>${esc(r.s)}${bdg(r.s,"US")}</b><small>${esc(r.n)}</small></span>
+    <span class="num mp">${fmtN(r.p)}</span>
+    ${chgHTML(r.chgp)}
+    <span class="num mx">${fmtMc(r.mc)}</span>
+    <span class="msec">${esc(r.sec||"—")}</span>
+    <span class="mcaret">▸</span>
+  </button><div class="mdetail" id="usd-${escAttr(r.s)}"></div>`;
+}
+function usDetail(r){
+  const cells=[];
+  function cell(h,v){cells.push(`<div class="mcell"><div class="mh">${h}</div><div class="mv">${v}</div></div>`);}
+  cell("價格",fmtN(r.p));cell("漲跌%",r.chgp==null?"—":(r.chgp>0?"+":"")+fmtN(r.chgp)+"%");
+  cell("市值",fmtMc(r.mc));cell("成交量",fmtN(r.v,0));
+  cell("Sector",esc(r.sec||"—"));cell("Industry",esc(r.ind||"—"));
+  cell("Country",esc(r.co||"—"));cell("IPO 年",esc(r.ipo||"—"));
+  return `<div class="mgrid">${cells.join("")}</div>${jumpBtns(r.s,"US")}`+
+    `<div style="margin-top:9px;font-size:11px;color:var(--ink-3)">深度財報（營收/淨利/EPS 歷史）規劃中 · 現階段僅行情/市值層</div>`;
+}
+function pagerHTML(cur,total,attr){
+  if(total<=1)return "";
+  const ps=new Set([1,2,cur-1,cur,cur+1,total-1,total].filter(p=>p>=1&&p<=total));
+  const arr=[...ps].sort((a,b)=>a-b);
+  let out=`<button class="pbtn" ${attr}="${cur-1}" ${cur<=1?"disabled":""}>‹</button>`,last=0;
+  arr.forEach(p=>{if(p-last>1)out+=`<span class="pinfo">…</span>`;out+=`<button class="pbtn ${p===cur?"on":""}" ${attr}="${p}">${p}</button>`;last=p;});
+  out+=`<button class="pbtn" ${attr}="${cur+1}" ${cur>=total?"disabled":""}>›</button>`;
+  return out;
+}
+function renderMkt(mk){
+  const M=MKT[mk];if(!M.rows)return;
+  const rows=mk==="tw"?twFiltered():usFiltered();
+  const total=Math.max(1,Math.ceil(rows.length/MKT.PS));
+  if(M.page>total)M.page=total;
+  const slice=rows.slice((M.page-1)*MKT.PS,M.page*MKT.PS);
+  document.getElementById(mk+"-body").innerHTML=slice.map(mk==="tw"?twRow:usRow).join("")||'<div class="mload">無符合條件的標的</div>';
+  document.getElementById(mk+"-count").textContent=rows.length.toLocaleString()+" / "+M.rows.length.toLocaleString()+" 檔";
+  document.getElementById(mk+"-pager").innerHTML=pagerHTML(M.page,total,mk==="tw"?"data-twpg":"data-uspg")+`<span class="pinfo">第 ${M.page} / ${total} 頁</span>`;
+  if(mk==="tw"){
+    document.getElementById("tw-f-type").innerHTML=["ALL","上市","上櫃","ETF"].map(x=>`<button class="cbtn ${M.type===x?'on':''}" data-twtype="${x}">${x==="ALL"?"全部":x}</button>`).join("");
+    document.querySelectorAll("[data-twk]").forEach(b=>b.classList.toggle("act",b.dataset.twk===M.sort));
+  }else{
+    document.querySelectorAll("[data-usk]").forEach(b=>b.classList.toggle("act",b.dataset.usk===M.sort));
+  }
+}
+function switchTab(t){
+  document.querySelectorAll(".tabbtn").forEach(b=>b.classList.toggle("on",b.dataset.tab===t));
+  ["res","tw","us"].forEach(x=>{const p=document.getElementById("pane-"+x);if(p)p.hidden=x!==t;});
+  if(t==="tw"||t==="us")loadMkt(t);
+}
+function openResearchCard(k){
+  switchTab("res");
+  if(!RES_TK.has(k))return;
+  const i=RES_TK.get(k);
+  let row=document.querySelector('.rrow[data-i="'+i+'"]');
+  if(!row){ // 研究分頁篩選把該列濾掉了 → 清篩選重試
+    state.market="ALL";state.conv="ALL";state.q="";
+    const s=document.getElementById("search");if(s)s.value="";
+    renderControls();renderRoster();
+    row=document.querySelector('.rrow[data-i="'+i+'"]');
+  }
+  if(row){ensureDetail(i);document.getElementById("det-"+i).classList.add("open");row.setAttribute("aria-expanded","true");row.scrollIntoView({behavior:"smooth",block:"center"});}
+}
+function openAvoidCard(k){
+  switchTab("res");
+  if(!AVD_TK.has(k))return;
+  const i=AVD_TK.get(k);
+  const det=document.getElementById("adet-"+i);const row=document.querySelector('.arow[data-a="'+i+'"]');
+  if(det){det.classList.add("open");}if(row){row.setAttribute("aria-expanded","true");row.scrollIntoView({behavior:"smooth",block:"center"});}
+}
+
 function initAll(){
   ASOFD=(function(){const p=String(ASOF).split("-");return new Date(+p[0],(+p[1]||1)-1,(+p[2]||1));})();
   DATA.forEach((d,i)=>{d._i=i;const r=recency(d);d._rec=r.days;d._fresh=r.days<=7;d._soon=catSoon(d);d._mk=mkOf(d);});
   document.getElementById("asof").textContent=ASOF||"—";
   const _rc={};DATA.forEach(d=>{_rc[d.m]=(_rc[d.m]||0)+1;});
   document.getElementById("count").textContent=DATA.length+" 檔（"+["US","EU","JP","KR","TW"].filter(x=>_rc[x]).map(x=>x+" "+_rc[x]).join(" · ")+"）";
+  RES_TK=new Map(DATA.map(d=>[d.m+":"+String(d.tk).toUpperCase(),d._i]));
+  AVD_TK=new Map(mergedAvoids().map((a,i)=>[a.m+":"+String(a.tk).toUpperCase(),i]));
+  const tcr=document.getElementById("tc-res");if(tcr)tcr.textContent=DATA.length+"檔";
   renderAvoids();renderPulse();renderToday();renderControls();renderRoster();renderBars();
 }
 async function initDates(cur){
@@ -547,6 +908,10 @@ async function boot(){
   }
   ASOF=payload.asof||payload.generated||"";DATA=payload.tickers||[];AVOIDS=payload.avoids||[];
   initAll();initDates(want);
+  try{const r=await fetch("data/market/meta.json",{cache:"no-cache"});if(r.ok){const m=await r.json();
+    const tw=document.getElementById("tc-tw"),us=document.getElementById("tc-us");
+    if(tw&&m.tw_rows)tw.textContent=m.tw_rows.toLocaleString()+"檔";
+    if(us&&m.us_rows)us.textContent=m.us_rows.toLocaleString()+"檔";}}catch(e){}
 }
 boot();
 </script>

@@ -1,0 +1,41 @@
+name: market-data
+
+on:
+  schedule:
+    # 22:20 UTC = 台北 06:20，抓「最近一個完整交易日」：台股前一日收盤 + 美股當日收盤
+    # 跑在 LLM 研究 cron（台北 08:02）之前，避免 push 競爭
+    - cron: "20 22 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build market data (TW + US aggregate endpoints)
+        run: python3 scripts/build_market_data.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "market-data-bot"
+          git config user.email "gpwork4u@gmail.com"
+          git add data/market/
+          if git diff --cached --quiet; then
+            echo "no changes"; exit 0
+          fi
+          git commit -m "Market data $(date -u +%Y-%m-%d) [skip ci]"
+          # LLM cron 可能同時 push：rebase 重試一次
+          git push origin main || (git pull --rebase origin main && git push origin main)
