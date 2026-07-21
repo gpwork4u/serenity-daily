@@ -272,6 +272,181 @@ def write_if_changed(path, payload):
     return True
 
 
+def _rank_pct(sorted_xs, v):
+    """v 在已排序 sorted_xs 中的百分位 0..1（含 ties 取平均秩）。"""
+    import bisect
+    n = len(sorted_xs)
+    if n <= 1:
+        return 0.5
+    lo = bisect.bisect_left(sorted_xs, v)
+    hi = bisect.bisect_right(sorted_xs, v)
+    return ((lo + hi - 1) / 2) / (n - 1)
+
+
+def _pct_fn(stocks, key, transform=None, lo=None, hi=None):
+    """回傳 (ind, val) -> 百分位；產業內 >=8 檔用產業分佈，否則用全市場。transform 先套用。"""
+    from collections import defaultdict
+    def val(r):
+        x = r.get(key)
+        if x is None:
+            return None
+        if transform:
+            x = transform(x)
+        if x is None:
+            return None
+        if lo is not None and x < lo:
+            x = lo
+        if hi is not None and x > hi:
+            x = hi
+        return x
+    mkt = sorted(v for v in (val(r) for r in stocks) if v is not None)
+    ind_vals = defaultdict(list)
+    for r in stocks:
+        v = val(r)
+        if v is not None:
+            ind_vals[r.get("ind") or "其他"].append(v)
+    ind_sorted = {k: sorted(vs) for k, vs in ind_vals.items() if len(vs) >= 8}
+
+    def fn(r):
+        v = val(r)
+        if v is None:
+            return None
+        ind = r.get("ind") or "其他"
+        xs = ind_sorted.get(ind, mkt)
+        return _rank_pct(xs, v)
+    return fn, val
+
+
+def score_tw(rows):
+    """綜合多因子購入評分（透明規則化，教育用途，非投資建議）。就地在每檔 stock 加欄位。"""
+    stocks = [r for r in rows if r.get("t") == "stock" and r.get("p") is not None]
+    for r in stocks:
+        pe, pb = r.get("pe"), r.get("pb")
+        r["_roe"] = round(pb / pe * 100, 1) if (pe and pe > 0 and pb and pb > 0) else None
+
+    # 因子百分位函式（產業相對）
+    pe_pct, _ = _pct_fn(stocks, "pe", lo=0.1, hi=100)      # 低者佳 → 用 1-pct
+    pb_pct, _ = _pct_fn(stocks, "pb", lo=0.01, hi=30)      # 低者佳
+    yl_pct, _ = _pct_fn(stocks, "yld", lo=0, hi=20)        # 高者佳
+    roe_pct, _ = _pct_fn(stocks, "_roe", lo=-10, hi=50)    # 高者佳
+    nm_pct, _ = _pct_fn(stocks, "nm", lo=-30, hi=40)       # 高者佳
+    pe_hi_pct, _ = _pct_fn(stocks, "pe", lo=0.1, hi=200)   # 判定估值過熱
+
+    def wavg(pairs):  # pairs: [(score0_100, weight), ...] 忽略 None
+        num = den = 0.0
+        for s, w in pairs:
+            if s is not None:
+                num += s * w
+                den += w
+        return (num / den) if den else None
+
+    dist = {"A": 0, "B": 0, "C": 0, "D": 0, "E": 0, "—": 0}
+    for r in stocks:
+        # 價值
+        vpe = pe_pct(r); vpb = pb_pct(r); vyl = yl_pct(r)
+        value = wavg([(None if vpe is None else (1 - vpe) * 100, 0.45),
+                      (None if vpb is None else (1 - vpb) * 100, 0.30),
+                      (None if vyl is None else vyl * 100, 0.25)])
+        # 品質
+        rp = roe_pct(r); npv = nm_pct(r)
+        quality = wavg([(None if rp is None else rp * 100, 0.55),
+                        (None if npv is None else npv * 100, 0.45)])
+        if quality is not None:
+            if (r.get("q_eps") or 0) > 0 and (r.get("om") or -1) > 0:
+                quality = min(100, quality + 5)  # 實際獲利小獎勵
+        # 成長（低基期防呆）
+        g = r.get("rev_cum_yoy")
+        if g is None:
+            g = r.get("rev_yoy")
+        # 低基期防呆：單月或「累計」YoY 暴衝都算（完工認列/近零基期）
+        lowbase = ((r.get("rev_yoy") is not None and r.get("rev_yoy") > 300) or
+                   (r.get("rev_cum_yoy") is not None and r.get("rev_cum_yoy") > 300))
+        ind_s = r.get("ind") or ""
+        fin = ("金融" in ind_s) or ("保險" in ind_s) or ("證券" in ind_s) or ("銀行" in ind_s)
+        growth = None
+        if g is not None:
+            gg = max(-30.0, min(40.0, g))
+            growth = (gg + 30) / 70 * 100
+            if lowbase:
+                growth = min(growth, 62)  # 低基期尖峰不可進頂級
+            if fin:
+                growth = min(growth, 60)  # 金融保險「營收」YoY 屬定義性跳動，不予放大
+        # 業外撐獲利：淨利>0 但本業虧損(qop<=0)、或淨利遠大於營業利益 → 獲利品質存疑
+        qop, qni = r.get("q_op"), r.get("q_ni")
+        waigai = (qop is not None and qni is not None and qni > 0 and not fin
+                  and (qop <= 0 or qni > qop * 1.8))
+        if waigai and quality is not None:
+            quality = quality * 0.82  # 品質打折（獲利非本業）
+        # 風險扣分
+        pen = 0
+        dn = []
+        if waigai:
+            pen += 4; dn.append("獲利多來自業外")
+        if r.get("om") is not None and r["om"] < 0:
+            pen += 10; dn.append("本業虧損")
+        if (r.get("q_ni") is not None and r["q_ni"] < 0) or (r.get("q_eps") is not None and r["q_eps"] < 0):
+            pen += 8; dn.append("單季淨損")
+        if r.get("rev_cum_yoy") is not None and r["rev_cum_yoy"] < -15:
+            pen += 6; dn.append("營收明顯衰退")
+        ph = pe_hi_pct(r)
+        if ph is not None and ph > 0.95 and (r.get("pe") or 0) > 40:
+            pen += 5; dn.append("估值偏高")
+        # 景氣循環尖峰防呆：極低 trailing PE + 高毛利 + 高營收YoY 常是循環頂點，
+        # 此時 pe 被壓低 → value 與 ROE(=pb/pe) 同源被雙重灌頂，屬 value trap。
+        cyc = ((r.get("nm") or 0) >= 20 and (r.get("rev_cum_yoy") or 0) >= 50
+               and (r.get("pe") or 99) < 10 and not fin)
+        if cyc:
+            if quality is not None:
+                quality = min(quality, 70)  # 尖峰 ROE 不可獨立進頂級
+            pen += 6; dn.append("疑似循環獲利尖峰")
+        pen = min(pen, 25)
+
+        # 覆蓋度
+        cov = sum(1 for x in (value, quality, growth) if x is not None)
+        core = sum(1 for x in (vpe, vpb, vyl, rp, npv, growth) if x is not None)
+        if cov < 2 or core < 2:
+            r.update(sc=None, gr="—", sv=None, sq=None, sg=None, roe=r.get("_roe"), up=[], dn=[])
+            dist["—"] += 1
+            r.pop("_roe", None)
+            continue
+
+        base = wavg([(value, 0.35), (quality, 0.35), (growth, 0.30)])
+        total = max(0, min(100, round((base or 0) - pen)))
+        gr = "A" if total >= 76 else "B" if total >= 62 else "C" if total >= 46 else "D" if total >= 30 else "E"
+
+        loss_flag = ((r.get("om") is not None and r["om"] < 0)
+                     or (r.get("q_ni") is not None and r["q_ni"] < 0)
+                     or (r.get("q_eps") is not None and r["q_eps"] < 0))
+        up = []
+        if value is not None and value >= 70 and not loss_flag:
+            up.append("估值偏低")  # 不對虧損股（低 PB 常是財務困境定價）掛此標
+        if r["_roe"] is not None and r["_roe"] >= 15 and not waigai and not loss_flag:
+            up.append(f"高ROE≈{r['_roe']:.0f}%")
+        if r.get("nm") is not None and r["nm"] >= 10 and (r.get("om") or -1) > 0 and not waigai:
+            up.append("獲利穩健")
+        if r.get("yld") is not None and r["yld"] >= 4.5:
+            up.append(f"殖利率{r['yld']:.1f}%")
+        if r.get("rev_cum_yoy") is not None and r["rev_cum_yoy"] >= 15 and not lowbase:
+            up.append("營收成長")
+        if lowbase:
+            dn.append("低基期成長")
+
+        r.update(sc=total, gr=gr,
+                 sv=None if value is None else round(value),
+                 sq=None if quality is None else round(quality),
+                 sg=None if growth is None else round(growth),
+                 roe=r["_roe"], up=up[:4], dn=dn[:4])
+        r.pop("_roe", None)
+        dist[gr] += 1
+
+    # 非 stock / 停牌：標 N/A
+    for r in rows:
+        if "sc" not in r:
+            r.update(sc=None, gr="—", sv=None, sq=None, sg=None, roe=None, up=[], dn=[])
+    print("rating dist:", dist, file=sys.stderr)
+    return dist
+
+
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     changed = False
@@ -286,6 +461,10 @@ def main():
         with_q = sum(1 for r in stocks if r.get("q"))
         if stocks and with_q / len(stocks) < 0.5:
             sys.exit(f"SANITY FAIL: {label} quarterly coverage {with_q}/{len(stocks)} < 50% (端點 schema 變了?)")
+    rdist = score_tw(tw["rows"])
+    rated = sum(v for k, v in rdist.items() if k != "—")
+    if rated < 1000:
+        sys.exit(f"SANITY FAIL: rated stocks {rated} < 1000 (評分因子可能大量缺失)")
     changed |= write_if_changed(f"{OUT_DIR}/tw.json", tw)
 
     # ---- US（失敗不拖垮 TW：保留舊檔、exit 0）----

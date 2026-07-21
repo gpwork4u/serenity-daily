@@ -215,7 +215,35 @@
   .mkthead .masof{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
   .msel{font-family:var(--mono);font-size:11.5px;padding:5px 8px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--ink-2);max-width:170px}
   .mktrow,.mkthd{display:grid;align-items:center;gap:9px;padding:8px 13px;width:100%;text-align:left}
-  .grid-tw{grid-template-columns:minmax(118px,1.35fr) 40px 66px 58px 50px 46px 50px 60px 56px 22px}
+  .grid-tw{grid-template-columns:minmax(118px,1.3fr) 38px 64px 56px 48px 44px 48px 54px 60px 22px}
+  /* 購入評級 */
+  .gchip{font-family:var(--mono);font-size:9.5px;font-weight:800;padding:1px 5px;border-radius:5px;margin-left:5px;vertical-align:1px;border:1px solid;color:#fff}
+  .g-A{background:var(--core);border-color:var(--core)} .g-B{background:var(--accent);border-color:var(--accent)}
+  .g-C{background:var(--ink-3);border-color:var(--ink-3)} .g-D{background:var(--pre);border-color:var(--pre)}
+  .g-E{background:var(--avoid);border-color:var(--avoid)}
+  @media (prefers-color-scheme:dark){ .gchip{color:#0A0E13} }
+  :root[data-theme="dark"] .gchip{color:#0A0E13}
+  :root[data-theme="light"] .gchip{color:#fff}
+  .gcell{display:flex;flex-direction:column;align-items:flex-end;gap:0;justify-self:end}
+  .gcell .gg{font-family:var(--mono);font-size:12.5px;font-weight:800;line-height:1.1}
+  .gcell .gs{font-family:var(--mono);font-size:9.5px;color:var(--ink-3)}
+  .gc-A{color:var(--core)} .gc-B{color:var(--accent)} .gc-C{color:var(--ink-3)} .gc-D{color:var(--pre)} .gc-E{color:var(--avoid)}
+  .ratebox{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 13px;margin-bottom:4px}
+  .ratehd{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:9px}
+  .ratebig{font-family:var(--mono);font-size:26px;font-weight:800;line-height:1}
+  .ratesc{font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+  .ratesc b{font-size:17px}
+  .ratetier{font-size:12px;color:var(--ink-2)}
+  .sbar{display:grid;grid-template-columns:52px 1fr 34px;align-items:center;gap:9px;margin-bottom:5px}
+  .sbar .sl{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+  .sbar .st{height:9px;background:var(--surface-3);border-radius:5px;overflow:hidden}
+  .sbar .sf{height:100%;border-radius:5px;background:var(--accent);opacity:.85}
+  .sbar .sn{font-family:var(--mono);font-size:11px;text-align:right;color:var(--ink-2)}
+  .rchips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .rup,.rdn{font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:6px;border:1px solid}
+  .rup{color:var(--core);border-color:var(--core);background:var(--core-soft)}
+  .rdn{color:var(--avoid);border-color:var(--avoid);background:var(--avoid-soft)}
+  .ratenote{font-size:10.5px;color:var(--ink-3);margin-top:8px;line-height:1.5}
   .grid-us{grid-template-columns:minmax(160px,2fr) 76px 62px 74px minmax(90px,1fr) 22px}
   .mkthd{background:var(--surface-2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-3);position:sticky;top:0;z-index:5}
   .mkthd .sort{cursor:pointer;background:none;border:none;color:inherit;font:inherit;padding:0;text-transform:inherit;letter-spacing:inherit;text-align:right}
@@ -305,6 +333,9 @@
     .mktrow .num.mchg{order:3;font-size:13.5px;font-weight:600}
     .mmk{order:4}
     .mktrow .num.mx,.mktrow .msec{order:5;flex-basis:100%;text-align:left;font-size:11.5px;color:var(--ink-3)}
+    .grid-tw .num:not(.mp):not(.mchg):not(.mx){display:none}
+    .gcell{order:2;flex-direction:row;gap:6px;align-items:baseline}
+    .gcell .gg{font-size:16px} .gcell .gs{font-size:12px}
     .mcaret{display:none}
     .msel{max-width:46vw;font-size:13px;padding:8px 10px}
     .mdetail{padding:10px 12px 15px}
@@ -378,10 +409,15 @@
   <div class="tabpane" id="pane-tw" hidden>
     <div class="mkthead">
       <span class="masof" id="tw-asof"></span>
-      <span class="hint">上市＋上櫃全部普通股與 ETF · 行情/估值/月營收/季損益 · 點列展開個別檢視</span>
+      <span class="hint">全上市櫃普通股＋ETF · 行情/估值/月營收/季損益＋<b>綜合多因子購入評級</b> · 點列展開個別檢視</span>
+      <details class="disc" style="flex-basis:100%;margin:8px 0 0">
+        <summary>ⓘ 購入評級怎麼算 · 教育性量化評分，非投資建議<span class="cta"></span></summary>
+        <div class="full">綜合四支柱 → 0–100 分 → <b>A 強力偏多 / B 偏多 / C 中性 / D 偏空 / E 迴避</b>：<b>價值 35%</b>（產業相對 PE↓/PB↓/殖利率↑）＋<b>品質 35%</b>（ROE≈PB/PE、淨利率、獲利為正）＋<b>成長 30%</b>（累計營收 YoY，低基期與金融業已上限處理）－<b>風險扣分</b>（本業虧損/淨損/衰退/業外撐獲利/估值過熱）。僅用免費彙總資料（單季損益＋月營收＋估值），<b>無資產負債表、現金流、負債，無法評槓桿與流動性</b>；ETF、停牌、缺關鍵資料不評分。分數為機械規則計算，非買賣或部位建議，請以財報正本自行覆核。</div>
+      </details>
     </div>
     <div class="controls">
       <div class="cgroup"><span class="lbl">類型</span><span id="tw-f-type"></span></div>
+      <div class="cgroup"><span class="lbl">評級</span><span id="tw-f-grade"></span></div>
       <select class="msel" id="tw-ind" aria-label="產業別"></select>
       <input class="search" id="tw-q" placeholder="搜尋代號/名稱…" aria-label="搜尋台股">
       <span class="count" id="tw-count"></span>
@@ -395,8 +431,8 @@
         <button class="sort" data-twk="pe">PE</button>
         <button class="sort" data-twk="pb">PB</button>
         <button class="sort" data-twk="yld">殖利率</button>
-        <button class="sort" data-twk="rev_yoy">營收YoY</button>
-        <button class="sort" data-twk="q_eps">EPS(季)</button>
+        <button class="sort" data-twk="q_eps">EPS季</button>
+        <button class="sort act" data-twk="sc">購入評級</button>
         <span></span>
       </div>
       <div id="tw-body"><div class="mload">載入中…</div></div>
@@ -637,6 +673,8 @@ document.addEventListener("click",e=>{
   if(usk){const M=MKT.us;if(M.sort===usk.dataset.usk)M.dir*=-1;else{M.sort=usk.dataset.usk;M.dir=usk.dataset.usk==="s"?1:-1;}M.page=1;renderMkt("us");return;}
   const twt=e.target.closest("[data-twtype]");
   if(twt){MKT.tw.type=twt.dataset.twtype;MKT.tw.page=1;renderMkt("tw");return;}
+  const twg=e.target.closest("[data-twgrade]");
+  if(twg){MKT.tw.grade=twg.dataset.twgrade;MKT.tw.page=1;renderMkt("tw");return;}
   const tpg=e.target.closest("[data-twpg]");
   if(tpg&&!tpg.disabled){MKT.tw.page=+tpg.getAttribute("data-twpg");renderMkt("tw");document.getElementById("pane-tw").scrollIntoView({block:"start"});return;}
   const upg=e.target.closest("[data-uspg]");
@@ -687,7 +725,7 @@ try{const t=localStorage.getItem("sd-theme");if(t)document.documentElement.setAt
 // ---- 全市場分頁（台股/美股全覽） ----
 let RES_TK=new Map(),AVD_TK=new Map();
 const MKT={
-  tw:{rows:null,q:"",type:"ALL",ind:"ALL",sort:"a",dir:-1,page:1,asof:"",err:""},
+  tw:{rows:null,q:"",type:"ALL",ind:"ALL",grade:"ALL",sort:"sc",dir:-1,page:1,asof:"",err:""},
   us:{rows:null,q:"",sec:"ALL",sort:"mc",dir:-1,page:1,asof:"",err:""},
   PS:50
 };
@@ -748,6 +786,7 @@ function twFiltered(){
     if(M.type==="上櫃"&&!(r.mk==="上櫃"&&r.t==="stock"))return false;
     if(M.type==="ETF"&&r.t!=="etf")return false;
     if(M.ind!=="ALL"&&r.ind!==M.ind)return false;
+    if(M.grade!=="ALL"&&r.gr!==M.grade)return false;
     if(M.q){const q=M.q.toLowerCase();if(!((r.c+r.n).toLowerCase().includes(q)))return false;}
     return true;
   });
@@ -766,24 +805,46 @@ function usFiltered(){
   rows.sort((a,b)=>k==="s"?a.s.localeCompare(b.s)*M.dir:nullLast(a[k],b[k],M.dir));
   return rows;
 }
+const GTIER={A:"強力偏多",B:"偏多",C:"中性",D:"偏空",E:"迴避"};
+function gchip(gr){return gr&&gr!=="—"?`<span class="gchip g-${gr}">${gr}</span>`:"";}
+function gcell(r){
+  if(r.sc==null)return `<span class="gcell"><span class="gg" style="color:var(--ink-3)">—</span><span class="gs">N/A</span></span>`;
+  return `<span class="gcell"><span class="gg gc-${r.gr}">${r.gr}</span><span class="gs">${r.sc}</span></span>`;
+}
 function twRow(r){
   return `<button class="mktrow grid-tw" data-tc="${escAttr(r.c)}" aria-expanded="false">
-    <span class="mtk"><b>${esc(r.c)}${bdg(r.c,"TW")}</b><small>${esc(r.n)}</small></span>
+    <span class="mtk"><b>${esc(r.c)}${gchip(r.gr)}${bdg(r.c,"TW")}</b><small>${esc(r.n)}</small></span>
     <span class="mmk">${esc(r.t==="etf"?"ETF":r.mk)}</span>
     <span class="num mp">${fmtN(r.p)}</span>
     ${chgHTML(r.chgp)}
     <span class="num">${fmtN(r.pe,1)}</span>
     <span class="num">${fmtN(r.pb,1)}</span>
     <span class="num">${r.yld==null?"—":fmtN(r.yld,1)+"%"}</span>
-    ${chgHTML(r.rev_yoy,"mx")}
     <span class="num mx">${fmtN(r.q_eps)}</span>
+    ${gcell(r)}
     <span class="mcaret">▸</span>
   </button><div class="mdetail" id="twd-${escAttr(r.c)}"></div>`;
+}
+function rateBox(r){
+  if(r.sc==null)return `<div class="ratebox"><div class="ratetier">此標的未評分（ETF／停牌／缺關鍵財務資料）。</div></div>`;
+  function bar(l,v){return `<div class="sbar"><span class="sl">${l}</span><div class="st"><div class="sf" style="width:${v==null?0:v}%"></div></div><span class="sn">${v==null?"—":v}</span></div>`;}
+  const up=(r.up||[]).map(x=>`<span class="rup">＋${esc(x)}</span>`).join("");
+  const dn=(r.dn||[]).map(x=>`<span class="rdn">－${esc(x)}</span>`).join("");
+  return `<div class="ratebox">
+    <div class="ratehd">
+      <span class="ratebig gc-${r.gr}">${r.gr}</span>
+      <span class="ratesc">購入評分 <b class="gc-${r.gr}">${r.sc}</b> / 100</span>
+      <span class="ratetier">${GTIER[r.gr]||""}${r.roe!=null?` · ROE≈${r.roe}%`:""}</span>
+    </div>
+    ${bar("價值",r.sv)}${bar("品質",r.sq)}${bar("成長",r.sg)}
+    ${(up||dn)?`<div class="rchips">${up}${dn}</div>`:""}
+    <div class="ratenote">綜合多因子機械評分，非投資建議；未含負債/現金流。成長已對低基期與金融業上限處理。</div>
+  </div>`;
 }
 function twDetail(r){
   const cells=[];
   function cell(h,v){cells.push(`<div class="mcell"><div class="mh">${h}</div><div class="mv">${v}</div></div>`);}
-  let html="";
+  let html=`<div class="msect">購入評級</div>${rateBox(r)}`;
   html+=`<div class="msect">行情 · ${esc(MKT.tw.asof)}</div><div class="mgrid">`;cells.length=0;
   cell("收盤",fmtN(r.p));cell("漲跌",(r.chg==null?"—":(r.chg>0?"+":"")+fmtN(r.chg))+" <small>("+(r.chgp==null?"—":(r.chgp>0?"+":"")+fmtN(r.chgp)+"%")+")</small>");
   cell("成交量",fmtN(r.v==null?null:r.v/1000,0)+" <small>張</small>");cell("成交值",fmtYi(r.a));
@@ -850,6 +911,7 @@ function renderMkt(mk){
   document.getElementById(mk+"-pager").innerHTML=pagerHTML(M.page,total,mk==="tw"?"data-twpg":"data-uspg")+`<span class="pinfo">第 ${M.page} / ${total} 頁</span>`;
   if(mk==="tw"){
     document.getElementById("tw-f-type").innerHTML=["ALL","上市","上櫃","ETF"].map(x=>`<button class="cbtn ${M.type===x?'on':''}" data-twtype="${x}">${x==="ALL"?"全部":x}</button>`).join("");
+    document.getElementById("tw-f-grade").innerHTML=["ALL","A","B","C","D","E","—"].map(x=>`<button class="cbtn ${M.grade===x?'on':''}" data-twgrade="${x}">${x==="ALL"?"全部":x==="—"?"未評級":x}</button>`).join("");
     document.querySelectorAll("[data-twk]").forEach(b=>b.classList.toggle("act",b.dataset.twk===M.sort));
   }else{
     document.querySelectorAll("[data-usk]").forEach(b=>b.classList.toggle("act",b.dataset.usk===M.sort));
